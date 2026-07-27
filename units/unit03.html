@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 03: Measures of Central Tendency — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">MATH-2205</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#mid-topics">Mid Topics</a></li>
+                <li><a href="../index.html#final-topics">Final Topics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="notes-page mid-page">
+        <div class="notes-hero mid">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#mid-topics">Mid Term</a> &gt; <span>Unit 03</span>
+            </div>
+            <div class="unit-badge">UNIT 03 &middot; MID TERM</div>
+            <h1>Measures of Central Tendency</h1>
+        </div>
+
+        <div class="notes-container">
+            <section class="notes-section">
+                <h2>1. What are Measures of Central Tendency?</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Measures of central tendency are statistical measures that describe the center or typical value of a dataset. They summarize a large set of data by identifying a single value that represents the whole dataset. They indicate where most values are concentrated.
+                </div>
+                <p>The three primary measures are the mean, median, and mode.</p>
+            </section>
+
+            <section class="notes-section">
+                <h2>2. Mean (Arithmetic Average)</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The mean is the sum of all data values divided by the number of values. It is the most commonly used measure of central tendency.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Population Mean</div>
+                    \[\mu = \frac{\sum_{i=1}^{N} x_i}{N}\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Sample Mean</div>
+                    \[\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}\]
+                </div>
+                <p>Where:</p>
+                <ul>
+                    <li>\(\mu\) = population mean, \(\bar{x}\) = sample mean</li>
+                    <li>\(x_i\) = each individual data value</li>
+                    <li>\(N\) = population size, \(n\) = sample size</li>
+                </ul>
+            </section>
+
+            <section class="notes-section">
+                <h2>3. Geometric Mean</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Particularly useful when dealing with growth rates, ratios, percentages, or datasets with different ranges.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Geometric Mean</div>
+                    \[GM = \sqrt[n]{x_1 \cdot x_2 \cdot x_3 \cdots x_n} = \left(\prod_{i=1}^{n} x_i\right)^{\!1/n}\]
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example: Investment Growth Rate</div>
+                    <p>An investor experiences these annual returns:</p>
+                    <ul>
+                        <li>Year 1: 10% increase (factor = 1.10)</li>
+                        <li>Year 2: 20% increase (factor = 1.20)</li>
+                        <li>Year 3: 30% increase (factor = 1.30)</li>
+                    </ul>
+                    \[GM = \sqrt[3]{1.10 \times 1.20 \times 1.30} = \sqrt[3]{1.716} \approx 1.1972\]
+                    <p>Average growth rate &approx; 19.72% per year</p>
+                </div>
+                
+                <h3>Applications</h3>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">💰</div>
+                        <h4>Compound Interest</h4>
+                        <p>Calculating average rate of return over multiple periods</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📈</div>
+                        <h4>Population Growth</h4>
+                        <p>Finding average growth rate across time periods</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📊</div>
+                        <h4>Stock Market Returns</h4>
+                        <p>Computing average returns across volatile periods</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>4. Harmonic Mean</h2>
+                <div class="formula-box">
+                    <div class="formula-label">Harmonic Mean</div>
+                    \[HM = \frac{n}{\sum_{i=1}^{n} \frac{1}{x_i}} = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \cdots + \frac{1}{x_n}}\]
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example: Average Speed</div>
+                    <p>A car travels 100 km from City A to City B at 60 km/h. Return journey at 40 km/h.</p>
+                    \[HM = \frac{2}{\frac{1}{60} + \frac{1}{40}} = \frac{2}{\frac{2+3}{120}} = \frac{2 \times 120}{5} = 48 \text{ km/h}\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Important Inequality</div>
+                    <p>The AM-GM-HM inequality states: \(HM \leq GM \leq AM\). Equality holds only when all values are equal.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>5. Median</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The median is the middle value when data is arranged in ascending or descending order. It divides the data into two equal halves.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Median for Ungrouped Data</div>
+                    <p>For odd \(n\): \[\text{Median} = x_{\left(\frac{n+1}{2}\right)}\]</p>
+                    <p>For even \(n\): \[\text{Median} = \frac{x_{(n/2)} + x_{(n/2)+1}}{2}\]</p>
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Median for Grouped Data</div>
+                    \[\text{Median} = L + \frac{\frac{n}{2} - F}{f} \times h\]
+                </div>
+                <ul>
+                    <li>\(L\) = lower boundary of the median class</li>
+                    <li>\(n\) = total frequency</li>
+                    <li>\(F\) = cumulative frequency before the median class</li>
+                    <li>\(f\) = frequency of the median class</li>
+                    <li>\(h\) = class width</li>
+                </ul>
+                <div class="note-callout">
+                    <p>The median class is the class interval where the cumulative frequency first equals or exceeds \(n/2\).</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>6. Mode</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The mode is the value that appears most frequently. A dataset can have no mode, one mode (unimodal), two modes (bimodal), or more (multimodal).
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example 1: Discrete Dataset</div>
+                    <p>Scores: 50, 55, 60, 65, 65, 70, 75, 75, 75, 80, 85</p>
+                    <p>Since 75 appears 3 times (most frequent): Mode = 75</p>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example 2: Modal Class</div>
+                    <p>In a salary frequency distribution, the class 40,000–50,000 with frequency 12 (highest) is the modal class.</p>
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Mode for Grouped Data</div>
+                    \[\text{Mode} = L + \frac{f_1 - f_0}{2f_1 - f_0 - f_2} \times h\]
+                </div>
+                <ul>
+                    <li>\(L\) = lower boundary of the modal class</li>
+                    <li>\(f_1\) = frequency of the modal class</li>
+                    <li>\(f_0\) = frequency of the class before the modal class</li>
+                    <li>\(f_2\) = frequency of the class after the modal class</li>
+                    <li>\(h\) = class width</li>
+                </ul>
+            </section>
+
+            <section class="notes-section">
+                <h2>7. Choosing the Appropriate Measure</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Measure</th>
+                            <th>Best For</th>
+                            <th>Sensitive to Outliers?</th>
+                            <th>Data Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mean</td>
+                            <td>Symmetrical distributions</td>
+                            <td>Yes</td>
+                            <td>Numerical</td>
+                        </tr>
+                        <tr>
+                            <td>Median</td>
+                            <td>Skewed distributions / outliers</td>
+                            <td>No</td>
+                            <td>Numerical</td>
+                        </tr>
+                        <tr>
+                            <td>Mode</td>
+                            <td>Most common value / categorical</td>
+                            <td>No</td>
+                            <td>Both</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">📏</div>
+                        <h4>Mean</h4>
+                        <p>Best for symmetrical distributions without outliers. Sensitive to extreme values.</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">⚖️</div>
+                        <h4>Median</h4>
+                        <p>Useful for skewed distributions. Not affected by extreme values.</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🏆</div>
+                        <h4>Mode</h4>
+                        <p>Helpful for categorical data. Highlights the most frequent value.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>8. Importance & Relationships</h2>
+                <h3>Why They Matter</h3>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">🎯</div>
+                        <h4>Simplification</h4>
+                        <p>Summarize large datasets with a single representative value.</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🔄</div>
+                        <h4>Comparison</h4>
+                        <p>Enable easy comparison between different datasets.</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📊</div>
+                        <h4>Foundation for Analysis</h4>
+                        <p>Essential basis for further calculations like measures of dispersion.</p>
+                    </div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Empirical Relationship (Moderately Skewed Data)</div>
+                    \[\text{Mean} - \text{Mode} = 3(\text{Mean} - \text{Median})\]
+                    <p>Or equivalently:</p>
+                    \[\text{Mode} \approx 3 \times \text{Median} - 2 \times \text{Mean}\]
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; MATH-2205 Course Material</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

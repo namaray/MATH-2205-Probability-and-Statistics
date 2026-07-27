@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 02: Summarizing Data — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)'], ['$', '$']],
+                displayMath: [['\\[', '\\]'], ['$$', '$$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+    <div class="notes-page mid-page">
+        <nav class="navbar">
+            <div class="brand">MATH-2205</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#mid-topics">Mid Topics</a>
+                <a href="../index.html#final-topics">Final Topics</a>
+            </div>
+        </nav>
+
+        <header class="notes-hero mid">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> > <a href="../index.html#mid-topics">Mid Term</a> > Unit 02
+            </div>
+            <div class="unit-badge">UNIT 02 &middot; MID TERM</div>
+            <h1>Summarizing Data</h1>
+        </header>
+
+        <main class="notes-container">
+            <section>
+                <h2>1. Frequency Distribution</h2>
+                <div class="definition-box">
+                    <p>A frequency distribution is an overview of all distinct values in some variable and the number of times they occur. It tells how frequencies are distributed over values.</p>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Example:</strong> Survey of households about pets.<br>
+                    Data: 3, 0, 1, 4, 4, 1, 2, 0, 2, 2, 0, 2, 0, 1, 3, 1, 2, 1, 1, 3
+                </div>
+
+                <h3>Steps for Creating a Frequency Table</h3>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content"><strong>Write the categories:</strong> List all unique values (0, 1, 2, 3, 4)</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content"><strong>Tally the data:</strong> Go through each value and mark tallies</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content"><strong>Count frequencies:</strong> Sum up tallies for each category</div>
+                    </div>
+                </div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Number of Pets</th>
+                            <th>Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>2</td>
+                        </tr>
+                        <tr style="font-weight: bold;">
+                            <td>Total</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>2. Bar Diagram</h2>
+                <div class="definition-box">
+                    <p>A bar diagram displays a vertical bar for each category. The height of the bar is the percentage or frequency of observations. Typically, the bars are apart, not side by side.</p>
+                </div>
+                
+                <div class="key-concept">
+                    <div class="icon">📊</div>
+                    <div>
+                        <h4>Key Features</h4>
+                        <p>Used for categorical data. Bars don't touch each other. Height represents frequency or percentage.</p>
+                    </div>
+                </div>
+
+                <div class="note-callout">
+                    Example: Bar Diagram of Shark Attacks by U.S. States shows individual categories clearly separated.
+                </div>
+            </section>
+
+            <section>
+                <h2>3. Pie Chart</h2>
+                <div class="definition-box">
+                    <p>A pie chart is a circle having a slice for each category. The size of a slice corresponds to the percentage of observations in the category.</p>
+                </div>
+
+                <div class="formula-box">
+                    \[ \text{Angle} = \frac{\text{Category Frequency}}{\text{Total Frequency}} \times 360^\circ \]
+                </div>
+
+                <div class="note-callout">
+                    Each slice visually represents the proportion of data in that category, making it ideal for showing parts of a whole.
+                </div>
+            </section>
+
+            <section>
+                <h2>4. Histogram</h2>
+                <div class="definition-box">
+                    <p>A histogram is a graph that shows the frequency of numerical data using rectangles. The height represents the distribution frequency.</p>
+                </div>
+
+                <h3>Steps for Constructing a Histogram</h3>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content"><strong>Divide the range:</strong> Split data into intervals of equal width. For discrete variables with few values, use actual values.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content"><strong>Count frequencies:</strong> Count the number of observations in each interval, forming a frequency table.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content"><strong>Draw the bars:</strong> On the horizontal axis, label endpoints. Draw a bar over each interval with height equal to its frequency.</div>
+                    </div>
+                </div>
+
+                <div class="note-callout">
+                    <span class="callout-label">Key Difference:</span> In a histogram, bars touch each other because the data is continuous. In a bar diagram, bars are separated because the data is categorical.
+                </div>
+            </section>
+
+            <section>
+                <h2>5. Frequency Polygon</h2>
+                <div class="definition-box">
+                    <p>A frequency polygon is a line graph of class frequency plotted against class midpoint. Obtained by connecting the mid-points of the tops of histogram rectangles.</p>
+                </div>
+
+                <div class="formula-box">
+                    \[ \text{Class Midpoint} = \frac{\text{Lower Limit} + \text{Upper Limit}}{2} \]
+                </div>
+            </section>
+
+            <section>
+                <h2>6. Cumulative Frequency Polygon (Ogive)</h2>
+                <div class="definition-box">
+                    <p>A cumulative frequency polygon (ogive) shows cumulative frequencies. Cumulative percents are added from left to right. It plots cumulative frequency on the y-axis and class boundaries on the x-axis.</p>
+                </div>
+
+                <ul>
+                    <li>Also known as ogive</li>
+                    <li>Shows running total of frequencies</li>
+                    <li>Useful for finding median, quartiles, and percentiles</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>7. Comparison of Graphical Methods</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Bar Diagram</th>
+                            <th>Histogram</th>
+                            <th>Frequency Polygon</th>
+                            <th>Ogive</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data Type</td>
+                            <td>Categorical</td>
+                            <td>Numerical (Continuous)</td>
+                            <td>Numerical</td>
+                            <td>Numerical</td>
+                        </tr>
+                        <tr>
+                            <td>Bars Touch?</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>N/A (lines)</td>
+                            <td>N/A (lines)</td>
+                        </tr>
+                        <tr>
+                            <td>Shows</td>
+                            <td>Individual frequencies</td>
+                            <td>Distribution shape</td>
+                            <td>Distribution shape</td>
+                            <td>Cumulative frequencies</td>
+                        </tr>
+                        <tr>
+                            <td>Best For</td>
+                            <td>Comparing categories</td>
+                            <td>Showing distribution</td>
+                            <td>Showing distribution shape</td>
+                            <td>Finding percentiles</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; MATH-2205 Probability and Statistics Notes</p>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

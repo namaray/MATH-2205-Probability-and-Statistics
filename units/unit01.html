@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 01: Introduction to Statistics — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">MATH-2205</div>
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#mid-topics">Mid Topics</a>
+            <a href="../index.html#final-topics">Final Topics</a>
+        </div>
+    </nav>
+
+    <div class="notes-page mid-page">
+        <div class="notes-hero mid">
+            <div class="breadcrumb">Home &gt; Mid Term &gt; Unit 01</div>
+            <div class="unit-badge">UNIT 01 &middot; MID TERM</div>
+            <h1>Introduction to Statistics</h1>
+        </div>
+
+        <div class="notes-container">
+            <div class="notes-section">
+                <h2>SECTION 1: What is Statistics?</h2>
+                <div class="definition-box">
+                    <span class="def-label">Definition:</span> Statistics is a branch of mathematics that involves the collection, analysis, interpretation, presentation, and organization of data. It provides methods for making inferences and decisions in the presence of uncertainty.
+                </div>
+                <h3>Why Do We Need Statistics?</h3>
+                <ul>
+                    <li>Understanding statistics helps make better choices</li>
+                    <li>Statistics translates data into knowledge</li>
+                    <li>Helps understand the world around us</li>
+                </ul>
+                <div class="note-callout">
+                    <span class="callout-label">Historical Note:</span> Dr. John Snow's data-driven discovery of cholera transmission in 1854 London is one of the earliest examples of applied statistics.
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h2>SECTION 2: Branches of Statistics</h2>
+                <p>Statistics is broadly divided into two major branches.</p>
+                <div class="key-concept">
+                    <div class="concept-icon">📋</div>
+                    <h4>Descriptive Statistics</h4>
+                    <p>The branch that focuses on collecting, summarizing, and presenting a set of data.</p>
+                </div>
+                <div class="key-concept">
+                    <div class="concept-icon">🔍</div>
+                    <h4>Inferential Statistics</h4>
+                    <p>The branch that analyzes sample data to draw conclusions about a population.</p>
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h2>SECTION 3: Key Terminology</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Term</th>
+                            <th>Definition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Population</td>
+                            <td>The set of all subjects in which we are interested</td>
+                        </tr>
+                        <tr>
+                            <td>Sample</td>
+                            <td>A representative part of population selected for analysis</td>
+                        </tr>
+                        <tr>
+                            <td>Variable</td>
+                            <td>A symbol or name used to represent a value that can change or vary</td>
+                        </tr>
+                        <tr>
+                            <td>Statistic</td>
+                            <td>A numerical measure that describes a characteristic of a sample</td>
+                        </tr>
+                        <tr>
+                            <td>Parameter</td>
+                            <td>A numerical measure that describes a characteristic of a population</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Population vs Sample</h3>
+                <div class="key-concept">
+                    <div class="concept-icon">🌍</div>
+                    <h4>Population</h4>
+                    <p>The 'large group' — all items, individuals, or subjects about which you want to draw a conclusion.</p>
+                </div>
+                <div class="key-concept">
+                    <div class="concept-icon">🧪</div>
+                    <h4>Sample</h4>
+                    <p>The 'small group' — a portion of the population selected for analysis, often randomly selected.</p>
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <h2>SECTION 4: Types of Variables</h2>
+                <h3>Categorical (Qualitative) Variables</h3>
+                <div class="definition-box">
+                    Describes data divided into distinct categories or groups. Cannot be measured numerically; described with labels or names.
+                </div>
+                <p>Examples: Marital Status, Political Party, Eye Color</p>
+
+                <h3>Numerical (Quantitative) Variables</h3>
+                <div class="definition-box">
+                    Represents data in numerical form, allows mathematical operations like addition, subtraction, and averaging.
+                </div>
+
+                <h4>Discrete Variables</h4>
+                <p>Take finite or countable number of values. Usually represent items counted in whole numbers.</p>
+                <div class="example-box">
+                    <span class="example-label">📝 Examples:</span> Number of students in a class (25, 30, 45); Number of cars in a parking lot (5, 10, 15)
+                </div>
+
+                <h4>Continuous Variables</h4>
+                <p>Can take infinite number of values within a given range, including fractions and decimals.</p>
+                <div class="example-box">
+                    <span class="example-label">📝 Examples:</span> Height of individuals (5.8 feet, 6.2 feet); Weight of an object (50.5 kg, 73.2 kg)
+                </div>
+
+                <h3>Variable Classification Tree</h3>
+                <div class="tree-diagram">
+<pre>
+<span class='tree-root'>Variables</span>
+<span class='tree-branch'>├──</span> <span class='tree-leaf'>Categorical</span>
+<span class='tree-branch'>│   └──</span> Examples: Marital Status, Political Party, Eye Color
+<span class='tree-branch'>└──</span> <span class='tree-leaf'>Numerical</span>
+    <span class='tree-branch'>├──</span> <span class='tree-leaf'>Discrete</span>
+    <span class='tree-branch'>│   └──</span> Examples: Number of Children, Defects per hour
+    <span class='tree-branch'>└──</span> <span class='tree-leaf'>Continuous</span>
+        <span class='tree-branch'>└──</span> Examples: Weight, Voltage
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        MATH-2205 Probability &amp; Statistics — United International University
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 0) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
