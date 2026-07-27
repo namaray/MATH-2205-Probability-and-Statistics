@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mid Term Formula Sheet — MATH-2205</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formula-sheet.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="nav-brand-icon">📚</span>
+                <span class="nav-brand-text">MATH-<span>2205</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#mid-topics">Mid Topics</a>
+                <a href="#" class="active">Formula Sheet</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-page mid-page">
+        <div class="notes-hero mid">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">›</span>
+                <span class="current">Mid Term Formula Sheet</span>
+            </div>
+            <div class="unit-badge">QUICK REVIEW · MID TERM</div>
+            <h1>Formula Sheet &amp; Quick Review</h1>
+            <p class="hero-subtitle" style="max-width:540px;margin:0.5rem auto 0;font-size:0.95rem;">All key formulas, definitions, and relationships from Units 01–03 in one skimmable page.</p>
+        </div>
+
+        <!-- ============ QUICK‑NAV PILLS ============ -->
+        <div class="pill-nav">
+            <a href="#unit1">Unit 01</a>
+            <a href="#unit2">Unit 02</a>
+            <a href="#unit3-mean">Mean</a>
+            <a href="#unit3-gm">GM</a>
+            <a href="#unit3-hm">HM</a>
+            <a href="#unit3-median">Median</a>
+            <a href="#unit3-mode">Mode</a>
+            <a href="#relationships">Relationships</a>
+        </div>
+
+        <div class="notes-container" style="max-width:920px;">
+
+            <!-- ═══════════════ UNIT 01 ═══════════════ -->
+            <div class="unit-divider" id="unit1">
+                <span class="unit-divider-tag">UNIT 01</span>
+                <span class="unit-divider-title">Introduction to Statistics</span>
+            </div>
+
+            <div class="fs-grid two-col">
+                <div class="fs-card">
+                    <div class="fs-card-head">📋 Branches</div>
+                    <p><strong>Descriptive</strong> — collect, summarize, present data.</p>
+                    <p><strong>Inferential</strong> — analyze a <em>sample</em> to draw conclusions about a <em>population</em>.</p>
+                </div>
+                <div class="fs-card">
+                    <div class="fs-card-head">📌 Key Terms</div>
+                    <table class="fs-mini-table">
+                        <tr><td><strong>Population</strong></td><td>Entire group of interest</td></tr>
+                        <tr><td><strong>Sample</strong></td><td>Subset selected for study</td></tr>
+                        <tr><td><strong>Parameter</strong></td><td>Describes population</td></tr>
+                        <tr><td><strong>Statistic</strong></td><td>Describes sample</td></tr>
+                        <tr><td><strong>Variable</strong></td><td>Value that can change</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="fs-card wide">
+                <div class="fs-card-head">🔀 Variable Types</div>
+                <div class="fs-tree">
+                    <span class="t-root">Variables</span>
+                    <div class="t-row">
+                        <div class="t-branch">
+                            <span class="t-label cat">Categorical</span>
+                            <span class="t-desc">Labels / names (eye color, party)</span>
+                        </div>
+                        <div class="t-branch">
+                            <span class="t-label num">Numerical</span>
+                            <div class="t-sub-row">
+                                <div class="t-sub">
+                                    <span class="t-label disc">Discrete</span>
+                                    <span class="t-desc">Countable (# of students)</span>
+                                </div>
+                                <div class="t-sub">
+                                    <span class="t-label cont">Continuous</span>
+                                    <span class="t-desc">Measurable (height, weight)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 02 ═══════════════ -->
+            <div class="unit-divider" id="unit2">
+                <span class="unit-divider-tag">UNIT 02</span>
+                <span class="unit-divider-title">Summarizing Data</span>
+            </div>
+
+            <div class="fs-grid two-col">
+                <div class="fs-card">
+                    <div class="fs-card-head">📊 Frequency Distribution</div>
+                    <p>List every distinct value &amp; count how often it occurs.</p>
+                    <div class="fs-steps">
+                        <span>① List categories</span>
+                        <span>② Tally</span>
+                        <span>③ Count</span>
+                    </div>
+                </div>
+                <div class="fs-card">
+                    <div class="fs-card-head">🥧 Pie Chart Angle</div>
+                    <div class="fs-formula">
+                        \[\theta = \frac{f}{N} \times 360°\]
+                    </div>
+                    <p class="fs-where">\(f\) = category freq · \(N\) = total freq</p>
+                </div>
+            </div>
+
+            <div class="fs-card wide">
+                <div class="fs-card-head">📏 Class Midpoint &amp; Key Differences</div>
+                <div class="fs-formula">
+                    \[\text{Midpoint} = \frac{\text{Lower Limit} + \text{Upper Limit}}{2}\]
+                </div>
+                <table class="fs-mini-table" style="margin-top:0.75rem">
+                    <thead><tr><th></th><th>Bar Diagram</th><th>Histogram</th><th>Freq Polygon</th><th>Ogive</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Data</strong></td><td>Categorical</td><td>Numerical</td><td>Numerical</td><td>Numerical</td></tr>
+                        <tr><td><strong>Bars touch?</strong></td><td>No</td><td>Yes</td><td>Lines</td><td>Lines</td></tr>
+                        <tr><td><strong>Shows</strong></td><td>Frequencies</td><td>Distribution</td><td>Shape</td><td>Cumulative</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ═══════════════ UNIT 03 ═══════════════ -->
+            <div class="unit-divider" id="unit3-mean">
+                <span class="unit-divider-tag">UNIT 03</span>
+                <span class="unit-divider-title">Measures of Central Tendency</span>
+            </div>
+
+            <!-- Arithmetic Mean -->
+            <div class="fs-card wide highlight-purple">
+                <div class="fs-card-head">📐 Arithmetic Mean</div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Population</span>
+                        \[\mu = \frac{\sum x_i}{N}\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Sample</span>
+                        \[\bar{x} = \frac{\sum x_i}{n}\]
+                    </div>
+                </div>
+                <div class="fs-notation">
+                    <span>\(\mu\) = population mean</span>
+                    <span>\(\bar{x}\) = sample mean</span>
+                    <span>\(N\) = population size</span>
+                    <span>\(n\) = sample size</span>
+                </div>
+                <div class="fs-simple">
+                    <em>Simply: add up all values, divide by how many.</em>
+                </div>
+            </div>
+
+            <!-- Weighted Mean (bonus helpful) -->
+            <div class="fs-card wide" id="unit3-wm">
+                <div class="fs-card-head">⚖️ Weighted Mean</div>
+                <div class="fs-formula">
+                    \[\bar{x}_w = \frac{\sum w_i x_i}{\sum w_i}\]
+                </div>
+                <p class="fs-where">\(w_i\) = weight of each value · \(x_i\) = data value</p>
+                <div class="fs-simple"><em>Multiply each value by its weight, sum up, divide by total weight.</em></div>
+            </div>
+
+            <!-- Geometric Mean -->
+            <div class="fs-card wide highlight-teal" id="unit3-gm">
+                <div class="fs-card-head">📈 Geometric Mean</div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Simple Form</span>
+                        \[GM = \sqrt[n]{x_1 \cdot x_2 \cdots x_n}\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Product Form</span>
+                        \[GM = \left(\prod_{i=1}^{n} x_i\right)^{1/n}\]
+                    </div>
+                </div>
+                <div class="fs-simple"><em>Multiply all \(n\) values together, take the \(n\)th root.</em></div>
+                <div class="fs-use-case">
+                    <strong>Use for:</strong> growth rates, compound interest, stock returns
+                </div>
+            </div>
+
+            <!-- Harmonic Mean -->
+            <div class="fs-card wide highlight-amber" id="unit3-hm">
+                <div class="fs-card-head">🔄 Harmonic Mean</div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">General</span>
+                        \[HM = \frac{n}{\displaystyle\sum_{i=1}^{n}\frac{1}{x_i}}\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Two values</span>
+                        \[HM = \frac{2}{\dfrac{1}{a}+\dfrac{1}{b}} = \frac{2ab}{a+b}\]
+                    </div>
+                </div>
+                <div class="fs-simple"><em>Divide \(n\) by the sum of reciprocals.</em></div>
+                <div class="fs-use-case">
+                    <strong>Use for:</strong> average speed (same distance, diff. speeds), rates &amp; ratios
+                </div>
+            </div>
+
+            <!-- Median -->
+            <div class="fs-card wide highlight-purple" id="unit3-median">
+                <div class="fs-card-head">📊 Median</div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Odd \(n\)</span>
+                        \[\text{Median} = x_{\left(\frac{n+1}{2}\right)}\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Even \(n\)</span>
+                        \[\text{Median} = \frac{x_{(n/2)} + x_{(n/2)+1}}{2}\]
+                    </div>
+                </div>
+                <div class="fs-simple" style="margin-bottom:1rem"><em>Sort values → pick the middle one (or average of two middles).</em></div>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">Grouped Data</span>
+                    \[\text{Median} = L + \frac{\frac{n}{2} - F}{f} \times h\]
+                    <div class="fs-notation" style="margin-top:0.5rem">
+                        <span>\(L\) = lower boundary</span>
+                        <span>\(F\) = cum. freq before</span>
+                        <span>\(f\) = freq of median class</span>
+                        <span>\(h\) = class width</span>
+                    </div>
+                    <p class="fs-tip">💡 Median class → where cumulative freq first ≥ \(n/2\)</p>
+                </div>
+            </div>
+
+            <!-- Mode -->
+            <div class="fs-card wide highlight-teal" id="unit3-mode">
+                <div class="fs-card-head">🏆 Mode</div>
+                <p style="margin-bottom:0.75rem">The value that appears <strong>most frequently</strong>. Can be unimodal, bimodal, multimodal, or no mode.</p>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">Grouped Data</span>
+                    \[\text{Mode} = L + \frac{f_1 - f_0}{2f_1 - f_0 - f_2} \times h\]
+                    <div class="fs-notation" style="margin-top:0.5rem">
+                        <span>\(L\) = lower boundary</span>
+                        <span>\(f_1\) = modal class freq</span>
+                        <span>\(f_0\) = class before</span>
+                        <span>\(f_2\) = class after</span>
+                        <span>\(h\) = class width</span>
+                    </div>
+                    <p class="fs-tip">💡 Modal class → class with the <strong>highest</strong> frequency</p>
+                </div>
+            </div>
+
+            <!-- ═══════════════ RELATIONSHIPS ═══════════════ -->
+            <div class="unit-divider" id="relationships">
+                <span class="unit-divider-tag">KEY</span>
+                <span class="unit-divider-title">Relationships &amp; When to Use</span>
+            </div>
+
+            <div class="fs-card wide highlight-amber">
+                <div class="fs-card-head">⚡ AM–GM–HM Inequality</div>
+                <div class="fs-formula">
+                    \[HM \leq GM \leq AM\]
+                </div>
+                <div class="fs-simple"><em>Equality holds only when all values are equal.</em></div>
+            </div>
+
+            <div class="fs-card wide highlight-purple">
+                <div class="fs-card-head">🔗 Empirical Relationship (Moderately Skewed)</div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Form 1</span>
+                        \[\text{Mean} - \text{Mode} = 3(\text{Mean} - \text{Median})\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Form 2</span>
+                        \[\text{Mode} \approx 3\,\text{Median} - 2\,\text{Mean}\]
+                    </div>
+                </div>
+            </div>
+
+            <div class="fs-card wide">
+                <div class="fs-card-head">🎯 Which Measure to Use?</div>
+                <table class="fs-mini-table">
+                    <thead><tr><th>Measure</th><th>Best For</th><th>Outlier Sensitive?</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Mean</strong></td><td>Symmetric data, no outliers</td><td class="yes">Yes ⚠️</td></tr>
+                        <tr><td><strong>Median</strong></td><td>Skewed data / has outliers</td><td class="no">No ✅</td></tr>
+                        <tr><td><strong>Mode</strong></td><td>Categorical data / most common</td><td class="no">No ✅</td></tr>
+                        <tr><td><strong>GM</strong></td><td>Growth rates, compound interest</td><td>—</td></tr>
+                        <tr><td><strong>HM</strong></td><td>Rates (avg speed, ratios)</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div><!-- /notes-container -->
+    </div><!-- /notes-page -->
+
+    <footer class="footer">
+        <p>MATH-2205 Probability &amp; Statistics — United International University</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>

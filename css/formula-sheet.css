@@ -1,0 +1,375 @@
+/* ============================================
+   Formula Sheet — Compact Quick-Review Styles
+   ============================================ */
+
+/* ─── Pill Navigation ─── */
+.pill-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0 2rem;
+  margin: -0.5rem auto 2rem;
+  max-width: 920px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.pill-nav a {
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-secondary);
+  background: var(--bg-glass);
+  border: 1px solid var(--bg-glass-border);
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.pill-nav a:hover {
+  color: var(--text-heading);
+  background: rgba(108, 99, 255, 0.12);
+  border-color: rgba(108, 99, 255, 0.25);
+}
+
+/* ─── Unit Dividers ─── */
+.unit-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 2.5rem 0 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-subtle);
+  scroll-margin-top: 5rem;
+}
+
+.unit-divider-tag {
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(108, 99, 255, 0.12);
+  color: var(--accent-primary);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  white-space: nowrap;
+}
+
+.unit-divider-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+/* ─── Formula Sheet Grid ─── */
+.fs-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.fs-grid.two-col {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ─── Formula Cards ─── */
+.fs-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  transition: var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.fs-card.wide {
+  margin-bottom: 1rem;
+}
+
+.fs-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--bg-card-hover);
+}
+
+/* Color accent strips */
+.fs-card.highlight-purple::before,
+.fs-card.highlight-teal::before,
+.fs-card.highlight-amber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.fs-card.highlight-purple::before {
+  background: linear-gradient(90deg, #6c63ff, #a78bfa);
+}
+
+.fs-card.highlight-teal::before {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.fs-card.highlight-amber::before {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.fs-card-head {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+}
+
+.fs-card p {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+
+/* ─── Formula Display ─── */
+.fs-formula {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.fs-formula-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.fs-formula-item {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+}
+
+.fs-formula-divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--border-subtle);
+  margin: 0.5rem 0;
+}
+
+.fs-formula-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-secondary);
+  margin-bottom: 0.3rem;
+}
+
+/* ─── Notation / Where line ─── */
+.fs-notation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+
+.fs-notation span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.fs-where {
+  font-size: 0.8rem !important;
+  color: var(--text-muted) !important;
+  text-align: center;
+  margin-top: 0.25rem !important;
+}
+
+/* ─── Simple English line ─── */
+.fs-simple {
+  text-align: center;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.fs-simple em {
+  font-size: 0.82rem;
+  color: var(--accent-secondary);
+  font-style: italic;
+}
+
+/* ─── Use-case badges ─── */
+.fs-use-case {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.fs-use-case strong {
+  color: var(--text-primary);
+}
+
+/* ─── Sub-box (grouped data formulas inside a card) ─── */
+.fs-sub-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.fs-tip {
+  font-size: 0.8rem !important;
+  color: var(--accent-secondary) !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* ─── Mini Tables ─── */
+.fs-mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.fs-mini-table thead th {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-secondary);
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+}
+
+.fs-mini-table td {
+  padding: 0.35rem 0.6rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  vertical-align: top;
+}
+
+.fs-mini-table td.yes { color: #f59e0b; }
+.fs-mini-table td.no  { color: #34d399; }
+
+.fs-mini-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ─── Steps ─── */
+.fs-steps {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.fs-steps span {
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(108, 99, 255, 0.08);
+  color: var(--accent-tertiary);
+  border: 1px solid rgba(108, 99, 255, 0.12);
+}
+
+/* ─── Variable Type Tree (compact) ─── */
+.fs-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.t-root {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-heading);
+  padding: 0.3rem 1rem;
+  background: rgba(108, 99, 255, 0.1);
+  border-radius: 50px;
+  border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.t-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.t-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.t-label {
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 50px;
+}
+
+.t-label.cat  { background: rgba(244,114,182,0.12); color: #f472b6; border: 1px solid rgba(244,114,182,0.2); }
+.t-label.num  { background: rgba(96,165,250,0.12);  color: #60a5fa; border: 1px solid rgba(96,165,250,0.2); }
+.t-label.disc { background: rgba(167,139,250,0.12); color: #a78bfa; border: 1px solid rgba(167,139,250,0.2); }
+.t-label.cont { background: rgba(52,211,153,0.12);  color: #34d399; border: 1px solid rgba(52,211,153,0.2); }
+
+.t-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.t-sub-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.t-sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 600px) {
+  .pill-nav { gap: 0.3rem; padding: 0 1rem; }
+  .pill-nav a { font-size: 0.72rem; padding: 0.28rem 0.65rem; }
+  .fs-formula-row { flex-direction: column; }
+  .fs-formula-divider { width: 60%; height: 1px; margin: 0.25rem auto; }
+  .fs-grid.two-col { grid-template-columns: 1fr; }
+  .t-row { flex-direction: column; align-items: center; }
+  .t-sub-row { flex-direction: column; align-items: center; }
+  .unit-divider-title { font-size: 1rem; }
+}
+
+/* ─── Print optimization ─── */
+@media print {
+  body::before, .navbar, .pill-nav, .footer { display: none; }
+  body { background: #fff; color: #111; }
+  .notes-page { padding-top: 0; }
+  .notes-hero { padding: 1rem 0; }
+  .fs-card { break-inside: avoid; border: 1px solid #ccc; background: #fff; }
+  .unit-divider { break-before: auto; }
+}
