@@ -1030,6 +1030,10 @@ body::before {
 
 mjx-container[jax="CHTML"][display="true"] {
   margin: 1em 0 !important;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.25rem;
 }
 
 /* ============ SUPPLEMENTARY CLASS ALIASES ============ */

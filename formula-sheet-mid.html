@@ -33,7 +33,7 @@
             </div>
             <div class="unit-badge">QUICK REVIEW · MID TERM</div>
             <h1>Formula Sheet &amp; Quick Review</h1>
-            <p class="hero-subtitle" style="max-width:540px;margin:0.5rem auto 0;font-size:0.95rem;">All key formulas, definitions, and relationships from Units 01–03 in one skimmable page.</p>
+            <p class="hero-subtitle" style="max-width:540px;margin:0.5rem auto 0;font-size:0.95rem;">All key formulas, definitions, and relationships from Units 01–06 in one skimmable page.</p>
         </div>
 
         <!-- ============ QUICK‑NAV PILLS ============ -->
@@ -45,6 +45,13 @@
             <a href="#unit3-hm">HM</a>
             <a href="#unit3-median">Median</a>
             <a href="#unit3-mode">Mode</a>
+            <a href="#unit4">Dispersion</a>
+            <a href="#unit4-quartiles">Quartiles</a>
+            <a href="#unit4-var">Variance</a>
+            <a href="#unit4-outliers">Outliers</a>
+            <a href="#unit5">Moments</a>
+            <a href="#unit6">Correlation</a>
+            <a href="#unit6-reg">Regression</a>
             <a href="#relationships">Relationships</a>
         </div>
 
@@ -267,6 +274,292 @@
                 </div>
             </div>
 
+            <!-- ═══════════════ UNIT 04 ═══════════════ -->
+            <div class="unit-divider" id="unit4">
+                <span class="unit-divider-tag">UNIT 04</span>
+                <span class="unit-divider-title">Measures of Dispersion</span>
+            </div>
+
+            <div class="fs-grid two-col">
+                <div class="fs-card">
+                    <div class="fs-card-head">↔️ Range</div>
+                    <div class="fs-formula">
+                        \[R = X_{\max} - X_{\min}\]
+                    </div>
+                    <p class="fs-tip">⚠️ Uses only 2 values — badly distorted by one extreme observation.</p>
+                </div>
+                <div class="fs-card">
+                    <div class="fs-card-head">📏 Mean Absolute Deviation</div>
+                    <div class="fs-formula">
+                        \[MAD = \frac{\sum |X_i - \bar{X}|}{n}\]
+                    </div>
+                    <p class="fs-where">The \(|\cdot|\) is essential — otherwise \(\sum(X_i-\bar{X}) = 0\).</p>
+                </div>
+            </div>
+
+            <!-- Quartiles / IQR / Position -->
+            <div class="fs-card wide highlight-purple" id="unit4-quartiles">
+                <div class="fs-card-head">📦 Quartiles, Deciles &amp; Percentiles</div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Quartile</span>
+                        \[Q_k = \left(\frac{k(n+1)}{4}\right)^{\text{th}}\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Decile</span>
+                        \[D_k = \left(\frac{k(n+1)}{10}\right)^{\text{th}}\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Percentile</span>
+                        \[P_k = \left(\frac{k(n+1)}{100}\right)^{\text{th}}\]
+                    </div>
+                </div>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">Interquartile Range &amp; Quartile Deviation</span>
+                    \[IQR = Q_3 - Q_1 \qquad QD = \tfrac{1}{2}IQR\]
+                    <p class="fs-tip">💡 \(Q_1 = P_{25}\) · \(Q_2 = D_5 = P_{50} = \) Median · \(Q_3 = P_{75}\) · \(D_k = P_{10k}\)</p>
+                </div>
+                <div class="fs-simple"><em>IQR = spread of the middle 50% of the data.</em></div>
+            </div>
+
+            <!-- Variance & SD -->
+            <div class="fs-card wide highlight-teal" id="unit4-var">
+                <div class="fs-card-head">📐 Variance &amp; Standard Deviation</div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Population</span>
+                        \[\sigma^2 = \frac{\sum (x-\mu)^2}{N} \qquad \sigma = \sqrt{\sigma^2}\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Sample</span>
+                        \[s^2 = \frac{\sum (x-\bar{x})^2}{n-1} \qquad s = \sqrt{s^2}\]
+                    </div>
+                </div>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">⚡ Short-cut (computational) form</span>
+                    \[\sigma^2 = \frac{\sum X^2}{N} - \mu^2\]
+                    <p class="fs-tip">💡 Variance = <strong>mean of squares − square of the mean</strong>. Far faster in exams.</p>
+                </div>
+                <div class="fs-notation">
+                    <span>\(N\) = population size</span>
+                    <span>\(n\) = sample size</span>
+                    <span>\(n-1\) = degrees of freedom (unbiased)</span>
+                </div>
+            </div>
+
+            <!-- CV -->
+            <div class="fs-card wide highlight-amber">
+                <div class="fs-card-head">⚖️ Coefficient of Variation</div>
+                <div class="fs-formula">
+                    \[CV = \frac{\sigma}{\mu} \times 100\%\]
+                </div>
+                <div class="fs-simple"><em>Unit-free — higher CV = more variable relative to its mean.</em></div>
+                <div class="fs-use-case">
+                    <strong>Use for:</strong> comparing spread across datasets with different units or very different means (risk vs. return, inflation, GDP growth)
+                </div>
+            </div>
+
+            <!-- Five-number summary + Outliers -->
+            <div class="fs-grid two-col">
+                <div class="fs-card">
+                    <div class="fs-card-head">5️⃣ Five-Number Summary</div>
+                    <div class="fs-steps">
+                        <span>① Min</span>
+                        <span>② Q₁</span>
+                        <span>③ Median</span>
+                        <span>④ Q₃</span>
+                        <span>⑤ Max</span>
+                    </div>
+                    <p class="fs-where">Drawn as a <strong>box-and-whisker plot</strong> — box spans Q₁→Q₃, line = median.</p>
+                </div>
+                <div class="fs-card" id="unit4-outliers">
+                    <div class="fs-card-head">🎯 Outlier Fences (1.5 × IQR)</div>
+                    <div class="fs-formula">
+                        \[\text{Lower} = Q_1 - 1.5\,IQR\]
+                        \[\text{Upper} = Q_3 + 1.5\,IQR\]
+                    </div>
+                    <p class="fs-tip">💡 \(x\) is an outlier if \(x &lt; Q_1 - 1.5(Q_3-Q_1)\) or \(x &gt; Q_3 + 1.5(Q_3-Q_1)\)</p>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 05 ═══════════════ -->
+            <div class="unit-divider" id="unit5">
+                <span class="unit-divider-tag">UNIT 05</span>
+                <span class="unit-divider-title">Moments, Skewness &amp; Kurtosis</span>
+            </div>
+
+            <div class="fs-card wide highlight-purple">
+                <div class="fs-card-head">🌀 Moments</div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Raw moment — about A</span>
+                        \[\mu_r' = \frac{\sum (x - A)^r}{n}\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Central moment — about the mean</span>
+                        \[\mu_r = \frac{\sum (x - \bar{x})^r}{n}\]
+                    </div>
+                </div>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">The first four central moments</span>
+                    <table class="fs-mini-table">
+                        <thead><tr><th>Moment</th><th>Value</th><th>Describes</th></tr></thead>
+                        <tbody>
+                            <tr><td>\(\mu_1\)</td><td>\(= 0\) always</td><td>Deviations cancel</td></tr>
+                            <tr><td>\(\mu_2\)</td><td>\(= \sigma^2\)</td><td>Dispersion / spread</td></tr>
+                            <tr><td>\(\mu_3\)</td><td>\(\frac{\sum(x-\bar{x})^3}{n}\)</td><td>Skewness / asymmetry</td></tr>
+                            <tr><td>\(\mu_4\)</td><td>\(\frac{\sum(x-\bar{x})^4}{n}\)</td><td>Kurtosis / peakedness</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="fs-tip">💡 1st <em>raw</em> moment = Mean · 2nd central = Variance · 3rd = Skewness · 4th = Kurtosis</p>
+                </div>
+            </div>
+
+            <div class="fs-grid two-col">
+                <div class="fs-card highlight-teal">
+                    <div class="fs-card-head">↗️ Skewness \(\beta_1\)</div>
+                    <div class="fs-formula">
+                        \[\beta_1 = \frac{\mu_3}{\sigma^3}\]
+                    </div>
+                    <table class="fs-mini-table">
+                        <tr><td>\(\beta_1 = 0\)</td><td>Symmetrical</td></tr>
+                        <tr><td>\(\beta_1 &gt; 0\)</td><td>Positively skewed (right tail)</td></tr>
+                        <tr><td>\(\beta_1 &lt; 0\)</td><td>Negatively skewed (left tail)</td></tr>
+                    </table>
+                    <p class="fs-tip">💡 Pearson: \(Sk = \frac{\text{Mean}-\text{Mode}}{\sigma} = \frac{3(\text{Mean}-\text{Median})}{\sigma}\)</p>
+                </div>
+                <div class="fs-card highlight-amber">
+                    <div class="fs-card-head">🔺 Kurtosis \(\beta_2\)</div>
+                    <div class="fs-formula">
+                        \[\beta_2 = \frac{\mu_4}{\mu_2^{\,2}}\]
+                    </div>
+                    <table class="fs-mini-table">
+                        <tr><td>\(\beta_2 = 3\)</td><td>Mesokurtic (normal)</td></tr>
+                        <tr><td>\(\beta_2 &gt; 3\)</td><td>Leptokurtic (sharp peak)</td></tr>
+                        <tr><td>\(\beta_2 &lt; 3\)</td><td>Platykurtic (flat peak)</td></tr>
+                    </table>
+                    <p class="fs-tip">💡 \(\mu_2 = \sigma^2\), so \(\beta_2 = \mu_4/\sigma^4\)</p>
+                </div>
+            </div>
+
+            <div class="fs-card wide">
+                <div class="fs-card-head">📊 Skewness at a Glance</div>
+                <table class="fs-mini-table">
+                    <thead><tr><th>Shape</th><th>Tail</th><th>Relationship</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Positive skew</strong></td><td>Right</td><td>Mean &gt; Median &gt; Mode</td></tr>
+                        <tr><td><strong>Symmetric</strong></td><td>None</td><td>Mean = Median = Mode</td></tr>
+                        <tr><td><strong>Negative skew</strong></td><td>Left</td><td>Mean &lt; Median &lt; Mode</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ═══════════════ UNIT 06 ═══════════════ -->
+            <div class="unit-divider" id="unit6">
+                <span class="unit-divider-tag">UNIT 06</span>
+                <span class="unit-divider-title">Correlation &amp; Regression</span>
+            </div>
+
+            <div class="fs-card wide highlight-purple">
+                <div class="fs-card-head">🔗 Pearson's Correlation Coefficient \(r\)</div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Definition form</span>
+                        \[r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i-\bar{x})^2 \sum (y_i-\bar{y})^2}}\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Computational form</span>
+                        \[r = \frac{n\sum xy - \sum x \sum y}{\sqrt{\left[n\sum x^2 - (\sum x)^2\right]\left[n\sum y^2 - (\sum y)^2\right]}}\]
+                    </div>
+                </div>
+                <div class="fs-formula">\[-1 \leq r \leq +1\]</div>
+                <table class="fs-mini-table">
+                    <thead><tr><th>Value of r</th><th>Meaning</th></tr></thead>
+                    <tbody>
+                        <tr><td>\(+1\)</td><td>Perfect positive linear relationship</td></tr>
+                        <tr><td>\(r &gt; 0\)</td><td>Positive — both rise together</td></tr>
+                        <tr><td>\(0\)</td><td>No linear relationship</td></tr>
+                        <tr><td>\(r &lt; 0\)</td><td>Negative — one rises as other falls</td></tr>
+                        <tr><td>\(-1\)</td><td>Perfect negative linear relationship</td></tr>
+                    </tbody>
+                </table>
+                <p class="fs-tip">⚠️ Correlation measures <strong>linear</strong> association only — and never implies causation.</p>
+            </div>
+
+            <div class="fs-card wide highlight-teal" id="unit6-reg">
+                <div class="fs-card-head">📈 Least-Squares Regression Line</div>
+                <div class="fs-formula">
+                    \[y = a + bx\]
+                </div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Slope b</span>
+                        \[b = \frac{n\sum xy - (\sum x)(\sum y)}{n\sum x^2 - (\sum x)^2}\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Intercept a</span>
+                        \[\bar{y} = a + b\bar{x} \;\Rightarrow\; a = \bar{y} - b\bar{x}\]
+                    </div>
+                </div>
+                <div class="fs-steps">
+                    <span>① Table: \(x, y, xy, x^2\)</span>
+                    <span>② Find \(b\)</span>
+                    <span>③ \(a = \bar{y} - b\bar{x}\)</span>
+                    <span>④ Predict</span>
+                </div>
+                <p class="fs-tip">💡 The line always passes through \((\bar{x}, \bar{y})\). "Least squares" minimises \(\sum(y_i - \hat{y}_i)^2\).</p>
+            </div>
+
+            <div class="fs-card wide highlight-amber">
+                <div class="fs-card-head">📋 Spearman's Rank Correlation \(\rho\)</div>
+                <div class="fs-formula">
+                    \[\rho = 1 - \frac{6\sum d_i^2}{n(n^2 - 1)}\]
+                </div>
+                <div class="fs-notation">
+                    <span>\(d_i\) = rank\((x)\) − rank\((y)\)</span>
+                    <span>\(n\) = number of observations</span>
+                    <span>\(-1 \leq \rho \leq +1\)</span>
+                </div>
+                <div class="fs-steps">
+                    <span>① Rank \(x\) and \(y\)</span>
+                    <span>② \(d = R_x - R_y\)</span>
+                    <span>③ \(\sum d^2\)</span>
+                    <span>④ Apply formula</span>
+                </div>
+                <table class="fs-mini-table" style="margin-top:0.75rem">
+                    <thead><tr><th>Value of rho</th><th>Strength</th></tr></thead>
+                    <tbody>
+                        <tr><td>±1.00</td><td>Perfect</td></tr>
+                        <tr><td>±0.70 – ±0.99</td><td>Strong</td></tr>
+                        <tr><td>±0.40 – ±0.69</td><td>Moderate</td></tr>
+                        <tr><td>±0.10 – ±0.39</td><td>Weak</td></tr>
+                        <tr><td>0</td><td>No correlation</td></tr>
+                    </tbody>
+                </table>
+                <div class="fs-use-case">
+                    <strong>Use for:</strong> ranked data, monotonic but non-linear relationships, or data with outliers
+                </div>
+            </div>
+
+            <div class="fs-grid two-col">
+                <div class="fs-card">
+                    <div class="fs-card-head">🔮 Interpolation</div>
+                    <p>Estimating a value <strong>within</strong> two known values in a sequence.</p>
+                    <p class="fs-tip">✅ Reliable — stays inside the observed data range.</p>
+                </div>
+                <div class="fs-card">
+                    <div class="fs-card-head">🚀 Extrapolation</div>
+                    <p>Estimating a value by extending a known sequence <strong>beyond</strong> the area that is certainly known.</p>
+                    <p class="fs-tip">⚠️ Risky — the fitted relationship may not hold outside the data range.</p>
+                </div>
+            </div>
+
             <!-- ═══════════════ RELATIONSHIPS ═══════════════ -->
             <div class="unit-divider" id="relationships">
                 <span class="unit-divider-tag">KEY</span>
@@ -306,6 +599,33 @@
                         <tr><td><strong>Mode</strong></td><td>Categorical data / most common</td><td class="no">No ✅</td></tr>
                         <tr><td><strong>GM</strong></td><td>Growth rates, compound interest</td><td>—</td></tr>
                         <tr><td><strong>HM</strong></td><td>Rates (avg speed, ratios)</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="fs-card wide highlight-teal">
+                <div class="fs-card-head">📊 Which Measure of Dispersion?</div>
+                <table class="fs-mini-table">
+                    <thead><tr><th>Measure</th><th>Uses All Data?</th><th>Outlier Sensitive?</th><th>Best For</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Range</strong></td><td>No</td><td class="yes">Very ⚠️</td><td>Quick rough spread</td></tr>
+                        <tr><td><strong>IQR</strong></td><td>No</td><td class="no">No ✅</td><td>Skewed data, outlier detection</td></tr>
+                        <tr><td><strong>MAD</strong></td><td>Yes</td><td>Moderately</td><td>Intuitive average distance</td></tr>
+                        <tr><td><strong>Variance / SD</strong></td><td>Yes</td><td class="yes">Yes ⚠️</td><td>Symmetric data, further analysis</td></tr>
+                        <tr><td><strong>CV</strong></td><td>Yes</td><td class="yes">Yes ⚠️</td><td>Different units / different means</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="fs-card wide">
+                <div class="fs-card-head">🧭 Correlation vs. Regression</div>
+                <table class="fs-mini-table">
+                    <thead><tr><th></th><th>Correlation</th><th>Regression</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Answers</strong></td><td>How strongly do they move together?</td><td>Predict \(y\) from \(x\)</td></tr>
+                        <tr><td><strong>Output</strong></td><td>A single number \(r\) (or \(\rho\))</td><td>An equation \(y = a + bx\)</td></tr>
+                        <tr><td><strong>Symmetric?</strong></td><td>Yes — \(r_{xy} = r_{yx}\)</td><td>No — \(x\) and \(y\) play different roles</td></tr>
+                        <tr><td><strong>Range</strong></td><td>\(-1\) to \(+1\)</td><td>Any real values of \(a, b\)</td></tr>
                     </tbody>
                 </table>
             </div>

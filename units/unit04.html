@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 04: Measures of Dispersion — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <span class="nav-brand-icon">📚</span>
+                <span class="nav-brand-text">MATH-2205</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#mid-topics">Mid Topics</a>
+                <a href="../index.html#final-topics">Final Topics</a>
+                <a href="../formula-sheet-mid.html">⚡ Formula Sheet</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-page mid-page">
+        <div class="notes-hero mid">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#mid-topics">Mid Term</a> &gt; <span>Unit 04</span>
+            </div>
+            <div class="unit-badge">UNIT 04 &middot; MID TERM</div>
+            <h1>Measures of Dispersion / Variability</h1>
+        </div>
+
+        <div class="notes-container">
+            <section class="notes-section">
+                <h2>1. Why Do We Need Measures of Dispersion?</h2>
+                <p>The measures of location (mean, median, mode) alone do <strong>not</strong> provide a complete or sufficient description of data.</p>
+                <div class="example-box">
+                    <div class="example-label">📝 Motivating Example</div>
+                    <p>Two groups of 6 students with their exam scores:</p>
+                    <table class="comparison-table">
+                        <tbody>
+                            <tr><td><strong>Group I</strong></td><td>48</td><td>50</td><td>52</td><td>51</td><td>49</td><td>50</td></tr>
+                            <tr><td><strong>Group II</strong></td><td>1</td><td>2</td><td>100</td><td>99</td><td>98</td><td>0</td></tr>
+                        </tbody>
+                    </table>
+                    <p>The arithmetic mean of <strong>each</strong> group is 50 — yet the two groups are nothing alike. Group I is tightly clustered; Group II is wildly spread out. Only a measure of dispersion can tell them apart.</p>
+                </div>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Measures of dispersion (also called measures of variability) are statistical tools used to describe the spread or distribution of a set of data. They indicate how much the data points differ from the central tendency and from each other.
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Key Property</div>
+                    <p>A measure of statistical dispersion is a <strong>non-negative real number</strong> that is <strong>zero</strong> if all the data are the same, and <strong>increases</strong> as the data become more diverse.</p>
+                </div>
+                <p>Understanding dispersion is crucial because it gives insight into the <strong>consistency</strong> and <strong>reliability</strong> of the data.</p>
+            </section>
+
+            <section class="notes-section">
+                <h2>2. Common Measures of Dispersion</h2>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">↔️</div>
+                        <h4>Range</h4>
+                        <p>Largest value minus smallest value</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📦</div>
+                        <h4>Interquartile Range</h4>
+                        <p>Spread of the middle 50% of the data</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🔟</div>
+                        <h4>Deciles &amp; Percentiles</h4>
+                        <p>Measures of position within the dataset</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📏</div>
+                        <h4>Mean Absolute Deviation</h4>
+                        <p>Average distance from the mean</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📐</div>
+                        <h4>Variance &amp; SD</h4>
+                        <p>Mean squared deviation and its square root</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">⚖️</div>
+                        <h4>Coefficient of Variation</h4>
+                        <p>Relative dispersion — a unit-free comparison</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">5️⃣</div>
+                        <h4>Five-Number Summary</h4>
+                        <p>Min, Q1, Median, Q3, Max</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📊</div>
+                        <h4>Box &amp; Whisker Plot</h4>
+                        <p>Visual display of the five-number summary</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🎯</div>
+                        <h4>Outliers</h4>
+                        <p>Values far away from the rest of the data</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🌀</div>
+                        <h4>Moments, Skewness, Kurtosis</h4>
+                        <p>Shape descriptors of a distribution</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>3. Range</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The range is the difference between the largest and the smallest observation.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Range</div>
+                    \[\text{Range} = \text{Largest value} - \text{Smallest value}\]
+                </div>
+                <p>The greater the spread of the data from the centre of the distribution, the larger the range will be.</p>
+                <div class="note-callout">
+                    <div class="callout-label">⚠️ Limitation</div>
+                    <p>Since the range takes into account <strong>only</strong> the largest and smallest observations, it is susceptible to considerable distortion if there is one unusual extreme observation.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>4. Quartiles and the Interquartile Range (IQR)</h2>
+                <div class="definition-box">
+                    <strong>Quartiles:</strong> Quartiles divide an ordered dataset into four equal parts, each containing 25% of the data. They summarise the distribution and are especially useful for measuring spread and identifying outliers.
+                </div>
+                <ul>
+                    <li>\(Q_1\) — first quartile (25th percentile), the <em>lower quartile</em></li>
+                    <li>\(Q_2\) — second quartile (50th percentile), the <em>median</em></li>
+                    <li>\(Q_3\) — third quartile (75th percentile), the <em>upper quartile</em></li>
+                </ul>
+                <div class="definition-box">
+                    <strong>Interquartile Range (IQR):</strong> The IQR measures the spread in the middle 50% of the data — the difference between the observation at \(Q_3\) and the observation at \(Q_1\).
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Interquartile Range</div>
+                    \[IQR = Q_3 - Q_1\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Semi-Interquartile Range (Quartile Deviation)</div>
+                    \[QD = \frac{IQR}{2} = \frac{Q_3 - Q_1}{2} = 0.5 \times IQR\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Position of the \(k\)th Quartile</div>
+                    \[Q_k = \left(\frac{k(n+1)}{4}\right)^{\text{th}} \text{value}, \qquad k = 1, 2, 3\]
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example 1</div>
+                    <p>Data: 24, 25, 26, 27, 30, 32, 40, 44, 50, 52, 55, 57</p>
+                    <ul>
+                        <li>\(Q_1 = 26.5\)</li>
+                        <li>\(Q_2 = \text{Median} = 36\)</li>
+                        <li>\(Q_3 = 51\)</li>
+                    </ul>
+                    \[IQR = Q_3 - Q_1 = 51 - 26.5 = 24.5\]
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example 2</div>
+                    <p>Upper quartile \(Q_3 = 69\), lower quartile \(Q_1 = 59\), median \(Q_2 = 65\).</p>
+                    \[IQR = 69 - 59 = 10 \qquad\text{Semi-IQR} = 0.5 \times 10 = 5\]
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>5. Deciles and Percentiles</h2>
+                <p>Deciles and percentiles are both <strong>measures of position</strong>, helping to divide a dataset into equal parts for analysis.</p>
+
+                <h3>Deciles</h3>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Deciles split a dataset into <em>ten</em> equal parts — each decile represents 10% of the data. The nine decile values (\(D_1, D_2, \ldots, D_9\)) serve as cut-off points separating the dataset into ten groups.
+                </div>
+                <ul>
+                    <li>\(D_1\) (1st decile): the value below which 10% of the data falls</li>
+                    <li>\(D_2\) (2nd decile): the value below which 20% of the data falls</li>
+                    <li>…</li>
+                    <li>\(D_9\) (9th decile): the value below which 90% of the data falls</li>
+                </ul>
+                <div class="formula-box">
+                    <div class="formula-label">\(k\)th Decile</div>
+                    \[D_k = \left(\frac{k(n+1)}{10}\right)^{\text{th}} \text{value}, \qquad k = 1, 2, \ldots, 9\]
+                </div>
+
+                <h3>Percentiles</h3>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Percentiles split a dataset into <em>one hundred</em> equal parts. The 99 percentile values (\(P_1, \ldots, P_{99}\)) each cut off 1% of the data.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">\(k\)th Percentile</div>
+                    \[P_k = \left(\frac{k(n+1)}{100}\right)^{\text{th}} \text{value}, \qquad k = 1, 2, \ldots, 99\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Handy Equivalences</div>
+                    <p>\(Q_1 = P_{25}\) &nbsp;·&nbsp; \(Q_2 = D_5 = P_{50} = \text{Median}\) &nbsp;·&nbsp; \(Q_3 = P_{75}\) &nbsp;·&nbsp; \(D_k = P_{10k}\)</p>
+                </div>
+                <p>For grouped data, quartiles, deciles and percentiles can also be read off a <strong>cumulative frequency curve (ogive)</strong>: locate the required cumulative frequency on the vertical axis, move across to the curve, then down to the horizontal axis.</p>
+            </section>
+
+            <section class="notes-section">
+                <h2>6. Mean Absolute Deviation (MAD)</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Mean Absolute Deviation (MAD) quantifies the average distance between each data point and the mean of the dataset. It provides insight into the dispersion or variability of data.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Mean Absolute Deviation</div>
+                    \[MAD = \frac{\sum |X_i - \bar{X}|}{n}\]
+                </div>
+                <ul>
+                    <li>\(X_i\) = each data value</li>
+                    <li>\(\bar{X}\) = mean of the data</li>
+                    <li>\(n\) = number of observations</li>
+                </ul>
+                <div class="note-callout">
+                    <p>The absolute value is essential — without it the deviations would always sum to zero, since \(\sum (X_i - \bar{X}) = 0\).</p>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example</div>
+                    <p>Data: 3, 7, 8, 12, 15 with \(\bar{X} = 9\).</p>
+                    \[MAD = \frac{|3-9| + |7-9| + |8-9| + |12-9| + |15-9|}{5} = \frac{6+2+1+3+6}{5} = \frac{18}{5} = 3.6\]
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>7. Variance and Standard Deviation</h2>
+                <p>Variance and standard deviation are the fundamental measures of dispersion in statistics, describing how spread out the data is from the mean.</p>
+
+                <h3>Variance</h3>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Variance measures the <em>mean squared deviation</em> of each data point from the mean.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Population Variance</div>
+                    \[\sigma^2 = \frac{\sum (x - \mu)^2}{N}\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Sample Variance</div>
+                    \[s^2 = \frac{\sum (x - \bar{x})^2}{n - 1}\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Why \(n-1\)?</div>
+                    <p>Dividing by \(n-1\) (the degrees of freedom) makes the sample variance an <strong>unbiased</strong> estimator of the population variance.</p>
+                </div>
+
+                <h3>Standard Deviation</h3>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Standard deviation is the <em>square root of the variance</em> and measures the average deviation of data points from the mean. Unlike variance, it is expressed in the same units as the original data.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Population SD</div>
+                    \[\sigma = \sqrt{\frac{\sum (X - \mu)^2}{N}}\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Sample SD</div>
+                    \[s = \sqrt{\frac{\sum (X - \bar{x})^2}{n - 1}}\]
+                </div>
+
+                <h3>Computational (Short-cut) Form</h3>
+                <p>Expanding the square gives a form that is much faster to compute by hand:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Derivation</div>
+                    \[\begin{aligned}
+                    \sigma^2 &= \frac{\sum (X - \mu)^2}{N} \\[4pt]
+                             &= \frac{\sum (X^2 - 2\mu X + \mu^2)}{N} \\[4pt]
+                             &= \frac{\sum X^2}{N} - \frac{2\mu \sum X}{N} + \frac{N\mu^2}{N} \\[4pt]
+                             &= \frac{\sum X^2}{N} - 2\mu^2 + \mu^2 \\[4pt]
+                             &= \frac{\sum X^2}{N} - \mu^2
+                    \end{aligned}\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">💡 Exam Shortcut</div>
+                    \[\sigma^2 = \frac{\sum X^2}{N} - \mu^2\]
+                    <p>That is: <strong>Variance = mean of squares − square of the mean.</strong> Far faster than computing every deviation by hand.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>8. Coefficient of Variation (CV)</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The Coefficient of Variation (CV) is a statistical measure that expresses the <em>relative dispersion</em> of a dataset in relation to its mean. Because it is a ratio, it has no units.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Coefficient of Variation</div>
+                    \[CV = \frac{\sigma}{\mu} \times 100\%\]
+                </div>
+                <h3>Interpretation</h3>
+                <ul>
+                    <li>A <strong>higher CV</strong> indicates greater variability relative to the mean.</li>
+                    <li>A <strong>lower CV</strong> suggests the data points are more consistent around the mean.</li>
+                </ul>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">💹</div>
+                        <h4>Risk vs. Return</h4>
+                        <p>Comparing investment risk relative to expected return</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📉</div>
+                        <h4>Inflation Rates</h4>
+                        <p>Comparing volatility across countries or periods</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🌍</div>
+                        <h4>GDP Growth</h4>
+                        <p>Measuring variability of growth across economies</p>
+                    </div>
+                </div>
+                <div class="note-callout">
+                    <p>CV is the right tool when comparing the spread of two datasets that have <strong>different units</strong> or <strong>very different means</strong> — a raw standard deviation comparison would be misleading.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>9. The Five-Number Summary</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The five-number summary is a statistical tool used to describe the distribution of a dataset using five key descriptive statistics.
+                </div>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Minimum value</h4>
+                            <p>The smallest data value</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>First Quartile (Q1)</h4>
+                            <p>The median of the lower half — 25th percentile</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Median (Q2)</h4>
+                            <p>The middle value — 50th percentile</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Third Quartile (Q3)</h4>
+                            <p>The median of the upper half — 75th percentile</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Maximum value</h4>
+                            <p>The largest data value</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>10. Box-and-Whisker Plot (Box Plot)</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> A Box-and-Whisker Plot, or simply Box Plot, is a graphical representation of data distribution based on the five-number summary.
+                </div>
+                <p>It is particularly useful for identifying <strong>central tendency</strong>, <strong>variability</strong>, <strong>skewness</strong>, and <strong>outliers</strong> in a dataset.</p>
+                <ul>
+                    <li>The <strong>box</strong> stretches from \(Q_1\) to \(Q_3\) — its length is the IQR.</li>
+                    <li>The <strong>line inside the box</strong> is the median (\(Q_2\)).</li>
+                    <li>The <strong>whiskers</strong> extend to the smallest and largest values that are not outliers.</li>
+                    <li>Points beyond the whiskers are plotted individually as <strong>outliers</strong>.</li>
+                </ul>
+                <div class="note-callout">
+                    <div class="callout-label">Reading Skewness from a Box Plot</div>
+                    <p>If the median sits <em>left</em> of centre with a longer right whisker → positively skewed. If it sits <em>right</em> of centre with a longer left whisker → negatively skewed. A centred median with equal whiskers → symmetric.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>11. Skewness</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Skewness measures the <em>asymmetry</em> of a probability distribution. It indicates whether the data is symmetrically distributed or leans more towards one side of the mean.
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Shape</th>
+                            <th>Relationship</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Positive skew (right-tailed)</td>
+                            <td>Long tail to the right</td>
+                            <td>Mean &gt; Median &gt; Mode</td>
+                        </tr>
+                        <tr>
+                            <td>No skew (symmetric)</td>
+                            <td>Balanced both sides</td>
+                            <td>Mean = Median = Mode</td>
+                        </tr>
+                        <tr>
+                            <td>Negative skew (left-tailed)</td>
+                            <td>Long tail to the left</td>
+                            <td>Mean &lt; Median &lt; Mode</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note-callout">
+                    <p>Skewness is developed further in <a href="unit05.html">Unit 05</a>, where it is expressed using moments.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>12. Outliers</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> An outlier is a data point that significantly deviates from other values in a dataset. It lies far away from the central tendency (mean, median, or mode) and can influence statistical analyses, leading to misleading conclusions.
+                </div>
+                <h3>Detection of Outliers</h3>
+                <div class="formula-box">
+                    <div class="formula-label">Outlier Fences (1.5 × IQR Rule)</div>
+                    \[\text{Lower Bound} = Q_1 - 1.5 \times IQR\]
+                    \[\text{Upper Bound} = Q_3 + 1.5 \times IQR\]
+                </div>
+                <p>A value \(x\) is an outlier if it lies <strong>more than 1.5 times the IQR</strong> from the nearest quartile. Thus \(x\) is an outlier if:</p>
+                <div class="formula-box">
+                    \[x &lt; Q_1 - 1.5(Q_3 - Q_1)\]
+                    \[x &gt; Q_3 + 1.5(Q_3 - Q_1)\]
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example</div>
+                    <p>If \(Q_1 = 26.5\) and \(Q_3 = 51\), then \(IQR = 24.5\) and \(1.5 \times IQR = 36.75\).</p>
+                    \[\text{Lower} = 26.5 - 36.75 = -10.25 \qquad \text{Upper} = 51 + 36.75 = 87.75\]
+                    <p>Any value below \(-10.25\) or above \(87.75\) is flagged as an outlier.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>13. Moments — Introduction</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> In statistics, moments are quantitative measures that describe the <em>shape</em> of a distribution. Moments provide information about the central tendency, dispersion, skewness, and kurtosis of a dataset.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Moment about a point \(A\)</div>
+                    \[\mu_r = \frac{1}{n}\sum_{i=1}^{n}(x_i - A)^r\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Raw Moment — about 0 (the origin)</div>
+                    \[\mu_r' = \frac{1}{n}\sum_{i=1}^{n}(x_i)^r\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Central Moment — about \(\bar{x}\) (the mean)</div>
+                    \[\mu_r = \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^r\]
+                </div>
+
+                <h3>The Four Main Types of Moments</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Moment</th>
+                            <th>Quantity</th>
+                            <th>Describes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1st raw moment</td><td>Mean</td><td>Location / central tendency</td></tr>
+                        <tr><td>2nd central moment</td><td>Variance</td><td>Dispersion / spread</td></tr>
+                        <tr><td>3rd central moment</td><td>Skewness</td><td>Asymmetry of data</td></tr>
+                        <tr><td>4th central moment</td><td>Kurtosis</td><td>Peakedness / flatness</td></tr>
+                    </tbody>
+                </table>
+                <div class="note-callout">
+                    <div class="callout-label">Quick Facts</div>
+                    <p>The first <strong>central</strong> moment is always \(\mu_1 = 0\), and the second central moment is exactly the variance, \(\mu_2 = \sigma^2\).</p>
+                </div>
+                <div class="note-callout">
+                    <p>Moments, skewness and kurtosis are covered in full in <a href="unit05.html">Unit 05</a>.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>14. Choosing a Measure of Dispersion</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Measure</th>
+                            <th>Uses All Data?</th>
+                            <th>Outlier Sensitive?</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Range</td><td>No</td><td>Very</td><td>Quick rough idea of spread</td></tr>
+                        <tr><td>IQR / Semi-IQR</td><td>No</td><td>No</td><td>Skewed data, outlier detection</td></tr>
+                        <tr><td>MAD</td><td>Yes</td><td>Moderately</td><td>Intuitive average distance</td></tr>
+                        <tr><td>Variance / SD</td><td>Yes</td><td>Yes</td><td>Symmetric data, further analysis</td></tr>
+                        <tr><td>CV</td><td>Yes</td><td>Yes</td><td>Comparing datasets with different units</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MATH-2205 Probability &amp; Statistics — United International University</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>

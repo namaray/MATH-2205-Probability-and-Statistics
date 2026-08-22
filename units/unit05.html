@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 05: Moments, Skewness and Kurtosis — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <span class="nav-brand-icon">📚</span>
+                <span class="nav-brand-text">MATH-2205</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#mid-topics">Mid Topics</a>
+                <a href="../index.html#final-topics">Final Topics</a>
+                <a href="../formula-sheet-mid.html">⚡ Formula Sheet</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-page mid-page">
+        <div class="notes-hero mid">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#mid-topics">Mid Term</a> &gt; <span>Unit 05</span>
+            </div>
+            <div class="unit-badge">UNIT 05 &middot; MID TERM</div>
+            <h1>Moments, Skewness and Kurtosis</h1>
+        </div>
+
+        <div class="notes-container">
+            <section class="notes-section">
+                <h2>1. What are Moments?</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> In statistics, a moment is a quantitative measure that describes important characteristics of a data distribution.
+                </div>
+                <p>Moments describe:</p>
+                <ul>
+                    <li><strong>Central tendency</strong> (mean)</li>
+                    <li><strong>Dispersion</strong> (variance)</li>
+                    <li><strong>Skewness</strong> (asymmetry)</li>
+                    <li><strong>Kurtosis</strong> (peakedness or flatness)</li>
+                </ul>
+                <div class="note-callout">
+                    <p>That is, moments are a set of statistical parameters used to measure a distribution. The shape of <em>any</em> distribution can be described by its various "moments".</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>2. Raw Moments and Central Moments</h2>
+                <div class="definition-box">
+                    <strong>Raw moment:</strong> A moment about any arbitrary value \(A\) is known as a <em>raw moment</em>.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">\(r\)th Raw Moment (about \(A\))</div>
+                    \[\mu_r' = \frac{\sum (x - A)^r}{n}\]
+                </div>
+                <div class="definition-box">
+                    <strong>Central moment:</strong> A moment about the <em>mean</em> is known as a <em>central moment</em>.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">\(r\)th Central Moment (about \(\bar{x}\))</div>
+                    \[\mu_r = \frac{\sum (x - \bar{x})^r}{n}\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Special Case</div>
+                    <p>When \(A = 0\), the raw moment is taken about the <strong>origin</strong>: \(\mu_r' = \dfrac{\sum x^r}{n}\). The first raw moment about the origin is simply the mean.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>3. The First Four Central Moments</h2>
+                <div class="formula-box">
+                    <div class="formula-label">First Central Moment</div>
+                    \[\mu_1 = \frac{\sum (x - \bar{x})^1}{n}\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Second Central Moment</div>
+                    \[\mu_2 = \frac{\sum (x - \bar{x})^2}{n}\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Third Central Moment</div>
+                    \[\mu_3 = \frac{\sum (x - \bar{x})^3}{n}\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Fourth Central Moment</div>
+                    \[\mu_4 = \frac{\sum (x - \bar{x})^4}{n}\]
+                </div>
+
+                <h3>Why \(\mu_1 = 0\)</h3>
+                <div class="formula-box">
+                    <div class="formula-label">The first central moment is always zero</div>
+                    \[\mu_1 = \frac{\sum (x - \bar{x})^1}{n} = \frac{\sum x - n\bar{x}}{n} = \frac{n\bar{x} - n\bar{x}}{n} = 0\]
+                </div>
+                <p>Because \(\sum x = n\bar{x}\), the positive and negative deviations from the mean cancel exactly. This is precisely why the mean absolute deviation uses \(|x - \bar{x}|\) and the variance uses \((x-\bar{x})^2\).</p>
+
+                <h3>Why \(\mu_2 = \text{Variance}\)</h3>
+                <div class="formula-box">
+                    <div class="formula-label">The second central moment is the variance</div>
+                    \[\mu_2 = \frac{\sum (x - \bar{x})^2}{n} = \sigma^2\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Summary</div>
+                    <p>\(\mu_1 = 0\) &nbsp;·&nbsp; \(\mu_2 = \sigma^2\) &nbsp;·&nbsp; \(\mu_3\) drives skewness &nbsp;·&nbsp; \(\mu_4\) drives kurtosis</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>4. Skewness</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Skewness measures the <em>asymmetry</em> of a distribution — whether the data is symmetrically distributed or leans more towards one side of the mean.
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Tail</th>
+                            <th>Relationship</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Positive skewness</td><td>Long tail to the right</td><td>Mean &gt; Median &gt; Mode</td></tr>
+                        <tr><td>Zero skewness</td><td>Symmetric</td><td>Mean = Median = Mode</td></tr>
+                        <tr><td>Negative skewness</td><td>Long tail to the left</td><td>Mean &lt; Median &lt; Mode</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="notes-section">
+                <h2>5. Measure of Skewness Using Moments</h2>
+                <p>The measure of skewness may also be obtained by making use of moments. A <strong>relative measure of skewness</strong> is denoted by \(\beta_1\) and is defined as:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Moment Coefficient of Skewness</div>
+                    \[\beta_1 = \frac{\mu_3}{\sigma^3}\]
+                </div>
+                <p>Since \(\sigma = \sqrt{\mu_2}\), this can equivalently be written \(\beta_1 = \dfrac{\mu_3}{\mu_2^{3/2}}\).</p>
+                <h3>Interpretation</h3>
+                <ul>
+                    <li>If \(\beta_1 = 0\) → the distribution is <strong>symmetrical</strong></li>
+                    <li>If \(\beta_1 &gt; 0\) (+ve) → the distribution is <strong>positively skewed</strong></li>
+                    <li>If \(\beta_1 &lt; 0\) (−ve) → the distribution is <strong>negatively skewed</strong></li>
+                </ul>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">↗️</div>
+                        <h4>Positive Skewness</h4>
+                        <p>Right-tailed. A few unusually large values pull the mean up.</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">⚖️</div>
+                        <h4>Zero Skewness</h4>
+                        <p>Symmetric distribution — the normal curve is the classic case.</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">↘️</div>
+                        <h4>Negative Skewness</h4>
+                        <p>Left-tailed. A few unusually small values pull the mean down.</p>
+                    </div>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Alternative (Pearson) Measures</div>
+                    \[Sk = \frac{\text{Mean} - \text{Mode}}{\sigma}\]
+                    \[Sk = \frac{3(\text{Mean} - \text{Median})}{\sigma}\]
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>6. Kurtosis</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Kurtosis refers to the <em>pointedness (peakedness)</em> of a peak in the distribution curve. The main difference between skewness and kurtosis is that the former talks of the degree of <em>symmetry</em>, whereas the latter talks of the degree of <em>peakedness</em> in the frequency distribution.
+                </div>
+                <p>There are three types of kurtosis: mesokurtic, leptokurtic and platykurtic.</p>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">🔺</div>
+                        <h4>Leptokurtic</h4>
+                        <p>A curve having a relatively <strong>higher peak</strong> than the normal curve. Kurtosis &gt; 3 — heavy tails, more outliers.</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🔔</div>
+                        <h4>Mesokurtic</h4>
+                        <p>The normal curve itself is called mesokurtic. Kurtosis = 3.</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🛖</div>
+                        <h4>Platykurtic</h4>
+                        <p>A curve having a relatively <strong>flat peak</strong> than the normal curve. Kurtosis &lt; 3 — light tails, few outliers.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>7. Measure of Kurtosis Using Moments</h2>
+                <p>The measure of kurtosis may also be obtained by making use of moments. A <strong>relative measure of kurtosis</strong> is denoted by \(\beta_2\) and is defined as:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Moment Coefficient of Kurtosis</div>
+                    \[\beta_2 = \frac{\mu_4}{\mu_2^2}\]
+                </div>
+                <p>Since \(\mu_2 = \sigma^2\), this is equivalently \(\beta_2 = \dfrac{\mu_4}{\sigma^4}\).</p>
+                <h3>Interpretation</h3>
+                <ul>
+                    <li>If \(\beta_2 = 3\) → the distribution is <strong>mesokurtic</strong></li>
+                    <li>If \(\beta_2 &gt; 3\) → the distribution is <strong>leptokurtic</strong></li>
+                    <li>If \(\beta_2 &lt; 3\) → the distribution is <strong>platykurtic</strong></li>
+                </ul>
+                <div class="note-callout">
+                    <div class="callout-label">Excess Kurtosis</div>
+                    <p>Some texts report <em>excess kurtosis</em>, \(\beta_2 - 3\), so that the normal distribution scores 0 instead of 3. Check which convention a question is using before answering.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>8. Quick Reference</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Formula</th>
+                            <th>Tells You</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Raw moment</td><td>\(\mu_r' = \frac{\sum (x-A)^r}{n}\)</td><td>Moment about an arbitrary point \(A\)</td></tr>
+                        <tr><td>Central moment</td><td>\(\mu_r = \frac{\sum (x-\bar{x})^r}{n}\)</td><td>Moment about the mean</td></tr>
+                        <tr><td>\(\mu_1\)</td><td>\(= 0\)</td><td>Deviations from the mean cancel</td></tr>
+                        <tr><td>\(\mu_2\)</td><td>\(= \sigma^2\)</td><td>Variance — spread</td></tr>
+                        <tr><td>\(\beta_1\)</td><td>\(= \frac{\mu_3}{\sigma^3}\)</td><td>Skewness — 0 symmetric, +ve right, −ve left</td></tr>
+                        <tr><td>\(\beta_2\)</td><td>\(= \frac{\mu_4}{\mu_2^2}\)</td><td>Kurtosis — 3 meso, &gt;3 lepto, &lt;3 platy</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MATH-2205 Probability &amp; Statistics — United International University</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>

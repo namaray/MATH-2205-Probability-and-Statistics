@@ -10,6 +10,11 @@
 | Unit 01 | Introduction to Statistics | Statistics definition, branches, population & sample, variables |
 | Unit 02 | Summarizing Data | Frequency distribution, bar diagram, pie chart, histogram, frequency polygon, ogive |
 | Unit 03 | Measures of Central Tendency | Mean, geometric mean, harmonic mean, median, mode |
+| Unit 04 | Measures of Dispersion | Range, quartiles & IQR, deciles & percentiles, MAD, variance & SD, CV, five-number summary, box plot, outliers |
+| Unit 05 | Moments, Skewness & Kurtosis | Raw & central moments, β₁ (skewness), β₂ (kurtosis) |
+| Unit 06 | Correlation & Regression | Scatter diagram, Pearson's r, least-squares line, interpolation & extrapolation, Spearman's ρ |
+
+📄 **[Mid Term Formula Sheet](formula-sheet-mid.html)** — every formula from Units 01–06 on one page.
 
 ### Final Term
 > 🔒 Coming soon

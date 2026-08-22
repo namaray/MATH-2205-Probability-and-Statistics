@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 06: Correlation and Regression — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <span class="nav-brand-icon">📚</span>
+                <span class="nav-brand-text">MATH-2205</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#mid-topics">Mid Topics</a>
+                <a href="../index.html#final-topics">Final Topics</a>
+                <a href="../formula-sheet-mid.html">⚡ Formula Sheet</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-page mid-page">
+        <div class="notes-hero mid">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#mid-topics">Mid Term</a> &gt; <span>Unit 06</span>
+            </div>
+            <div class="unit-badge">UNIT 06 &middot; MID TERM</div>
+            <h1>Correlation and Regression</h1>
+        </div>
+
+        <div class="notes-container">
+            <section class="notes-section">
+                <h2>1. What is Correlation?</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Correlation is a statistical measure that describes the <em>strength</em> and <em>direction</em> of a relationship between two or more variables. It quantifies the direction and strength of the relationship between these variables.
+                </div>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">📈</div>
+                        <h4>Positive Correlation</h4>
+                        <p>When one variable increases as the other increases</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📉</div>
+                        <h4>Negative Correlation</h4>
+                        <p>When one decreases as the other increases</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🔀</div>
+                        <h4>No Correlation</h4>
+                        <p>No consistent relationship between the two variables</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>2. Scatter Diagram / Scatterplot</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Scatter plots (or scatter diagrams) are graphs that present the relationship between two variables in a dataset. They represent data points on a two-dimensional plane, i.e. on a Cartesian system.
+                </div>
+                <ul>
+                    <li>The <strong>independent variable</strong> (or attribute) is plotted on the <strong>X-axis</strong>.</li>
+                    <li>The <strong>dependent variable</strong> is plotted on the <strong>Y-axis</strong>.</li>
+                </ul>
+                <div class="note-callout">
+                    <div class="callout-label">Reading a Scatterplot</div>
+                    <p>Points trending upward from left to right → positive correlation. Points trending downward → negative correlation. A cloud with no pattern → no correlation. The tighter the points cluster around a line, the stronger the correlation.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>3. Correlation Coefficient (r)</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Correlation is a statistical measure that describes the extent to which two variables are <em>linearly</em> related. The degree of association is measured by a correlation coefficient, denoted by \(r\). It is sometimes called <em>Pearson's correlation coefficient</em>.
+                </div>
+                <p>The correlation coefficient is measured on a scale that varies from \(+1\) through \(0\) to \(-1\):</p>
+                <div class="formula-box">
+                    <div class="formula-label">Range of \(r\)</div>
+                    \[-1 \leq r \leq +1\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Pearson's Correlation Coefficient</div>
+                    \[r_{xy} = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \; \sum (y_i - \bar{y})^2}}\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Computational Form (easier by hand)</div>
+                    \[r = \frac{n\sum xy - (\sum x)(\sum y)}{\sqrt{\left[n\sum x^2 - (\sum x)^2\right]\left[n\sum y^2 - (\sum y)^2\right]}}\]
+                </div>
+
+                <h3>Interpreting \(r\)</h3>
+                <ul>
+                    <li>A linear correlation coefficient that is <strong>greater than zero</strong> indicates a <strong>positive</strong> relationship.</li>
+                    <li>A value that is <strong>less than zero</strong> signifies a <strong>negative</strong> relationship.</li>
+                    <li>A value of <strong>zero</strong> indicates <strong>no relationship</strong> between the two variables \(x\) and \(y\).</li>
+                    <li><strong>Complete (perfect) correlation</strong> between two variables is expressed by either \(+1\) or \(-1\).</li>
+                </ul>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Value of \(r\)</th>
+                            <th>Interpretation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>\(r = +1\)</td><td>Perfect positive linear relationship</td></tr>
+                        <tr><td>\(0 &lt; r &lt; +1\)</td><td>Positive relationship — stronger as \(r\) approaches \(+1\)</td></tr>
+                        <tr><td>\(r = 0\)</td><td>No linear relationship</td></tr>
+                        <tr><td>\(-1 &lt; r &lt; 0\)</td><td>Negative relationship — stronger as \(r\) approaches \(-1\)</td></tr>
+                        <tr><td>\(r = -1\)</td><td>Perfect negative linear relationship</td></tr>
+                    </tbody>
+                </table>
+                <div class="note-callout">
+                    <div class="callout-label">⚠️ Remember</div>
+                    <p>Correlation measures <em>linear</em> association only, and correlation does <strong>not</strong> imply causation.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>4. Regression Analysis</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Regression analysis is a technique of studying the dependence of one variable (called the <em>dependent variable</em>) on one or more variables (called <em>explanatory variables</em>) with a view to estimating or predicting the average value of the dependent variable in terms of the known or fixed values of the independent variable.
+                </div>
+                <h3>Types of Regression Analysis</h3>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">📏</div>
+                        <h4>Linear Regression</h4>
+                        <p>One independent variable, straight-line relationship</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🧮</div>
+                        <h4>Multiple Linear Regression</h4>
+                        <p>Two or more independent variables</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">〰️</div>
+                        <h4>Non-linear Regression</h4>
+                        <p>The relationship follows a curve, not a straight line</p>
+                    </div>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Correlation vs. Regression</div>
+                    <p><strong>Correlation</strong> tells you how strongly two variables move together — it is symmetric in \(x\) and \(y\). <strong>Regression</strong> gives you an equation to <em>predict</em> \(y\) from \(x\) — it is not symmetric.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>5. Line of Best Fit</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The line of best fit refers to a line through a scatter plot of data points that best expresses the relationship between those points.
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>6. Simple Regression Line — The Least Squares Method</h2>
+                <p>There are many lines that could possibly be drawn on a given scatter diagram. Which one should we choose as the estimating line? Of course, the <strong>best fitted line</strong>. The most commonly used method for selecting such a line is the <strong>least-squares method</strong>, and the resulting line is called the <strong>least-squares line</strong>.</p>
+                <div class="formula-box">
+                    <div class="formula-label">General Form of the Regression Line</div>
+                    \[y = a + bx\]
+                </div>
+                <p>where \(a\) and \(b\) are constants to be found:</p>
+                <ul>
+                    <li>\(a\) = the intercept — the value of \(y\) when \(x = 0\)</li>
+                    <li>\(b\) = the slope — the change in \(y\) for a one-unit increase in \(x\)</li>
+                </ul>
+                <div class="formula-box">
+                    <div class="formula-label">Slope \(b\)</div>
+                    \[b = \frac{n\sum xy - (\sum x)(\sum y)}{n\sum x^2 - (\sum x)^2}\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Intercept \(a\) — the line passes through \((\bar{x}, \bar{y})\)</div>
+                    \[\bar{y} = a + b\bar{x} \qquad \Longrightarrow \qquad a = \bar{y} - b\bar{x}\]
+                </div>
+                <h3>Procedure</h3>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Build the table</h4>
+                            <p>Compute the columns \(x\), \(y\), \(xy\) and \(x^2\), then their totals \(\sum x\), \(\sum y\), \(\sum xy\), \(\sum x^2\).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Find the slope</h4>
+                            <p>Substitute the totals into the formula for \(b\).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Find the intercept</h4>
+                            <p>Compute \(\bar{x}\) and \(\bar{y}\), then use \(a = \bar{y} - b\bar{x}\).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Write the line and predict</h4>
+                            <p>State \(y = a + bx\) and substitute any required value of \(x\).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-callout">
+                    <p>"Least squares" means the line is chosen to minimise \(\sum (y_i - \hat{y}_i)^2\) — the sum of squared vertical distances between the observed points and the line.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>7. Extrapolation and Interpolation</h2>
+                <div class="definition-box">
+                    <strong>Extrapolation</strong> is an estimation of a value based on extending a known sequence of values or facts <em>beyond</em> the area that is certainly known.
+                </div>
+                <div class="definition-box">
+                    <strong>Interpolation</strong> is an estimation of a value <em>within</em> two known values in a sequence of values.
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">⚠️ Caution</div>
+                    <p>Interpolation is generally reliable because it stays inside the observed range of the data. Extrapolation is risky — the relationship you fitted may not hold outside the range you actually measured.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>8. Rank Correlation — Spearman's Coefficient</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> A rank correlation coefficient measures the degree of similarity between two rankings and can be used to assess the significance of the relation between them. Spearman's correlation coefficient (\(\rho\)) measures the strength and direction of association between two <em>ranked</em> variables.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Spearman's Rank Correlation Coefficient</div>
+                    \[\rho = 1 - \frac{6\sum d_i^2}{n(n^2 - 1)}\]
+                </div>
+                <p>where:</p>
+                <ul>
+                    <li>\(\rho\) = Spearman's rank correlation coefficient</li>
+                    <li>\(d_i\) = difference between the two ranks of each observation</li>
+                    <li>\(n\) = number of observations</li>
+                </ul>
+                <div class="formula-box">
+                    <div class="formula-label">Range</div>
+                    \[-1 \leq \rho \leq +1\]
+                </div>
+
+                <h3>Interpretation &amp; Comments</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Spearman \(\rho\)</th>
+                            <th>Type of Correlation</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>+1.00</td><td>Perfect Positive</td><td>A perfect increasing monotonic relationship; ranks move in exactly the same direction.</td></tr>
+                        <tr><td>+0.70 to +0.99</td><td>Strong Positive</td><td>Strong tendency: as one variable increases in rank, the other does too.</td></tr>
+                        <tr><td>+0.40 to +0.69</td><td>Moderate Positive</td><td>Moderate tendency of variables to increase together in rank.</td></tr>
+                        <tr><td>+0.10 to +0.39</td><td>Weak Positive</td><td>Slight tendency for higher values in one variable to be associated with higher ranks.</td></tr>
+                        <tr><td>0</td><td>No Correlation</td><td>No relationship between the ranks of the two variables.</td></tr>
+                        <tr><td>−0.10 to −0.39</td><td>Weak Negative</td><td>Slight tendency: as one rank increases, the other decreases slightly.</td></tr>
+                        <tr><td>−0.40 to −0.69</td><td>Moderate Negative</td><td>Moderate inverse relationship between ranks.</td></tr>
+                        <tr><td>−0.70 to −0.99</td><td>Strong Negative</td><td>Strong tendency: as one rank increases, the other decreases significantly.</td></tr>
+                        <tr><td>−1.00</td><td>Perfect Negative</td><td>A perfect decreasing monotonic relationship; ranks move in exactly opposite directions.</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Procedure</h3>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Rank both variables</h4>
+                            <p>Assign ranks separately to the \(x\) values and the \(y\) values.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Find the differences</h4>
+                            <p>For each observation compute \(d = \text{rank}(x) - \text{rank}(y)\).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Square and sum</h4>
+                            <p>Compute \(d^2\) for each row and total them to get \(\sum d^2\).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Apply the formula</h4>
+                            <p>Substitute \(\sum d^2\) and \(n\) into \(\rho = 1 - \frac{6\sum d^2}{n(n^2-1)}\).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-callout">
+                    <p>Use Spearman's \(\rho\) when the data are already ranks, when the relationship is monotonic but not linear, or when outliers would distort Pearson's \(r\).</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MATH-2205 Probability &amp; Statistics — United International University</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
