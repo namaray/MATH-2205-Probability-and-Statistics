@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worksheet: Probability 01 — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <span class="nav-brand-icon">📚</span>
+                <span class="nav-brand-text">MATH-2205</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="probability.html">Probability Notes</a>
+                <a href="../index.html#final-topics">Final Topics</a>
+                <a href="../formula-sheet-final.html">⚡ Final Formula Sheet</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-page final-page">
+        <div class="notes-hero final">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#final-topics">Final Term</a> &gt; <span>Worksheet 01</span>
+            </div>
+            <div class="unit-badge">WORKSHEET 01 &middot; PROBABILITY</div>
+            <h1>Probability Worksheet</h1>
+        </div>
+
+        <div class="notes-container">
+            <section class="notes-section">
+                <div class="note-callout">
+                    <div class="callout-label">How to Use This Page</div>
+                    <p>Every question from <em>WS Probability 01</em> with a full worked solution behind a dropdown. Try each one on paper first — the solution is one click away, so there is no reason to peek early. The rules being used are all in the <a href="probability.html">Probability notes</a>.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>Question 1 — Simple Probability</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>A teacher randomly selects one student from a group of 12 boys and 24 girls. Find the probability that the teacher selects:</p>
+                    <ul>
+                        <li>(a) a particular boy</li>
+                        <li>(b) a girl</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Total students</div>
+                        \[12 + 24 = 36\]
+                        <div class="step">(a) A particular boy</div>
+                        <p>"A particular boy" means one specific, named boy — a single outcome out of 36:</p>
+                        \[P = \frac{1}{36}\]
+                        <div class="step">(b) A girl</div>
+                        \[P = \frac{24}{36} = \frac{2}{3}\]
+                        <span class="answer">(a) 1/36 ≈ 0.0278 &nbsp;·&nbsp; (b) 2/3 ≈ 0.667</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>Question 2 — Venn Diagram</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>A group of 40 students took a test in Economics. The Venn diagram shows that 19 boys (\(B\)) took the test and that seven students failed the test (\(F\)). The regions are: \(B\) only = 16, \(B \cap F\) = 3, \(F\) only = 4, neither = 17.</p>
+                    <ul>
+                        <li>(a) Describe the 21 students who are members of the set \(B'\).</li>
+                        <li>(b) Find the probability that a randomly selected student is a boy or someone who failed the test.</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Reading the diagram</div>
+                        <table class="comparison-table">
+                            <thead><tr><th>Region</th><th>Meaning</th><th>Count</th></tr></thead>
+                            <tbody>
+                                <tr><td>\(B\) only</td><td>Boys who passed</td><td>16</td></tr>
+                                <tr><td>\(B \cap F\)</td><td>Boys who failed</td><td>3</td></tr>
+                                <tr><td>\(F\) only</td><td>Girls who failed</td><td>4</td></tr>
+                                <tr><td>Neither</td><td>Girls who passed</td><td>17</td></tr>
+                            </tbody>
+                        </table>
+                        <p>Checks: total \(16+3+4+17 = 40\) ✓, boys \(16+3 = 19\) ✓, failed \(3+4 = 7\) ✓</p>
+                        <div class="step">(a) Describing B′</div>
+                        <p>\(B'\) is the complement of \(B\) — everyone who is <strong>not</strong> a boy. Since \(40 - 19 = 21\):</p>
+                        <p>The 21 students in \(B'\) are the <strong>girls</strong> who took the Economics test (4 of whom failed and 17 of whom passed).</p>
+                        <div class="step">(b) P(boy or failed)</div>
+                        <p>By the addition rule:</p>
+                        \[P(B \cup F) = P(B) + P(F) - P(B \cap F) = \frac{19}{40} + \frac{7}{40} - \frac{3}{40} = \frac{23}{40}\]
+                        <p>Or just count the three shaded regions directly: \(16 + 3 + 4 = 23\) out of 40.</p>
+                        <span class="answer">(a) The 21 girls who took the test &nbsp;·&nbsp; (b) 23/40 = 0.575</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>Question 3 — Two-Way Table</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>The following table gives information about all the animals on a farm.</p>
+                    <table class="comparison-table">
+                        <thead><tr><th></th><th>Male</th><th>Female</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Goats</strong></td><td>5</td><td>25</td></tr>
+                            <tr><td><strong>Sheep</strong></td><td>3</td><td>22</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">⚠️ Incomplete in the Source</div>
+                    <p>The sub-questions for Q3 are missing from <em>WS Probability 01.docx</em> — the file gives the table but no parts (a), (b), … The solution below works out the full margin totals, which every version of this question needs, plus the probabilities such a question normally asks for.</p>
+                </div>
+                <details class="solution">
+                    <summary>Show working (margin totals &amp; standard parts)</summary>
+                    <div class="solution-body">
+                        <div class="step">Complete the table with totals</div>
+                        <table class="comparison-table">
+                            <thead><tr><th></th><th>Male</th><th>Female</th><th>Total</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Goats</strong></td><td>5</td><td>25</td><td><strong>30</strong></td></tr>
+                                <tr><td><strong>Sheep</strong></td><td>3</td><td>22</td><td><strong>25</strong></td></tr>
+                                <tr><td><strong>Total</strong></td><td><strong>8</strong></td><td><strong>47</strong></td><td><strong>55</strong></td></tr>
+                            </tbody>
+                        </table>
+                        <div class="step">The probabilities this table supports</div>
+                        <ul>
+                            <li>\(P(\text{goat}) = \frac{30}{55} = \frac{6}{11} \approx 0.545\)</li>
+                            <li>\(P(\text{female}) = \frac{47}{55} \approx 0.855\)</li>
+                            <li>\(P(\text{male goat}) = \frac{5}{55} = \frac{1}{11} \approx 0.091\)</li>
+                            <li>\(P(\text{goat or male}) = \frac{30}{55} + \frac{8}{55} - \frac{5}{55} = \frac{33}{55} = \frac{3}{5} = 0.6\)</li>
+                            <li>\(P(\text{female} \mid \text{sheep}) = \frac{22}{25} = 0.88\)</li>
+                            <li>\(P(\text{sheep} \mid \text{female}) = \frac{22}{47} \approx 0.468\)</li>
+                        </ul>
+                        <div class="step">Note on the last two</div>
+                        <p>\(P(\text{female} \mid \text{sheep}) \neq P(\text{sheep} \mid \text{female})\) — conditional probability is not symmetric. Reversing the two is exactly what Bayes' theorem is for.</p>
+                        <span class="answer">Totals: 30 goats, 25 sheep, 8 male, 47 female, 55 animals in all</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>Question 4 — Expected Number</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>A numbered wheel is divided into eight sectors of equal size, carrying the numbers 4, 1, 3, 3, 2, 4, 3, 5. The wheel is spun until it stops with the arrow pointing at one of the numbers. Axel decides to spin the wheel 400 times.</p>
+                    <ul>
+                        <li>(a) Find the number of times the arrow is <em>not</em> expected to point at a 4.</li>
+                        <li>(b) How many more times must Axel spin the wheel so that the expected number of times the arrow points at a 4 is at least 160?</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">The probability of a 4</div>
+                        <p>Of the eight equal sectors (4, 1, 3, 3, 2, 4, 3, 5), exactly two carry a 4:</p>
+                        \[P(4) = \frac{2}{8} = \frac14 \qquad P(\text{not }4) = 1 - \frac14 = \frac34\]
+                        <div class="step">(a) Expected number of non-4s in 400 spins</div>
+                        \[400 \times \frac34 = 300\]
+                        <div class="step">(b) Spins needed for an expected 160 fours</div>
+                        <p>In \(n\) spins the expected number of 4s is \(\frac{n}{4}\). Setting that to at least 160:</p>
+                        \[\frac{n}{4} \geq 160 \quad\Longrightarrow\quad n \geq 640\]
+                        <p>The question asks how many <strong>more</strong> spins are needed, and Axel has already done 400:</p>
+                        \[640 - 400 = 240\]
+                        <span class="answer">(a) 300 times &nbsp;·&nbsp; (b) 240 more spins</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>Question 5 — Venn Diagram with Unknowns</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>In a group of 25 boys, nine are members of the chess club (\(C\)), eight are members of the debating club (\(D\)) and 10 are members of neither. In the Venn diagram, \(a\) = chess only, \(b\) = both, \(c\) = debating only, and 10 lie outside both circles.</p>
+                    <ul>
+                        <li>(a) Find the values of \(a\), \(b\) and \(c\).</li>
+                        <li>(b) Find the probability that a randomly selected boy is:
+                            <ul>
+                                <li>(i) a member of the chess club or the debating club</li>
+                                <li>(ii) a member of exactly one of these clubs</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">(a) Setting up the equations</div>
+                        <p>Total in at least one club:</p>
+                        \[a + b + c = 25 - 10 = 15\]
+                        <p>Chess members and debating members:</p>
+                        \[a + b = 9 \qquad b + c = 8\]
+                        <div class="step">Solving</div>
+                        <p>Subtract \(a + b = 9\) from \(a + b + c = 15\):</p>
+                        \[c = 15 - 9 = 6\]
+                        <p>Then from \(b + c = 8\):</p>
+                        \[b = 8 - 6 = 2\]
+                        <p>And from \(a + b = 9\):</p>
+                        \[a = 9 - 2 = 7\]
+                        <p>Check: \(7 + 2 + 6 + 10 = 25\) ✓</p>
+                        <div class="step">(b)(i) Chess or debating</div>
+                        \[P(C \cup D) = \frac{a+b+c}{25} = \frac{15}{25} = \frac35 = 0.6\]
+                        <div class="step">(b)(ii) Exactly one club</div>
+                        <p>"Exactly one" excludes the overlap \(b\):</p>
+                        \[P = \frac{a + c}{25} = \frac{7 + 6}{25} = \frac{13}{25} = 0.52\]
+                        <span class="answer">(a) a = 7, b = 2, c = 6 &nbsp;·&nbsp; (b)(i) 0.6 &nbsp;·&nbsp; (b)(ii) 0.52</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>Question 6 — Addition Rule</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>Events \(X\) and \(Y\) are such that \(P(X) = 0.5\), \(P(Y) = 0.6\) and \(P(X \cap Y) = 0.2\).</p>
+                    <ul>
+                        <li>(a) State, giving a reason, whether events \(X\) and \(Y\) are mutually exclusive.</li>
+                        <li>(b) Using a Venn diagram, or otherwise, find \(P(X \cup Y)\).</li>
+                        <li>(c) Find the probability that \(X\) or \(Y\), but not both, occurs.</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">(a) Mutually exclusive?</div>
+                        <p><strong>No.</strong> Mutually exclusive events cannot happen together, which requires \(P(X \cap Y) = 0\). Here \(P(X \cap Y) = 0.2 \neq 0\), so the events <em>can</em> occur together and are not mutually exclusive.</p>
+                        <div class="step">(b) P(X ∪ Y)</div>
+                        \[P(X \cup Y) = P(X) + P(Y) - P(X \cap Y) = 0.5 + 0.6 - 0.2 = 0.9\]
+                        <div class="step">(c) X or Y but not both</div>
+                        <p>Take the union and remove the overlap:</p>
+                        \[P(\text{exactly one}) = P(X \cup Y) - P(X \cap Y) = 0.9 - 0.2 = 0.7\]
+                        <p>Equivalently, add the two "only" regions: \((0.5 - 0.2) + (0.6 - 0.2) = 0.3 + 0.4 = 0.7\) ✓</p>
+                        <span class="answer">(a) Not mutually exclusive, since P(X ∩ Y) = 0.2 ≠ 0 &nbsp;·&nbsp; (b) 0.9 &nbsp;·&nbsp; (c) 0.7</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>Question 7 — Independent Events</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>Abha passes through three independent sets of traffic lights when she drives to work. The probability that she has to stop at any particular set of lights is 0.2. Find the probability that Abha:</p>
+                    <ul>
+                        <li>(a) first has to stop at the second set of lights</li>
+                        <li>(b) has to stop at exactly one set of lights</li>
+                        <li>(c) has to stop at any set of lights</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Setting up</div>
+                        <p>\(P(\text{stop}) = 0.2\) and \(P(\text{go}) = 0.8\) at each set, and the three sets are independent — so probabilities along a path multiply.</p>
+                        <div class="step">(a) First stop is at the second set</div>
+                        <p>This means she goes through the first set and then stops at the second. What happens at the third set is irrelevant:</p>
+                        \[P = 0.8 \times 0.2 = 0.16\]
+                        <div class="step">(b) Stops at exactly one set</div>
+                        <p>One stop and two goes, and the stop could be at any of the three sets:</p>
+                        \[P = {}^{3}C_1 \times (0.2)(0.8)^2 = 3 \times 0.2 \times 0.64 = 0.384\]
+                        <div class="step">(c) Stops at any set of lights</div>
+                        <p>"Any" here means <em>at least one</em> — so use the complement of stopping at none:</p>
+                        \[P(\text{at least one stop}) = 1 - (0.8)^3 = 1 - 0.512 = 0.488\]
+                        <span class="answer">(a) 0.16 &nbsp;·&nbsp; (b) 0.384 &nbsp;·&nbsp; (c) 0.488</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>Question 8 — Biased Coin</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>A coin is biased such that the probability that three tosses all result in heads is \(\frac{125}{512}\). Find the probability of obtaining no heads with three tosses of the coin.</p>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Find p from the given information</div>
+                        <p>Let \(p = P(\text{head})\). The three tosses are independent, so:</p>
+                        \[p^3 = \frac{125}{512}\]
+                        <p>Both 125 and 512 are perfect cubes (\(5^3\) and \(8^3\)):</p>
+                        \[p = \sqrt[3]{\frac{125}{512}} = \frac{5}{8}\]
+                        <div class="step">No heads in three tosses</div>
+                        <p>"No heads" means three tails, and \(P(\text{tail}) = 1 - \frac58 = \frac38\):</p>
+                        \[P(\text{no heads}) = \left(\frac38\right)^3 = \frac{27}{512}\]
+                        <span class="answer">27/512 ≈ 0.0527</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>Question 9 — Tree Diagram &amp; Bayes</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>Every Friday evening Sunil either cooks a meal for Mina or buys her a take-away meal. The probability that he buys a take-away meal is 0.24. If Sunil cooks the meal, the probability that Mina enjoys it is 0.75; if he buys her a take-away meal, the probability that she does <em>not</em> enjoy it is \(x\). The probability that Sunil buys a take-away meal <em>and</em> Mina enjoys it is 0.156.</p>
+                    <ul>
+                        <li>(a) Find the value of \(x\). &nbsp;<strong>[2]</strong></li>
+                        <li>(b) Given that Mina does not enjoy her Friday meal, find the probability that Sunil cooked it. &nbsp;<strong>[3]</strong></li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">(a) Finding x</div>
+                        <p>If \(P(\text{not enjoy} \mid \text{take-away}) = x\), then \(P(\text{enjoy} \mid \text{take-away}) = 1 - x\). Multiplying along that branch:</p>
+                        \[P(\text{buys} \cap \text{enjoys}) = 0.24(1 - x) = 0.156\]
+                        \[1 - x = \frac{0.156}{0.24} = 0.65 \quad\Longrightarrow\quad x = 0.35\]
+                        <div class="step">(b) Building the tree</div>
+                        <p>\(P(\text{cooks}) = 1 - 0.24 = 0.76\), and \(P(\text{not enjoy} \mid \text{cooks}) = 1 - 0.75 = 0.25\).</p>
+                        <table class="comparison-table">
+                            <thead><tr><th>Path</th><th>Calculation</th><th>Probability</th></tr></thead>
+                            <tbody>
+                                <tr><td>Cooks ∩ not enjoy</td><td>\(0.76 \times 0.25\)</td><td>0.190</td></tr>
+                                <tr><td>Buys ∩ not enjoy</td><td>\(0.24 \times 0.35\)</td><td>0.084</td></tr>
+                                <tr><td><strong>P(not enjoy)</strong></td><td>\(0.190 + 0.084\)</td><td><strong>0.274</strong></td></tr>
+                            </tbody>
+                        </table>
+                        <div class="step">Apply the conditional probability formula</div>
+                        \[P(\text{cooked} \mid \text{not enjoy}) = \frac{P(\text{cooked} \cap \text{not enjoy})}{P(\text{not enjoy})} = \frac{0.190}{0.274}\]
+                        \[= \frac{190}{274} = \frac{95}{137} = 0.6934\]
+                        <p>This is Bayes' theorem in action: the condition has been reversed from "given he cooked, did she enjoy it?" to "given she didn't enjoy it, did he cook?"</p>
+                        <span class="answer">(a) x = 0.35 &nbsp;·&nbsp; (b) 95/137 ≈ 0.693</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>Question 10 — Discrete Random Variable</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>The random variable \(X\) takes the values \(-1\), 1, 2, 3 only. The probability that \(X\) takes the value \(x\) is \(kx^2\), where \(k\) is a constant.</p>
+                    <ul>
+                        <li>(i) Draw up the probability distribution table for \(X\), in terms of \(k\), and find the value of \(k\). &nbsp;<strong>[3]</strong></li>
+                        <li>(ii) Find \(E(X)\) and \(\text{Var}(X)\). &nbsp;<strong>[3]</strong></li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">(i) The table in terms of k</div>
+                        <table class="comparison-table">
+                            <tbody>
+                                <tr><td><strong>\(x\)</strong></td><td>\(-1\)</td><td>1</td><td>2</td><td>3</td></tr>
+                                <tr><td><strong>\(P(X=x)\)</strong></td><td>\(k\)</td><td>\(k\)</td><td>\(4k\)</td><td>\(9k\)</td></tr>
+                            </tbody>
+                        </table>
+                        <p>Note \((-1)^2 = 1\), so the first entry is \(k\), not \(-k\) — probabilities can never be negative.</p>
+                        <div class="step">Finding k</div>
+                        <p>The probabilities must sum to 1:</p>
+                        \[k + k + 4k + 9k = 15k = 1 \quad\Longrightarrow\quad k = \frac{1}{15}\]
+                        <p>So the distribution is \(\frac{1}{15}, \frac{1}{15}, \frac{4}{15}, \frac{9}{15}\).</p>
+                        <div class="step">(ii) E(X)</div>
+                        \[E(X) = (-1)\tfrac{1}{15} + (1)\tfrac{1}{15} + (2)\tfrac{4}{15} + (3)\tfrac{9}{15} = \frac{-1 + 1 + 8 + 27}{15} = \frac{35}{15} = \frac73\]
+                        <div class="step">Var(X)</div>
+                        \[E(X^2) = (1)\tfrac{1}{15} + (1)\tfrac{1}{15} + (4)\tfrac{4}{15} + (9)\tfrac{9}{15} = \frac{1 + 1 + 16 + 81}{15} = \frac{99}{15} = \frac{33}{5}\]
+                        \[\text{Var}(X) = \frac{33}{5} - \left(\frac73\right)^2 = \frac{33}{5} - \frac{49}{9} = \frac{297 - 245}{45} = \frac{52}{45}\]
+                        <span class="answer">k = 1/15 &nbsp;·&nbsp; E(X) = 7/3 ≈ 2.33 &nbsp;·&nbsp; Var(X) = 52/45 ≈ 1.156</span>
+                    </div>
+                </details>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MATH-2205 Probability &amp; Statistics — United International University</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>

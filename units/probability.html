@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <span class="nav-brand-icon">📚</span>
+                <span class="nav-brand-text">MATH-2205</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#mid-topics">Mid Topics</a>
+                <a href="../index.html#final-topics">Final Topics</a>
+                <a href="../formula-sheet-final.html">⚡ Final Formula Sheet</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-page final-page">
+        <div class="notes-hero final">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#final-topics">Final Term</a> &gt; <span>Probability</span>
+            </div>
+            <div class="unit-badge">PROBABILITY &middot; FINAL TERM</div>
+            <h1>Probability</h1>
+        </div>
+
+        <div class="notes-container">
+            <section class="notes-section">
+                <h2>1. What is Probability?</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Probability is the measure of how likely an event is to occur. It quantifies uncertainty.
+                </div>
+
+                <h3>Range of Probabilities Rule</h3>
+                <p>The probability of an event \(E\) is between 0 and 1, inclusive:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Range Rule</div>
+                    \[0 \leq P(E) \leq 1\]
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>\(P(E)\)</th><th>0</th><th>0.25</th><th>0.5</th><th>0.75</th><th>1</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Meaning</strong></td><td>Impossible</td><td>Unlikely</td><td>Even chance</td><td>Likely</td><td>Certain</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="notes-section">
+                <h2>2. Basic Terms</h2>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">🔬</div>
+                        <h4>Experiment</h4>
+                        <p>An action with an uncertain outcome (e.g. tossing a coin)</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🎯</div>
+                        <h4>Outcome</h4>
+                        <p>A possible result (e.g. getting heads)</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🗂️</div>
+                        <h4>Sample Space (S)</h4>
+                        <p>The set of all possible outcomes</p>
+                    </div>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example</div>
+                    <p>For tossing a coin, \(S = \{H, T\}\).</p>
+                </div>
+
+                <h3>Theoretical Probability</h3>
+                <p>Based on known possible outcomes:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Theoretical Probability</div>
+                    \[P(E) = \frac{\text{Number of favourable outcomes}}{\text{Total number of outcomes}}\]
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>3. Complement Rule</h2>
+                <div class="definition-box">
+                    <strong>Complement:</strong> \(A'\) is the event that \(A\) does <em>not</em> happen. Between them, \(A\) and \(A'\) cover the whole sample space.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Complement Rule</div>
+                    \[P(A) + P(A') = 1\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">💡 Why It Matters</div>
+                    <p>Rearranged as \(P(A) = 1 - P(A')\), this is the single most useful shortcut in probability. Any question phrased as <strong>"at least one"</strong> is almost always faster through the complement <strong>"none"</strong>.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>4. Addition Rule</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The Addition Rule helps calculate the probability that <em>at least one</em> of two events, or both, occurs.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">In Words</div>
+                    \[P(A \text{ or } B \text{ or both}) = P(A \cup B)\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Addition Rule</div>
+                    \[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Why Subtract the Overlap?</div>
+                    <p>Adding \(P(A)\) and \(P(B)\) counts everything in the overlap \(A \cap B\) <strong>twice</strong>. Subtracting \(P(A \cap B)\) once puts it back to being counted exactly once.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>5. Mutually Exclusive (Disjoint) Events</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Two events are mutually exclusive if they <em>cannot</em> happen at the same time. (Equivalently: two events are <em>not</em> mutually exclusive if they can happen at the same time.)
+                </div>
+                <p>If \(A\) and \(B\) are two mutually exclusive events, then there is no overlap at all:</p>
+                <div class="formula-box">
+                    <div class="formula-label">No Overlap</div>
+                    \[P(A \cap B) = 0\]
+                </div>
+                <p>So the addition rule simplifies:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Addition Rule for Mutually Exclusive Events</div>
+                    \[\therefore\; P(A \cup B) = P(A) + P(B)\]
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example</div>
+                    <p>Rolling a die once: "getting a 2" and "getting a 5" are mutually exclusive — one roll cannot be both. But "getting an even number" and "getting a number above 3" are <em>not</em> mutually exclusive, since 4 and 6 satisfy both.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>6. Independent Events</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Two events are independent if the occurrence of one <em>does not affect</em> the occurrence of the other.
+                </div>
+                <p>If \(A\) and \(B\) are two independent events, then:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Multiplication Rule for Independent Events</div>
+                    \[P(A \cap B) = P(A) \times P(B)\]
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example: Tossing Two Coins</div>
+                    <p>Let \(A\) = getting Heads on the first coin, and \(B\) = getting Heads on the second coin. These events are independent because what you get on the first toss does not influence the second.</p>
+                    \[P(A) = \tfrac12, \quad P(B) = \tfrac12 \;\Rightarrow\; P(A \cap B) = \tfrac12 \cdot \tfrac12 = \tfrac14\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">⚠️ Don't Confuse These Two</div>
+                    <p><strong>Mutually exclusive</strong> and <strong>independent</strong> are not the same thing — they are almost opposites. Mutually exclusive events cannot occur together (\(P(A \cap B) = 0\)); independent events often do occur together, just without influencing each other (\(P(A \cap B) = P(A)P(B)\)).</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>7. Dependent Events</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Two events are dependent if the occurrence of one <em>affects</em> the probability of the other.
+                </div>
+                <p>If \(A\) and \(B\) are dependent, then:</p>
+                <div class="formula-box">
+                    <div class="formula-label">General Multiplication Rule</div>
+                    \[P(A \cap B) = P(A) \cdot P(B \mid A)\]
+                </div>
+                <p>Note that in this case:</p>
+                <div class="formula-box">
+                    \[P(B \mid A) \neq P(B)\]
+                </div>
+                <div class="note-callout">
+                    <p>This is actually the general rule — independence is just the special case where \(P(B \mid A) = P(B)\), which collapses it back to \(P(A \cap B) = P(A)P(B)\).</p>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example</div>
+                    <p>Drawing two cards from a deck <strong>without replacement</strong> makes the draws dependent: the first card changes what is left for the second. Drawing <strong>with replacement</strong> makes them independent.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>8. Conditional Probability</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The conditional probability \(P(B \mid A)\) is the probability of \(B\) <em>given that \(A\) has already happened</em>.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Conditional Probability</div>
+                    \[P(B \mid A) = \frac{P(A \cap B)}{P(A)} \qquad \text{(provided } P(A) &gt; 0\text{)}\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">How to Read It</div>
+                    <p>Conditioning on \(A\) shrinks the sample space to just \(A\). You then ask what fraction of that smaller world also contains \(B\) — hence dividing by \(P(A)\).</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>9. Tree Diagrams</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> A tree diagram is a visual tool used in probability to map out all possible outcomes of a sequence of events, along with their corresponding probabilities.
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Example: Tossing Two Coins</div>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>First toss</th><th>Second toss</th><th>Outcome</th><th>Probability</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>\(H\ (\frac12)\)</td><td>\(H\ (\frac12)\)</td><td>\(HH\)</td><td>\(\frac12 \times \frac12 = \frac14\)</td></tr>
+                            <tr><td>\(H\ (\frac12)\)</td><td>\(T\ (\frac12)\)</td><td>\(HT\)</td><td>\(\frac12 \times \frac12 = \frac14\)</td></tr>
+                            <tr><td>\(T\ (\frac12)\)</td><td>\(H\ (\frac12)\)</td><td>\(TH\)</td><td>\(\frac12 \times \frac12 = \frac14\)</td></tr>
+                            <tr><td>\(T\ (\frac12)\)</td><td>\(T\ (\frac12)\)</td><td>\(TT\)</td><td>\(\frac12 \times \frac12 = \frac14\)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>The Two Rules of Trees</h3>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Multiply along a branch</h4>
+                            <p>Follow one path from left to right and multiply the probabilities to get the probability of that complete outcome.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Add down the branches</h4>
+                            <p>To find the probability of an event that several paths satisfy, add the end probabilities of those paths.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-callout">
+                    <p>The probabilities on each set of branches leaving a single node always sum to 1 — a quick way to check a tree before using it.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>10. Bayes' Theorem</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Bayes' Theorem is a fundamental concept in probability and statistics that allows us to update the probability of a hypothesis or event based on new evidence or information.
+                </div>
+                <p>Bayes' Theorem <strong>reverses the condition</strong>: it allows you to compute \(P(A \mid B)\) from \(P(B \mid A)\).</p>
+                <div class="note-callout">
+                    <div class="callout-label">The Question It Answers</div>
+                    <p>"If an event has already occurred, how does that affect the probability of another event?"</p>
+                    <p>For example: a patient tests positive for a disease — what is the probability that the patient actually <em>has</em> the disease?</p>
+                </div>
+
+                <h3>Mathematical Formula</h3>
+                <p>For two events \(A\) and \(B\):</p>
+                <div class="formula-box">
+                    <div class="formula-label">Bayes' Theorem</div>
+                    \[P(A \mid B) = \frac{P(B \mid A) \times P(A)}{P(B)}\]
+                </div>
+
+                <h3>Meaning of Each Term</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Term</th><th>Meaning</th><th>Name</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>\(P(A \mid B)\)</td><td>Probability of event \(A\) given \(B\)</td><td>Posterior probability</td></tr>
+                        <tr><td>\(P(B \mid A)\)</td><td>Probability of event \(B\) given \(A\)</td><td>Likelihood</td></tr>
+                        <tr><td>\(P(A)\)</td><td>Initial probability of \(A\)</td><td>Prior probability</td></tr>
+                        <tr><td>\(P(B)\)</td><td>Total probability of \(B\)</td><td>Evidence</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Verbal Meaning</h3>
+                <p>Bayes' theorem says:</p>
+                <div class="formula-box">
+                    <div class="formula-label">In Words</div>
+                    \[\text{Updated Probability / Posterior} = \frac{\text{Likelihood} \times \text{Prior}}{\text{Evidence}}\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">📎 Finding the Evidence P(B)</div>
+                    <p>In practice \(P(B)\) is rarely handed to you — you build it from the branches of a tree. This is the <strong>law of total probability</strong>: \[P(B) = P(B \mid A)P(A) + P(B \mid A')P(A')\] which is just "add up every path that ends in \(B\)". This step is not spelled out in the handout, but nearly every Bayes question needs it.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>11. Quick Reference</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Rule</th><th>Formula</th><th>When to Use</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Range</td><td>\(0 \leq P(E) \leq 1\)</td><td>Sanity check on any answer</td></tr>
+                        <tr><td>Theoretical</td><td>\(P(E) = \frac{\text{favourable}}{\text{total}}\)</td><td>Equally likely outcomes</td></tr>
+                        <tr><td>Complement</td><td>\(P(A') = 1 - P(A)\)</td><td>"At least one", "not"</td></tr>
+                        <tr><td>Addition</td><td>\(P(A \cup B) = P(A)+P(B)-P(A \cap B)\)</td><td>"A or B or both"</td></tr>
+                        <tr><td>Mutually exclusive</td><td>\(P(A \cup B) = P(A)+P(B)\)</td><td>Events can't co-occur</td></tr>
+                        <tr><td>Independent</td><td>\(P(A \cap B) = P(A)P(B)\)</td><td>One doesn't affect the other</td></tr>
+                        <tr><td>Dependent</td><td>\(P(A \cap B) = P(A)P(B \mid A)\)</td><td>Without replacement</td></tr>
+                        <tr><td>Conditional</td><td>\(P(B \mid A) = \frac{P(A \cap B)}{P(A)}\)</td><td>"Given that …"</td></tr>
+                        <tr><td>Bayes</td><td>\(P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}\)</td><td>Reversing a condition</td></tr>
+                    </tbody>
+                </table>
+                <div class="note-callout">
+                    <div class="callout-label">📝 Practice</div>
+                    <p>Work through <a href="worksheet-probability-01.html">Worksheet 01</a> — ten questions covering Venn diagrams, expected counts, tree diagrams, Bayes and discrete distributions, each with a full worked solution.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MATH-2205 Probability &amp; Statistics — United International University</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
