@@ -17,7 +17,13 @@
 📄 **[Mid Term Formula Sheet](formula-sheet-mid.html)** — every formula from Units 01–06 on one page.
 
 ### Final Term
-> 🔒 Coming soon
+| Unit | Topic | Key Concepts |
+|------|-------|-------------|
+| Unit 07 | The Probability Distribution | Discrete distributions, E(x) & Var(x), binomial, Poisson, normal, empirical rule, z-score |
+
+📄 **[Final Term Formula Sheet](formula-sheet-final.html)** — final-term formulas on one page (Unit 07 so far).
+
+> 📚 More final term units coming as they are released.
 
 ## 🚀 How to Use
 

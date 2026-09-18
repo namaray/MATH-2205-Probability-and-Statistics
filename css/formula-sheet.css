@@ -373,3 +373,16 @@
   .fs-card { break-inside: avoid; border: 1px solid #ccc; background: #fff; }
   .unit-divider { break-before: auto; }
 }
+
+/* ─── Final-Term Accent Overrides ─── */
+.final-page .pill-nav a:hover {
+  color: var(--text-heading);
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.final-page .unit-divider-tag {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent-final);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}

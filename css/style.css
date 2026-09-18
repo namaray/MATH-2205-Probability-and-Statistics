@@ -1144,3 +1144,30 @@ footer {
   display: block;
   margin-bottom: 0.4rem;
 }
+
+/* ============ FINAL-TERM PAGE ACCENTS ============ */
+/* Mid pages use the purple accent; final pages use green. */
+.final-page .definition-box {
+  border-left-color: var(--accent-final);
+}
+
+.final-page .definition-box strong {
+  color: var(--accent-final);
+}
+
+.final-page .formula-box {
+  background: rgba(16, 185, 129, 0.06);
+  border-color: rgba(16, 185, 129, 0.15);
+}
+
+.final-page .formula-box .formula-label {
+  color: var(--accent-final);
+}
+
+.final-page .step-item::before {
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.final-page .comparison-table thead th {
+  background: rgba(16, 185, 129, 0.1);
+}

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 07: Probability Distributions — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <span class="nav-brand-icon">📚</span>
+                <span class="nav-brand-text">MATH-2205</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#mid-topics">Mid Topics</a>
+                <a href="../index.html#final-topics">Final Topics</a>
+                <a href="../formula-sheet-final.html">⚡ Final Formula Sheet</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-page final-page">
+        <div class="notes-hero final">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#final-topics">Final Term</a> &gt; <span>Unit 07</span>
+            </div>
+            <div class="unit-badge">UNIT 07 &middot; FINAL TERM</div>
+            <h1>The Probability Distribution</h1>
+        </div>
+
+        <div class="notes-container">
+            <section class="notes-section">
+                <h2>1. The Probability Distribution</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The probability distribution for a random variable describes how the probabilities are distributed over the values of the random variable.
+                </div>
+                <p>In the development of the probability function for a <em>discrete</em> random variable, two conditions must be satisfied:</p>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Non-negativity</h4>
+                            <p>\(p(x)\) must be non-negative for each value of the random variable — that is, \(p(x) \geq 0\).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Total probability = 1</h4>
+                            <p>The sum of the probabilities for each value of the random variable must equal one — that is, \(\sum p(x) = 1\).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>The Distribution Table</h3>
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td><strong>\(X\)</strong></td>
+                            <td>\(x_1\)</td><td>\(x_2\)</td><td>\(x_3\)</td><td>— — —</td><td>\(x_n\)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>\(P(X = x)\)</strong></td>
+                            <td>\(p_1\)</td><td>\(p_2\)</td><td>\(p_3\)</td><td>— — —</td><td>\(p_n\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Mean and Variance of a Discrete Distribution</h3>
+                <div class="formula-box">
+                    <div class="formula-label">Mean = Expected Value</div>
+                    \[\mu = E(x) = \sum x\,p(x) = x_1p_1 + x_2p_2 + \cdots + x_np_n\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Variance</div>
+                    \[\text{Var}(x) = \sum x^2 p(x) - \big(E(x)\big)^2\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">💡 Working Order</div>
+                    <p>Always compute \(E(x)\) first, then build the \(x^2p(x)\) column. The variance is <strong>mean of the squares minus the square of the mean</strong> — the same structure as the short-cut variance formula from Unit 04.</p>
+                </div>
+
+                <h3>Exercises from the Handout</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 1</div>
+                    <p>A fair 4-sided die, numbered 1, 2, 3 and 5, is rolled twice. The random variable \(X\) is the sum of the two outcomes on which the die comes to rest.</p>
+                    <ul>
+                        <li>(i) Show that \(P(x = 8) = \frac{1}{8}\)</li>
+                        <li>(ii) Draw up the probability distribution table for \(X\), and find \(p(x &gt; 6)\)</li>
+                    </ul>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 2</div>
+                    <p>A bag contains 7 orange balls and 3 blue balls. 4 balls are selected at random from the bag, <strong>without replacement</strong>. Let \(X\) denote the number of blue balls selected.</p>
+                    <ul>
+                        <li>(i) Show that \(P(X = 0) = \frac{1}{6}\) and \(P(X = 1) = \frac{1}{2}\)</li>
+                        <li>(ii) Construct a table to show the probability distribution of \(X\)</li>
+                        <li>(iii) Find the mean and variance of \(X\)</li>
+                    </ul>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 3</div>
+                    <p>A fair cubical die with faces numbered 1, 1, 1, 2, 3, 4 is thrown and the score noted. The area \(A\) of a square of side equal to the score is calculated — so, for example, when the score on the die is 3, the value of \(A\) is 9.</p>
+                    <ul>
+                        <li>(i) Draw up a table to show the probability distribution of \(A\)</li>
+                        <li>(ii) Find \(E(A)\) and \(\text{Var}(A)\)</li>
+                    </ul>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 4</div>
+                    <p>The discrete random variable \(X\) has the following probability distribution:</p>
+                    <table class="comparison-table">
+                        <tbody>
+                            <tr><td><strong>\(x\)</strong></td><td>1</td><td>3</td><td>5</td><td>7</td></tr>
+                            <tr><td><strong>\(P(X = x)\)</strong></td><td>0.3</td><td>\(a\)</td><td>\(b\)</td><td>0.25</td></tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>(i) Write down an equation satisfied by \(a\) and \(b\)</li>
+                        <li>(ii) Given that \(E(X) = 4\), find \(a\) and \(b\)</li>
+                    </ul>
+                    <p class="fs-tip">Hint: the two conditions give you two equations — \(\sum p(x) = 1\) and \(\sum x\,p(x) = 4\).</p>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 5</div>
+                    <p>Two fair dice are thrown. Let the random variable \(X\) be the smaller of the two scores if the scores are different, or the score on one of the dice if the scores are the same.</p>
+                    <ul>
+                        <li>(i) Copy and complete a table showing the probability distribution of \(X\) for \(x = 1, 2, 3, 4, 5, 6\)</li>
+                        <li>(ii) Find \(E(X)\)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>2. Binomial / Bernoulli Distribution</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> A binomial distribution is one kind of <em>discrete</em> probability distribution that has <em>two possible outcomes</em> (success or failure / pass or fail).
+                </div>
+
+                <h3>Properties / Criteria</h3>
+                <p>Binomial distributions must also meet the following three criteria:</p>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">🔢</div>
+                        <h4>Fixed Trials</h4>
+                        <p>The number of observations or trials is fixed</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🔗</div>
+                        <h4>Independence</h4>
+                        <p>Trials are independent of one another</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">⚖️</div>
+                        <h4>Constant Probability</h4>
+                        <p>The probability of success (or pass) is exactly the same from one trial to another</p>
+                    </div>
+                </div>
+                <p>When the random variable \(X\) satisfies these conditions we denote it by:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Notation</div>
+                    \[X \sim \beta(n, p)\]
+                </div>
+
+                <h3>The Binomial Probability Function</h3>
+                <p>The random variable \(X\), which represents the number of successes in the \(n\) trials of this experiment, has a probability distribution given by:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Binomial Probability</div>
+                    \[P(X = r) = {}^{n}C_r \; p^r \, q^{\,n-r}\]
+                </div>
+                <ul>
+                    <li>\(r = 0, 1, 2, 3, \ldots, n\) &nbsp;(\(n\) = number of trials)</li>
+                    <li>\(p\) = probability of success</li>
+                    <li>\(q = 1 - p\) = probability of failure</li>
+                    <li>\({}^{n}C_r = \dfrac{n!}{r!\,(n-r)!}\) = number of ways to choose \(r\) successes from \(n\) trials</li>
+                </ul>
+
+                <h3>Mean (Expected Value) and Variance</h3>
+                <p>If \(X \sim \beta(n, p)\), then:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Mean</div>
+                    \[\mu = E(x) = n \times p\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Variance</div>
+                    \[\sigma^2 = npq\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">💡 Working Backwards</div>
+                    <p>Given the mean and variance you can recover \(n\) and \(p\): since \(\dfrac{\sigma^2}{\mu} = \dfrac{npq}{np} = q\), you get \(q\) directly, then \(p = 1 - q\) and \(n = \dfrac{\mu}{p}\). This is exactly what Exercise 3 below asks for.</p>
+                </div>
+
+                <h3>Exercises from the Handout</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 1</div>
+                    <p>A driving test is passed by 70% of people at their attempt. Find the probability that:</p>
+                    <ul>
+                        <li>(i) exactly 5 people out of 10 people will pass the driving test</li>
+                        <li>(ii) more than 1 person out of 8 people will pass the driving test</li>
+                    </ul>
+                    <p class="fs-tip">Hint for (ii): \(P(X &gt; 1) = 1 - P(X = 0) - P(X = 1)\) — the complement saves a lot of arithmetic.</p>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 2</div>
+                    <p>65% of all watches sold by a shop have a digital display and 35% have an analog display.</p>
+                    <ul>
+                        <li>(i) Find the probability that, out of the next 12 customers who buy a watch, fewer than 10 choose one with a digital display. &nbsp;<strong>[4]</strong></li>
+                    </ul>
+                    <p class="fs-tip">Hint: "fewer than 10" out of 12 — use \(1 - P(X = 10) - P(X = 11) - P(X = 12)\).</p>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 3</div>
+                    <p>A garden shop sells polyanthus plants in boxes, each box containing the same number of plants. The number of plants per box which produce yellow flowers has a binomial distribution with <strong>mean 11</strong> and <strong>variance 4.95</strong>.</p>
+                    <ul>
+                        <li>(a) Find the number of plants per box &nbsp;<strong>[4]</strong></li>
+                        <li>(b) Find the probability that a box contains exactly 12 plants which produce yellow flowers &nbsp;<strong>[2]</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>3. Poisson Distribution</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> In probability theory and statistics, the Poisson distribution is a <em>discrete</em> probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space, if these events occur with a known constant mean rate and independently of the time since the last event.
+                </div>
+
+                <h3>Conditions / Properties</h3>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">1️⃣</div>
+                        <h4>Occurs Singly</h4>
+                        <p>Events happen one at a time, not in clumps</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📊</div>
+                        <h4>Constant Rate</h4>
+                        <p>The average rate at which events occur is always the same</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">🔗</div>
+                        <h4>Independence</h4>
+                        <p>Events are independent of one another</p>
+                    </div>
+                </div>
+
+                <h3>The Poisson Probability Function</h3>
+                <p>The random variable \(X\) satisfying a Poisson distribution, \(X \sim P_0(\mu)\), has the probability distribution given by:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Poisson Probability</div>
+                    \[P(X = r) = \frac{e^{-\mu} \times \mu^{\,r}}{r!}\]
+                </div>
+                <ul>
+                    <li>\(\mu\) = the mean number of events in the interval considered</li>
+                    <li>\(r = 0, 1, 2, 3, \ldots\) &nbsp;(there is no upper limit)</li>
+                    <li>\(e \approx 2.71828\)</li>
+                </ul>
+
+                <h3>Mean (Expected Value) and Variance</h3>
+                <div class="formula-box">
+                    <div class="formula-label">Mean = Variance</div>
+                    \[E(x) = \sigma^2 = \mu\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">⚡ The Poisson Signature</div>
+                    <p>For a Poisson distribution the mean and the variance are <strong>equal</strong>. If a question tells you the mean and the variance of a count are roughly the same, it is hinting at Poisson; if the variance is clearly smaller than the mean, it is hinting at binomial (since \(\sigma^2 = npq &lt; np = \mu\)).</p>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">🕒 Scaling the Interval</div>
+                    <p>The rate scales with the interval. If breakdowns occur once every 48 hours, then in 60 hours \(\mu = \frac{60}{48} = 1.25\), and in 24 hours \(\mu = 0.5\). <strong>Always rescale \(\mu\) to the interval the question asks about before substituting.</strong></p>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">➕ Adding Poissons</div>
+                    <p>If \(X \sim P_0(\mu_1)\) and \(Y \sim P_0(\mu_2)\) are independent, then \(X + Y \sim P_0(\mu_1 + \mu_2)\). Two independent sources of emissions combine by adding their means.</p>
+                </div>
+
+                <h3>Exercises from the Handout</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 1</div>
+                    <p>Computer breakdowns occur randomly on average once every 48 hours of use.</p>
+                    <ul>
+                        <li>(i) Calculate the probability that there will be fewer than 4 breakdowns in 60 hours of use</li>
+                        <li>(ii) There will be no breakdowns in 24 hours of use</li>
+                    </ul>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 2</div>
+                    <p>Between 7 p.m. and 11 p.m., arrivals of patients at the casualty department of a hospital occur at random at an average rate of 6 per hour.</p>
+                    <ul>
+                        <li>(i) Find the probability that, during any period of one hour between 7 p.m. and 11 p.m., exactly 5 people will arrive &nbsp;<strong>[2]</strong></li>
+                        <li>(ii) A patient arrives at exactly 10.15 p.m. Find the probability that at least one more patient arrives before 10.35 p.m. &nbsp;<strong>[3]</strong></li>
+                    </ul>
+                    <p class="fs-tip">Hint for (ii): 20 minutes is \(\frac{1}{3}\) hour, so \(\mu = 2\); then \(P(X \geq 1) = 1 - P(X = 0)\).</p>
+                </div>
+                <div class="example-box">
+                    <div class="example-label">📝 Exercise 3</div>
+                    <p>The number of radioactive particles emitted per second by a certain metal is random and has mean 1.7. The radioactive metal is placed next to an object which independently emits particles at random such that the mean number of particles emitted per second is 0.6. Find the probability that the total number of particles emitted in the next 3 seconds is 6, 7 or 8. &nbsp;<strong>[4]</strong></p>
+                    <p class="fs-tip">Hint: combine the two independent rates (\(1.7 + 0.6 = 2.3\) per second), then scale to 3 seconds.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>4. Normal Distribution</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> A normal distribution, or Gaussian distribution, is one of the <em>continuous</em> probability distributions.
+                </div>
+                <p>In a normal distribution, data are symmetrically distributed with no skew. Most values cluster around a central region, with values tapering off as they go further away from the centre. The measures of central tendency (mean, mode and median) are the same in a normal distribution. In graphical form, the normal distribution appears as a <strong>"bell curve"</strong>.</p>
+
+                <h3>Properties of Normal Distributions</h3>
+                <p>Normal distributions have key characteristics that are easy to spot in graphs:</p>
+                <ul>
+                    <li>The <strong>mean, median and mode are the same</strong>.</li>
+                    <li>The distribution is <strong>symmetric about the mean</strong> — half the values fall below the mean and half above the mean — and is non-zero over the entire real line.</li>
+                    <li>The distribution can be described by <strong>two values: the mean and the standard deviation</strong>.</li>
+                </ul>
+                <p>If a variable \(X\) is normally distributed then it is symbolised as:</p>
+                <div class="formula-box">
+                    <div class="formula-label">Notation</div>
+                    \[X \sim N(\mu, \sigma)\]
+                </div>
+                <p>The parameters use the Greek symbol \(\mu\) (mu) for the population mean and \(\sigma\) (sigma) for the population standard deviation.</p>
+
+                <h3>The Normal Probability Density Function</h3>
+                <div class="formula-box">
+                    <div class="formula-label">Normal PDF</div>
+                    \[f(x) = \frac{1}{\sigma\sqrt{2\pi}} \; e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Symbol</th><th>Meaning</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>\(f(x)\)</td><td>Probability (density)</td></tr>
+                        <tr><td>\(x\)</td><td>Value of the variable</td></tr>
+                        <tr><td>\(\mu\)</td><td>Mean</td></tr>
+                        <tr><td>\(\sigma\)</td><td>Standard deviation</td></tr>
+                        <tr><td>\(\sigma^2\)</td><td>Variance</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>The Empirical Rule (68–95–99.7 Rule)</h3>
+                <div class="definition-box">
+                    <strong>Empirical rule:</strong> The empirical rule, or the 68-95-99.7 rule, tells you where most of your values lie in a normal distribution.
+                </div>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">📗</div>
+                        <h4>68%</h4>
+                        <p>Around 68% of values are within <strong>1</strong> standard deviation from the mean — \(\mu \pm \sigma\)</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📘</div>
+                        <h4>95%</h4>
+                        <p>Around 95% of values are within <strong>2</strong> standard deviations from the mean — \(\mu \pm 2\sigma\)</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">📙</div>
+                        <h4>99.7%</h4>
+                        <p>Around 99.7% of values are within <strong>3</strong> standard deviations from the mean — \(\mu \pm 3\sigma\)</p>
+                    </div>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Splitting the Curve</div>
+                    <p>Because the curve is symmetric, each band splits evenly either side of the mean: 34% + 34% inside \(\pm\sigma\), then 13.5% in each of the next bands, then 2.35% in each of the next, leaving about 0.15% in each tail beyond \(3\sigma\).</p>
+                </div>
+
+                <h3>Why Do Normal Distributions Matter?</h3>
+                <p>All kinds of variables in the natural and social sciences are normally or approximately normally distributed. Height, birth weight, reading ability, job satisfaction and SAT scores are just a few examples of such variables. Because normally distributed variables are so common, many statistical tests are designed for normally distributed populations.</p>
+            </section>
+
+            <section class="notes-section">
+                <h2>5. Standardising: the z-Score</h2>
+                <div class="note-callout">
+                    <div class="callout-label">📎 Supplementary</div>
+                    <p>This section is not in the Unit 07 handout, but you need it to actually compute probabilities from a normal distribution — the handout gives the curve and its properties, and the z-score is how you turn those into numbers with a standard normal table.</p>
+                </div>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The standard normal distribution is the normal distribution with mean 0 and standard deviation 1, written \(Z \sim N(0, 1)\). Any normal variable can be converted to it by <em>standardising</em>.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">z-Score</div>
+                    \[z = \frac{x - \mu}{\sigma}\]
+                </div>
+                <p>The z-score says how many standard deviations the value \(x\) lies above (positive) or below (negative) the mean.</p>
+                <div class="formula-box">
+                    <div class="formula-label">Reading Probabilities</div>
+                    \[P(X &lt; x) = P\!\left(Z &lt; \frac{x - \mu}{\sigma}\right) = \Phi(z)\]
+                </div>
+                <h3>Useful Identities</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>You want</th><th>Use</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>\(P(Z &gt; z)\)</td><td>\(1 - \Phi(z)\)</td></tr>
+                        <tr><td>\(P(Z &lt; -z)\)</td><td>\(1 - \Phi(z)\) &nbsp;(by symmetry)</td></tr>
+                        <tr><td>\(P(a &lt; Z &lt; b)\)</td><td>\(\Phi(b) - \Phi(a)\)</td></tr>
+                    </tbody>
+                </table>
+                <div class="example-box">
+                    <div class="example-label">📝 Worked Example</div>
+                    <p>Exam marks are \(X \sim N(60, 12)\). Find \(P(X &lt; 78)\).</p>
+                    \[z = \frac{78 - 60}{12} = 1.5\]
+                    <p>From the standard normal table, \(\Phi(1.5) \approx 0.9332\), so about <strong>93.3%</strong> of candidates score below 78.</p>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">Sanity Check</div>
+                    <p>The empirical rule is just the z-table at round numbers: \(\Phi(1) \approx 0.84\), \(\Phi(2) \approx 0.977\), \(\Phi(3) \approx 0.9987\) — double the middle and you get 68%, 95% and 99.7%.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>6. Choosing the Right Distribution</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Binomial</th>
+                            <th>Poisson</th>
+                            <th>Normal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Type</strong></td><td>Discrete</td><td>Discrete</td><td>Continuous</td></tr>
+                        <tr><td><strong>Notation</strong></td><td>\(X \sim \beta(n,p)\)</td><td>\(X \sim P_0(\mu)\)</td><td>\(X \sim N(\mu,\sigma)\)</td></tr>
+                        <tr><td><strong>Counts</strong></td><td>Successes in \(n\) fixed trials</td><td>Events in an interval</td><td>A measurement on a scale</td></tr>
+                        <tr><td><strong>Range of \(X\)</strong></td><td>\(0\) to \(n\)</td><td>\(0, 1, 2, \ldots\) (no limit)</td><td>All real numbers</td></tr>
+                        <tr><td><strong>Parameters</strong></td><td>\(n\), \(p\)</td><td>\(\mu\)</td><td>\(\mu\), \(\sigma\)</td></tr>
+                        <tr><td><strong>Mean</strong></td><td>\(np\)</td><td>\(\mu\)</td><td>\(\mu\)</td></tr>
+                        <tr><td><strong>Variance</strong></td><td>\(npq\)</td><td>\(\mu\)</td><td>\(\sigma^2\)</td></tr>
+                        <tr><td><strong>Give-away phrase</strong></td><td>"out of \(n\)", "% pass"</td><td>"on average … per hour"</td><td>"normally distributed"</td></tr>
+                    </tbody>
+                </table>
+                <div class="note-callout">
+                    <div class="callout-label">🎯 How to Spot It</div>
+                    <p>If the question caps the count at a fixed number of trials ("out of 12 customers"), it is <strong>binomial</strong>. If the count has no upper limit and comes with a rate per unit of time or space ("6 per hour"), it is <strong>Poisson</strong>. If the quantity is a measurement that can take any value ("heights are normally distributed"), it is <strong>normal</strong>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MATH-2205 Probability &amp; Statistics — United International University</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
