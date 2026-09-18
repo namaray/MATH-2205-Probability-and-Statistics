@@ -34,11 +34,14 @@
             </div>
             <div class="unit-badge">QUICK REVIEW · FINAL TERM</div>
             <h1>Formula Sheet &amp; Quick Review</h1>
-            <p class="hero-subtitle" style="max-width:560px;margin:0.5rem auto 0;font-size:0.95rem;">All key formulas and conditions from the final term in one skimmable page. Currently covering Unit 07 — more units will be added as they arrive.</p>
+            <p class="hero-subtitle" style="max-width:560px;margin:0.5rem auto 0;font-size:0.95rem;">All key formulas and conditions from the final term in one skimmable page. Currently covering Probability and Unit 07 — more units will be added as they arrive.</p>
         </div>
 
         <!-- ============ QUICK-NAV PILLS ============ -->
         <div class="pill-nav">
+            <a href="#probability">Probability</a>
+            <a href="#prob-rules">Rules</a>
+            <a href="#bayes">Bayes</a>
             <a href="#unit7">Unit 07</a>
             <a href="#discrete">Discrete E(x)</a>
             <a href="#binomial">Binomial</a>
@@ -49,6 +52,93 @@
         </div>
 
         <div class="notes-container" style="max-width:920px;">
+
+            <!-- ═══════════════ PROBABILITY ═══════════════ -->
+            <div class="unit-divider" id="probability">
+                <span class="unit-divider-tag">TOPIC</span>
+                <span class="unit-divider-title">Probability</span>
+            </div>
+
+            <div class="fs-grid two-col">
+                <div class="fs-card">
+                    <div class="fs-card-head">📐 Range &amp; Theoretical Probability</div>
+                    <div class="fs-formula">
+                        \[0 \leq P(E) \leq 1\]
+                    </div>
+                    <div class="fs-formula">
+                        \[P(E) = \frac{\text{favourable outcomes}}{\text{total outcomes}}\]
+                    </div>
+                    <p class="fs-where">0 = impossible · 0.5 = even chance · 1 = certain</p>
+                </div>
+                <div class="fs-card">
+                    <div class="fs-card-head">🔄 Complement Rule</div>
+                    <div class="fs-formula">
+                        \[P(A) + P(A') = 1\]
+                    </div>
+                    <div class="fs-formula">
+                        \[P(A) = 1 - P(A')\]
+                    </div>
+                    <p class="fs-tip">💡 Any "<strong>at least one</strong>" question → do "<strong>none</strong>" and subtract.</p>
+                </div>
+            </div>
+
+            <div class="fs-card wide highlight-purple" id="prob-rules">
+                <div class="fs-card-head">➕ Addition &amp; Multiplication Rules</div>
+                <div class="fs-formula">
+                    <span class="fs-formula-label">Addition rule — "A or B or both"</span>
+                    \[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]
+                </div>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">Special cases</span>
+                    <table class="fs-mini-table">
+                        <thead><tr><th>If the events are</th><th>Then</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Mutually exclusive</strong> (cannot co-occur)</td><td>\(P(A \cap B) = 0\) so \(P(A \cup B) = P(A)+P(B)\)</td></tr>
+                            <tr><td><strong>Independent</strong> (no influence)</td><td>\(P(A \cap B) = P(A) \times P(B)\)</td></tr>
+                            <tr><td><strong>Dependent</strong> (one affects the other)</td><td>\(P(A \cap B) = P(A) \cdot P(B \mid A)\)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="fs-tip">⚠️ Mutually exclusive ≠ independent. Exclusive events never co-occur; independent ones often do, just without influencing each other.</p>
+                <p class="fs-tip">💡 "Exactly one of A, B" = \(P(A \cup B) - P(A \cap B)\).</p>
+            </div>
+
+            <div class="fs-card wide highlight-teal">
+                <div class="fs-card-head">🌿 Conditional Probability &amp; Tree Diagrams</div>
+                <div class="fs-formula">
+                    \[P(B \mid A) = \frac{P(A \cap B)}{P(A)}, \qquad P(A) &gt; 0\]
+                </div>
+                <div class="fs-steps">
+                    <span>① Multiply ALONG a branch</span>
+                    <span>② Add ACROSS branches</span>
+                </div>
+                <p class="fs-where">Branches leaving any one node always sum to 1 — use it to check the tree.</p>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">Law of total probability</span>
+                    \[P(B) = P(B \mid A)P(A) + P(B \mid A')P(A')\]
+                    <p class="fs-tip">💡 This is just "add every path that ends in B" — it is how you get the denominator for Bayes.</p>
+                </div>
+            </div>
+
+            <div class="fs-card wide highlight-amber" id="bayes">
+                <div class="fs-card-head">🔁 Bayes' Theorem</div>
+                <div class="fs-formula">
+                    \[P(A \mid B) = \frac{P(B \mid A) \times P(A)}{P(B)}\]
+                </div>
+                <div class="fs-simple"><em>Posterior = (Likelihood × Prior) ÷ Evidence</em></div>
+                <table class="fs-mini-table">
+                    <thead><tr><th>Term</th><th>Name</th><th>Meaning</th></tr></thead>
+                    <tbody>
+                        <tr><td>\(P(A \mid B)\)</td><td>Posterior</td><td>Probability of A given B</td></tr>
+                        <tr><td>\(P(B \mid A)\)</td><td>Likelihood</td><td>Probability of B given A</td></tr>
+                        <tr><td>\(P(A)\)</td><td>Prior</td><td>Initial probability of A</td></tr>
+                        <tr><td>\(P(B)\)</td><td>Evidence</td><td>Total probability of B</td></tr>
+                    </tbody>
+                </table>
+                <div class="fs-use-case">
+                    <strong>Use when:</strong> the question reverses a condition — "given the outcome, what caused it?" (positive test → does the patient have the disease?)
+                </div>
+            </div>
 
             <!-- ═══════════════ UNIT 07 ═══════════════ -->
             <div class="unit-divider" id="unit7">

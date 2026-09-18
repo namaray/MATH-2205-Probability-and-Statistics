@@ -1171,3 +1171,84 @@ footer {
 .final-page .comparison-table thead th {
   background: rgba(16, 185, 129, 0.1);
 }
+
+/* ============ SOLUTION DROPDOWNS ============ */
+.solution {
+  margin: 0.9rem 0 0.25rem;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.16);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.solution[open] {
+  background: rgba(16, 185, 129, 0.07);
+  border-color: rgba(16, 185, 129, 0.28);
+}
+
+.solution > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-final);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  user-select: none;
+  transition: var(--transition-fast);
+}
+
+.solution > summary::-webkit-details-marker { display: none; }
+
+.solution > summary::before {
+  content: '▶';
+  font-size: 0.6rem;
+  transition: transform var(--transition-fast);
+}
+
+.solution[open] > summary::before { transform: rotate(90deg); }
+
+.solution > summary:hover { background: rgba(16, 185, 129, 0.08); }
+
+.solution > summary:focus-visible {
+  outline: 2px solid var(--accent-final);
+  outline-offset: -2px;
+}
+
+.solution-body {
+  padding: 0.25rem 1.25rem 1.1rem;
+  border-top: 1px solid rgba(16, 185, 129, 0.12);
+  font-size: 0.92rem;
+}
+
+.solution-body > *:first-child { margin-top: 0.85rem; }
+.solution-body p { margin-bottom: 0.6rem; }
+.solution-body ul, .solution-body ol { margin: 0.5rem 0 0.75rem 1.25rem; }
+.solution-body li { margin-bottom: 0.35rem; }
+
+.solution-body .step {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-final);
+  margin: 1rem 0 0.35rem;
+}
+
+.solution-body .answer {
+  display: block;
+  margin-top: 0.85rem;
+  padding: 0.6rem 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-left: 3px solid var(--accent-final);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+.solution-body table.comparison-table { margin: 0.75rem 0; }

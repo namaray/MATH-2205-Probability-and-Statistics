@@ -19,9 +19,14 @@
 ### Final Term
 | Unit | Topic | Key Concepts |
 |------|-------|-------------|
+| Probability | Probability | Sample space, complement, addition rule, mutually exclusive, independent & dependent events, conditional probability, tree diagrams, Bayes' theorem |
 | Unit 07 | The Probability Distribution | Discrete distributions, E(x) & Var(x), binomial, Poisson, normal, empirical rule, z-score |
 
-📄 **[Final Term Formula Sheet](formula-sheet-final.html)** — final-term formulas on one page (Unit 07 so far).
+✏️ **[Worksheet 01 — Probability Practice](units/worksheet-probability-01.html)** — 10 questions with full worked solutions behind dropdowns.
+
+📄 **[Final Term Formula Sheet](formula-sheet-final.html)** — final-term formulas on one page.
+
+> 💡 Every exercise in the Unit 07 notes and the worksheet has a **Show solution** dropdown with complete working.
 
 > 📚 More final term units coming as they are released.
 

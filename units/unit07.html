@@ -91,6 +91,27 @@
                         <li>(i) Show that \(P(x = 8) = \frac{1}{8}\)</li>
                         <li>(ii) Draw up the probability distribution table for \(X\), and find \(p(x &gt; 6)\)</li>
                     </ul>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">Setting up</div>
+                            <p>Each roll gives 1, 2, 3 or 5 with probability \(\frac14\). Two rolls give \(4 \times 4 = 16\) equally likely ordered pairs, each with probability \(\frac{1}{16}\).</p>
+                            <div class="step">(i) P(X = 8)</div>
+                            <p>The pairs summing to 8 are \((3,5)\) and \((5,3)\) — 2 out of 16.</p>
+                            \[P(X = 8) = \frac{2}{16} = \frac18 \quad\checkmark\]
+                            <div class="step">(ii) The distribution table</div>
+                            <table class="comparison-table">
+                                <tbody>
+                                    <tr><td><strong>\(x\)</strong></td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>10</td></tr>
+                                    <tr><td><strong>\(P(X=x)\)</strong></td><td>\(\frac{1}{16}\)</td><td>\(\frac{2}{16}\)</td><td>\(\frac{3}{16}\)</td><td>\(\frac{2}{16}\)</td><td>\(\frac{3}{16}\)</td><td>\(\frac{2}{16}\)</td><td>\(\frac{2}{16}\)</td><td>\(\frac{1}{16}\)</td></tr>
+                                </tbody>
+                            </table>
+                            <p>The counts are \(1+2+3+2+3+2+2+1 = 16\), so the probabilities sum to 1.</p>
+                            <div class="step">P(x &gt; 6)</div>
+                            \[P(X &gt; 6) = P(7) + P(8) + P(10) = \frac{2}{16} + \frac{2}{16} + \frac{1}{16} = \frac{5}{16}\]
+                            <span class="answer">P(X = 8) = 1/8 &nbsp;·&nbsp; P(X &gt; 6) = 5/16 = 0.3125</span>
+                        </div>
+                    </details>
                 </div>
                 <div class="example-box">
                     <div class="example-label">📝 Exercise 2</div>
@@ -100,6 +121,30 @@
                         <li>(ii) Construct a table to show the probability distribution of \(X\)</li>
                         <li>(iii) Find the mean and variance of \(X\)</li>
                     </ul>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">Setting up</div>
+                            <p>Choosing 4 balls from 10 without replacement gives \(\binom{10}{4} = 210\) equally likely selections. With 3 blue and 7 orange:</p>
+                            \[P(X = x) = \frac{\binom{3}{x}\binom{7}{4-x}}{\binom{10}{4}}\]
+                            <div class="step">(i) Verifying the two given values</div>
+                            \[P(X=0) = \frac{\binom{3}{0}\binom{7}{4}}{210} = \frac{1 \times 35}{210} = \frac{35}{210} = \frac16 \quad\checkmark\]
+                            \[P(X=1) = \frac{\binom{3}{1}\binom{7}{3}}{210} = \frac{3 \times 35}{210} = \frac{105}{210} = \frac12 \quad\checkmark\]
+                            <div class="step">(ii) The distribution table</div>
+                            <table class="comparison-table">
+                                <tbody>
+                                    <tr><td><strong>\(x\)</strong></td><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+                                    <tr><td><strong>\(P(X=x)\)</strong></td><td>\(\frac16\)</td><td>\(\frac12\)</td><td>\(\frac{3}{10}\)</td><td>\(\frac{1}{30}\)</td></tr>
+                                </tbody>
+                            </table>
+                            <p>The last two come from \(P(2) = \frac{3 \times 21}{210} = \frac{63}{210} = \frac{3}{10}\) and \(P(3) = \frac{1 \times 7}{210} = \frac{1}{30}\). Check: \(\frac{5}{30}+\frac{15}{30}+\frac{9}{30}+\frac{1}{30} = 1\) ✓</p>
+                            <div class="step">(iii) Mean and variance</div>
+                            \[E(X) = 0\left(\tfrac16\right) + 1\left(\tfrac12\right) + 2\left(\tfrac{3}{10}\right) + 3\left(\tfrac{1}{30}\right) = 0.5 + 0.6 + 0.1 = 1.2\]
+                            \[E(X^2) = 0 + 1\left(\tfrac12\right) + 4\left(\tfrac{3}{10}\right) + 9\left(\tfrac{1}{30}\right) = 0.5 + 1.2 + 0.3 = 2\]
+                            \[\text{Var}(X) = 2 - (1.2)^2 = 2 - 1.44 = 0.56\]
+                            <span class="answer">E(X) = 1.2 = 6/5 &nbsp;·&nbsp; Var(X) = 0.56 = 14/25</span>
+                        </div>
+                    </details>
                 </div>
                 <div class="example-box">
                     <div class="example-label">📝 Exercise 3</div>
@@ -108,6 +153,25 @@
                         <li>(i) Draw up a table to show the probability distribution of \(A\)</li>
                         <li>(ii) Find \(E(A)\) and \(\text{Var}(A)\)</li>
                     </ul>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">(i) The distribution of A</div>
+                            <p>The faces are 1, 1, 1, 2, 3, 4 — so the score is 1 with probability \(\frac36 = \frac12\), and 2, 3, 4 each with probability \(\frac16\). Since \(A = (\text{score})^2\), the possible areas are 1, 4, 9 and 16.</p>
+                            <table class="comparison-table">
+                                <tbody>
+                                    <tr><td><strong>\(a\)</strong></td><td>1</td><td>4</td><td>9</td><td>16</td></tr>
+                                    <tr><td><strong>\(P(A=a)\)</strong></td><td>\(\frac12\)</td><td>\(\frac16\)</td><td>\(\frac16\)</td><td>\(\frac16\)</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="step">(ii) E(A)</div>
+                            \[E(A) = 1\left(\tfrac12\right) + 4\left(\tfrac16\right) + 9\left(\tfrac16\right) + 16\left(\tfrac16\right) = \tfrac12 + \tfrac{29}{6} = \tfrac{3}{6} + \tfrac{29}{6} = \tfrac{32}{6} = \tfrac{16}{3}\]
+                            <div class="step">Var(A)</div>
+                            \[E(A^2) = 1\left(\tfrac12\right) + 16\left(\tfrac16\right) + 81\left(\tfrac16\right) + 256\left(\tfrac16\right) = \tfrac12 + \tfrac{353}{6} = \tfrac{356}{6} = \tfrac{178}{3}\]
+                            \[\text{Var}(A) = \tfrac{178}{3} - \left(\tfrac{16}{3}\right)^{2} = \tfrac{534}{9} - \tfrac{256}{9} = \tfrac{278}{9}\]
+                            <span class="answer">E(A) = 16/3 ≈ 5.33 &nbsp;·&nbsp; Var(A) = 278/9 ≈ 30.89</span>
+                        </div>
+                    </details>
                 </div>
                 <div class="example-box">
                     <div class="example-label">📝 Exercise 4</div>
@@ -123,6 +187,23 @@
                         <li>(ii) Given that \(E(X) = 4\), find \(a\) and \(b\)</li>
                     </ul>
                     <p class="fs-tip">Hint: the two conditions give you two equations — \(\sum p(x) = 1\) and \(\sum x\,p(x) = 4\).</p>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">(i) The equation from the total probability</div>
+                            <p>All probabilities must sum to 1:</p>
+                            \[0.3 + a + b + 0.25 = 1 \quad\Longrightarrow\quad a + b = 0.45\]
+                            <div class="step">(ii) Using E(X) = 4</div>
+                            \[1(0.3) + 3a + 5b + 7(0.25) = 4\]
+                            \[0.3 + 3a + 5b + 1.75 = 4 \quad\Longrightarrow\quad 3a + 5b = 1.95\]
+                            <p>Substitute \(a = 0.45 - b\):</p>
+                            \[3(0.45 - b) + 5b = 1.95 \;\Longrightarrow\; 1.35 + 2b = 1.95 \;\Longrightarrow\; b = 0.3\]
+                            \[a = 0.45 - 0.3 = 0.15\]
+                            <div class="step">Check</div>
+                            <p>\(0.3 + 0.15 + 0.3 + 0.25 = 1\) ✓ &nbsp; and &nbsp; \(0.3 + 0.45 + 1.5 + 1.75 = 4\) ✓</p>
+                            <span class="answer">a = 0.15 &nbsp;·&nbsp; b = 0.3</span>
+                        </div>
+                    </details>
                 </div>
                 <div class="example-box">
                     <div class="example-label">📝 Exercise 5</div>
@@ -133,6 +214,25 @@
                     </ul>
                 </div>
             </section>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">(i) Building the distribution</div>
+                            <p>Here \(X\) is simply the <strong>smaller of the two scores</strong> (if they are equal, that common value is both the smaller and the larger). There are 36 equally likely outcomes.</p>
+                            <p>\(X \geq k\) means both dice show \(k\) or more, which happens in \((7-k)^2\) ways. So:</p>
+                            \[P(X = k) = (7-k)^2 - (6-k)^2\ \text{ outcomes out of } 36\]
+                            <table class="comparison-table">
+                                <tbody>
+                                    <tr><td><strong>\(x\)</strong></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                                    <tr><td><strong>\(P(X=x)\)</strong></td><td>\(\frac{11}{36}\)</td><td>\(\frac{9}{36}\)</td><td>\(\frac{7}{36}\)</td><td>\(\frac{5}{36}\)</td><td>\(\frac{3}{36}\)</td><td>\(\frac{1}{36}\)</td></tr>
+                                </tbody>
+                            </table>
+                            <p>The odd numbers 11, 9, 7, 5, 3, 1 sum to 36 ✓</p>
+                            <div class="step">(ii) E(X)</div>
+                            \[E(X) = \frac{1(11) + 2(9) + 3(7) + 4(5) + 5(3) + 6(1)}{36} = \frac{11+18+21+20+15+6}{36} = \frac{91}{36}\]
+                            <span class="answer">E(X) = 91/36 ≈ 2.53</span>
+                        </div>
+                    </details>
 
             <section class="notes-section">
                 <h2>2. Binomial / Bernoulli Distribution</h2>
@@ -202,6 +302,24 @@
                         <li>(ii) more than 1 person out of 8 people will pass the driving test</li>
                     </ul>
                     <p class="fs-tip">Hint for (ii): \(P(X &gt; 1) = 1 - P(X = 0) - P(X = 1)\) — the complement saves a lot of arithmetic.</p>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">Setting up</div>
+                            <p>"Passes" is the success, so \(p = 0.7\) and \(q = 1 - 0.7 = 0.3\).</p>
+                            <div class="step">(i) Exactly 5 out of 10</div>
+                            <p>\(X \sim \beta(10,\ 0.7)\), and we want \(P(X = 5)\):</p>
+                            \[P(X = 5) = {}^{10}C_5\,(0.7)^5(0.3)^5 = 252 \times 0.16807 \times 0.00243\]
+                            \[= 0.10292\]
+                            <div class="step">(ii) More than 1 out of 8</div>
+                            <p>\(X \sim \beta(8,\ 0.7)\). Going direct would mean adding seven terms, so use the complement:</p>
+                            \[P(X &gt; 1) = 1 - P(X = 0) - P(X = 1)\]
+                            \[P(X = 0) = (0.3)^8 = 0.00006561\]
+                            \[P(X = 1) = {}^{8}C_1\,(0.7)(0.3)^7 = 8 \times 0.7 \times 0.0002187 = 0.00122472\]
+                            \[P(X &gt; 1) = 1 - 0.00006561 - 0.00122472 = 0.99871\]
+                            <span class="answer">(i) 0.1029 &nbsp;·&nbsp; (ii) 0.9987</span>
+                        </div>
+                    </details>
                 </div>
                 <div class="example-box">
                     <div class="example-label">📝 Exercise 2</div>
@@ -210,6 +328,22 @@
                         <li>(i) Find the probability that, out of the next 12 customers who buy a watch, fewer than 10 choose one with a digital display. &nbsp;<strong>[4]</strong></li>
                     </ul>
                     <p class="fs-tip">Hint: "fewer than 10" out of 12 — use \(1 - P(X = 10) - P(X = 11) - P(X = 12)\).</p>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">Setting up</div>
+                            <p>Let \(X\) be the number who choose a digital display, so \(X \sim \beta(12,\ 0.65)\) with \(q = 0.35\).</p>
+                            <p>"Fewer than 10" means \(X \leq 9\) — ten separate terms. The complement is only three:</p>
+                            \[P(X &lt; 10) = 1 - P(10) - P(11) - P(12)\]
+                            <div class="step">The three terms</div>
+                            \[P(12) = (0.65)^{12} = 0.005688\]
+                            \[P(11) = {}^{12}C_{11}(0.65)^{11}(0.35) = 12 \times 0.0087508 \times 0.35 = 0.036753\]
+                            \[P(10) = {}^{12}C_{10}(0.65)^{10}(0.35)^2 = 66 \times 0.0134627 \times 0.1225 = 0.108846\]
+                            <div class="step">Subtract</div>
+                            \[P(X &lt; 10) = 1 - (0.005688 + 0.036753 + 0.108846) = 1 - 0.151288\]
+                            <span class="answer">P(fewer than 10 choose digital) = 0.8487</span>
+                        </div>
+                    </details>
                 </div>
                 <div class="example-box">
                     <div class="example-label">📝 Exercise 3</div>
@@ -218,6 +352,22 @@
                         <li>(a) Find the number of plants per box &nbsp;<strong>[4]</strong></li>
                         <li>(b) Find the probability that a box contains exactly 12 plants which produce yellow flowers &nbsp;<strong>[2]</strong></li>
                     </ul>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">(a) Finding n</div>
+                            <p>For a binomial distribution \(\mu = np\) and \(\sigma^2 = npq\). Dividing one by the other kills \(n\) and \(p\) at once:</p>
+                            \[\frac{\sigma^2}{\mu} = \frac{npq}{np} = q \quad\Longrightarrow\quad q = \frac{4.95}{11} = 0.45\]
+                            \[p = 1 - q = 0.55\]
+                            \[n = \frac{\mu}{p} = \frac{11}{0.55} = 20\]
+                            <div class="step">(b) P(X = 12)</div>
+                            <p>So \(X \sim \beta(20,\ 0.55)\):</p>
+                            \[P(X = 12) = {}^{20}C_{12}\,(0.55)^{12}(0.45)^{8}\]
+                            \[= 125\,970 \times 0.00076623 \times 0.00168151\]
+                            \[= 0.1623\]
+                            <span class="answer">(a) 20 plants per box &nbsp;·&nbsp; (b) 0.1623</span>
+                        </div>
+                    </details>
                 </div>
             </section>
 
@@ -284,6 +434,27 @@
                         <li>(i) Calculate the probability that there will be fewer than 4 breakdowns in 60 hours of use</li>
                         <li>(ii) There will be no breakdowns in 24 hours of use</li>
                     </ul>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">(i) Fewer than 4 in 60 hours</div>
+                            <p>First rescale the mean to the interval in the question — 60 hours, at one breakdown per 48 hours:</p>
+                            \[\mu = \frac{60}{48} = 1.25\]
+                            <p>"Fewer than 4" means \(X \leq 3\), so add four terms of \(P(X=r) = \frac{e^{-1.25}(1.25)^r}{r!}\), with \(e^{-1.25} = 0.286505\):</p>
+                            <table class="comparison-table">
+                                <tbody>
+                                    <tr><td><strong>\(r\)</strong></td><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+                                    <tr><td><strong>\(P(X=r)\)</strong></td><td>0.286505</td><td>0.358131</td><td>0.223832</td><td>0.093263</td></tr>
+                                </tbody>
+                            </table>
+                            \[P(X &lt; 4) = 0.286505 + 0.358131 + 0.223832 + 0.093263 = 0.96173\]
+                            <div class="step">(ii) No breakdowns in 24 hours</div>
+                            <p>Rescale again — 24 hours is half of 48:</p>
+                            \[\mu = \frac{24}{48} = 0.5\]
+                            \[P(X = 0) = \frac{e^{-0.5}(0.5)^0}{0!} = e^{-0.5} = 0.60653\]
+                            <span class="answer">(i) 0.9617 &nbsp;·&nbsp; (ii) 0.6065</span>
+                        </div>
+                    </details>
                 </div>
                 <div class="example-box">
                     <div class="example-label">📝 Exercise 2</div>
@@ -293,11 +464,43 @@
                         <li>(ii) A patient arrives at exactly 10.15 p.m. Find the probability that at least one more patient arrives before 10.35 p.m. &nbsp;<strong>[3]</strong></li>
                     </ul>
                     <p class="fs-tip">Hint for (ii): 20 minutes is \(\frac{1}{3}\) hour, so \(\mu = 2\); then \(P(X \geq 1) = 1 - P(X = 0)\).</p>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">(i) Exactly 5 in one hour</div>
+                            <p>The interval asked about is exactly one hour, so \(\mu = 6\) needs no rescaling:</p>
+                            \[P(X = 5) = \frac{e^{-6} \times 6^5}{5!} = \frac{0.00247875 \times 7776}{120} = 0.16062\]
+                            <div class="step">(ii) At least one more between 10.15 and 10.35</div>
+                            <p>That window is 20 minutes \(= \frac13\) hour, so rescale:</p>
+                            \[\mu = 6 \times \tfrac13 = 2\]
+                            <p>"At least one" is the complement of "none":</p>
+                            \[P(X \geq 1) = 1 - P(X = 0) = 1 - e^{-2} = 1 - 0.135335 = 0.86447\]
+                            <p>Note the arrival at exactly 10.15 p.m. is a red herring — a Poisson process is memoryless, so it tells you nothing about what follows.</p>
+                            <span class="answer">(i) 0.1606 &nbsp;·&nbsp; (ii) 0.8647</span>
+                        </div>
+                    </details>
                 </div>
                 <div class="example-box">
                     <div class="example-label">📝 Exercise 3</div>
                     <p>The number of radioactive particles emitted per second by a certain metal is random and has mean 1.7. The radioactive metal is placed next to an object which independently emits particles at random such that the mean number of particles emitted per second is 0.6. Find the probability that the total number of particles emitted in the next 3 seconds is 6, 7 or 8. &nbsp;<strong>[4]</strong></p>
                     <p class="fs-tip">Hint: combine the two independent rates (\(1.7 + 0.6 = 2.3\) per second), then scale to 3 seconds.</p>
+                    <details class="solution">
+                        <summary>Show solution</summary>
+                        <div class="solution-body">
+                            <div class="step">Combine the two sources</div>
+                            <p>The metal and the object emit independently, and independent Poisson variables add. Per second the combined mean is:</p>
+                            \[1.7 + 0.6 = 2.3\ \text{particles per second}\]
+                            <div class="step">Rescale to 3 seconds</div>
+                            \[\mu = 2.3 \times 3 = 6.9\]
+                            <div class="step">Add the three terms</div>
+                            <p>With \(e^{-6.9} = 0.00100779\):</p>
+                            \[P(6) = \frac{e^{-6.9}(6.9)^6}{6!} = 0.151053\]
+                            \[P(7) = \frac{e^{-6.9}(6.9)^7}{7!} = 0.148895\]
+                            \[P(8) = \frac{e^{-6.9}(6.9)^8}{8!} = 0.128422\]
+                            \[P(6 \leq X \leq 8) = 0.151053 + 0.148895 + 0.128422 = 0.42837\]
+                            <span class="answer">P(total is 6, 7 or 8) = 0.4284</span>
+                        </div>
+                    </details>
                 </div>
             </section>
 
