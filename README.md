@@ -21,12 +21,15 @@
 |------|-------|-------------|
 | Probability | Probability | Sample space, complement, addition rule, mutually exclusive, independent & dependent events, conditional probability, tree diagrams, Bayes' theorem |
 | Unit 07 | The Probability Distribution | Discrete distributions, E(x) & Var(x), binomial, Poisson, normal, empirical rule, z-score |
+| Unit 09 | Continuous Probability Distribution | pdf properties, finding k, mean & variance, mode, median, quartiles, cdf |
 
 ✏️ **[Worksheet 01 — Probability Practice](units/worksheet-probability-01.html)** — 10 questions with full worked solutions behind dropdowns.
 
+✏️ **[Worksheet 02 — Continuous RV, Estimation & Hypothesis Testing](units/worksheet-02.html)** — 11 questions with full worked solutions behind dropdowns.
+
 📄 **[Final Term Formula Sheet](formula-sheet-final.html)** — final-term formulas on one page.
 
-> 💡 Every exercise in the Unit 07 notes and the worksheet has a **Show solution** dropdown with complete working.
+> 💡 Every exercise in the Unit 07 and Unit 09 notes and in both worksheets has a **Show solution** dropdown with complete working.
 
 > 📚 More final term units coming as they are released.
 

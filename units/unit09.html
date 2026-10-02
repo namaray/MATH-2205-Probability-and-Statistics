@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 09: Continuous Probability Distribution — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <span class="nav-brand-icon">📚</span>
+                <span class="nav-brand-text">MATH-2205</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="worksheet-02.html">Worksheet 02</a>
+                <a href="../index.html#final-topics">Final Topics</a>
+                <a href="../formula-sheet-final.html">⚡ Final Formula Sheet</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-page final-page">
+        <div class="notes-hero final">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#final-topics">Final Term</a> &gt; <span>Unit 09</span>
+            </div>
+            <div class="unit-badge">UNIT 09 &middot; FINAL TERM</div>
+            <h1>Continuous Probability Distribution</h1>
+        </div>
+
+        <div class="notes-container">
+            <section class="notes-section">
+                <h2>1. Discrete vs. Continuous Random Variables</h2>
+                <p>Unit 07 dealt with <em>discrete</em> random variables, which take separate, countable values. A <em>continuous</em> random variable can take any value in an interval. The slides contrast two variables from the same emergency department:</p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th></th><th>Discrete</th><th>Continuous</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Example</strong></td><td>The <strong>number of patients</strong> visiting the emergency department per hour</td><td>The <strong>waiting time</strong> (in hours) a patient has to wait before seeing a doctor</td></tr>
+                        <tr><td><strong>Values</strong></td><td>0, 1, 2, 3, … (counted)</td><td>Any value such as 1.37 h (measured)</td></tr>
+                        <tr><td><strong>Described by</strong></td><td>A probability table \(P(X = x)\)</td><td>A probability density function \(f(x)\)</td></tr>
+                        <tr><td><strong>Graph</strong></td><td>Separate spikes</td><td>A smooth curve</td></tr>
+                        <tr><td><strong>Total probability</strong></td><td>\(\sum p(x) = 1\)</td><td>\(\int f(x)\,dx = 1\)</td></tr>
+                    </tbody>
+                </table>
+                <div class="note-callout">
+                    <div class="callout-label">💡 The One Big Idea</div>
+                    <p>Every formula in this unit is the Unit 07 formula with <strong>\(\sum\) replaced by \(\int\)</strong> and \(p(x)\) replaced by \(f(x)\,dx\). If you know discrete expectation, you already know the structure.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>2. Probability Density Function (pdf)</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> A random variable \(X\) is continuous if its probability density function (pdf) \(f(x)\) is continuous at all but a finite number of points and possesses the following properties.
+                </div>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Non-negative</h4>
+                            <p>\(f(x) \geq 0\) for all \(x\)</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Total area = 1</h4>
+                            <p>\(\displaystyle\int_{-\infty}^{\infty} f(x)\,dx = 1\)</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Probability = area under the curve</h4>
+                            <p>\(\displaystyle P(a &lt; X \leq b) = \int_a^b f(x)\,dx\)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">⚠️ Single Points Have Zero Probability</div>
+                    <p>Because the area over a single point is zero, \(P(X = c) = 0\) for any value \(c\). This means \(&lt;\) and \(\leq\) give the same answer: \(P(a &lt; X &lt; b) = P(a \leq X \leq b)\). It also means \(f(x)\) itself is <em>not</em> a probability — it is a density, and it can be bigger than 1.</p>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">"Show that f(x) is a pdf" — the checklist</div>
+                    <p>You must show <strong>both</strong> properties: (1) \(f(x) \geq 0\) across the whole given range, and (2) \(\int f(x)\,dx = 1\) over that range. Forgetting the first one loses marks. Outside the stated range, \(f(x) = 0\).</p>
+                </div>
+
+                <h3>Example 01</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Example 01</div>
+                    <p>Show that \(f(x)\) is a probability density function where</p>
+                    \[f(x) = \tfrac{1}{2}(x - 3) \qquad \text{for } 3 \leq x \leq 5.\]
+                    <p>Find \(P(X &lt; 4)\).</p>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Property 1: non-negative</div>
+                        <p>For \(3 \leq x \leq 5\), we have \(x - 3 \geq 0\), so \(f(x) = \tfrac{1}{2}(x-3) \geq 0\). ✓</p>
+                        <div class="step">Property 2: total area is 1</div>
+                        \[\int_3^5 \tfrac{1}{2}(x-3)\,dx = \tfrac{1}{2}\left[\frac{(x-3)^2}{2}\right]_3^5 = \tfrac{1}{2}\left(\frac{4}{2} - 0\right) = 1 \;✓\]
+                        <p>Both properties hold, so \(f(x)\) is a pdf.</p>
+                        <div class="step">Find P(X &lt; 4)</div>
+                        \[P(X &lt; 4) = \int_3^4 \tfrac{1}{2}(x-3)\,dx = \tfrac{1}{2}\left[\frac{(x-3)^2}{2}\right]_3^4 = \tfrac{1}{2}\cdot\tfrac{1}{2} = \tfrac{1}{4}\]
+                        <span class="answer">f(x) is a valid pdf · P(X &lt; 4) = 1/4 = 0.25</span>
+                    </div>
+                </details>
+
+                <h3>Example 02 — Finding an Unknown Constant</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Example 02</div>
+                    \[f(x) = k(9 - x^2) \qquad \text{for } -3 \leq x \leq 3\]
+                    <ul>
+                        <li>(a) Find the value of \(k\) and calculate \(P(-1 &lt; X &lt; 2)\)</li>
+                        <li>(b) Find \(P(X = 2)\)</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">(a) Find k — set the total area equal to 1</div>
+                        \[\int_{-3}^{3} k(9 - x^2)\,dx = k\left[9x - \frac{x^3}{3}\right]_{-3}^{3} = k\big[(27 - 9) - (-27 + 9)\big] = 36k\]
+                        \[36k = 1 \quad\Longrightarrow\quad k = \frac{1}{36}\]
+                        <div class="step">(a) Find P(−1 &lt; X &lt; 2)</div>
+                        \[P(-1 &lt; X &lt; 2) = \frac{1}{36}\left[9x - \frac{x^3}{3}\right]_{-1}^{2} = \frac{1}{36}\left[\left(18 - \frac{8}{3}\right) - \left(-9 + \frac{1}{3}\right)\right]\]
+                        \[= \frac{1}{36}\left[\frac{46}{3} + \frac{26}{3}\right] = \frac{1}{36} \times 24 = \frac{2}{3}\]
+                        <div class="step">(b) Find P(X = 2)</div>
+                        <p>For a continuous random variable the probability of any single exact value is zero — there is no area over a single point:</p>
+                        \[P(X = 2) = \int_2^2 f(x)\,dx = 0\]
+                        <span class="answer">k = 1/36 · P(−1 &lt; X &lt; 2) = 2/3 ≈ 0.667 · P(X = 2) = 0</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>3. Mean and Variance of a Continuous Random Variable</h2>
+                <div class="formula-box">
+                    <div class="formula-label">Mean (Expected Value)</div>
+                    \[E(x) = \mu = \int_{-\infty}^{\infty} x\,f(x)\,dx\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Variance</div>
+                    \[\text{var}(x) = \sigma^2 = \int_{-\infty}^{\infty} x^2 f(x)\,dx - \big[E(x)\big]^2\]
+                </div>
+                <p>In practice you only integrate over the range where \(f(x)\) is non-zero, because \(f(x) = 0\) everywhere else.</p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th></th><th>Discrete (Unit 07)</th><th>Continuous (Unit 09)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Mean</strong></td><td>\(\sum x\,p(x)\)</td><td>\(\int x\,f(x)\,dx\)</td></tr>
+                        <tr><td><strong>\(E(X^2)\)</strong></td><td>\(\sum x^2 p(x)\)</td><td>\(\int x^2 f(x)\,dx\)</td></tr>
+                        <tr><td><strong>Variance</strong></td><td>\(E(X^2) - [E(X)]^2\)</td><td>\(E(X^2) - [E(X)]^2\)</td></tr>
+                    </tbody>
+                </table>
+                <div class="note-callout">
+                    <div class="callout-label">💡 Symmetry Shortcut</div>
+                    <p>If \(f(x)\) is symmetric about some value \(c\) — for example an even function on a range centred at 0 — then \(E(X) = c\) immediately, with no integration needed. You still need to integrate for the variance.</p>
+                </div>
+
+                <h3>Example 03</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Example 03</div>
+                    <p>The continuous random variable \(X\) has probability density function</p>
+                    \[f(x) = \frac{1}{36}(9 - x^2) \qquad \text{for } -3 \leq x \leq 3.\]
+                    <p>(a) Find the mean and variance of \(X\).</p>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Mean</div>
+                        \[E(X) = \int_{-3}^{3} x \cdot \frac{1}{36}(9 - x^2)\,dx = \frac{1}{36}\left[\frac{9x^2}{2} - \frac{x^4}{4}\right]_{-3}^{3} = \frac{1}{36}(0) = 0\]
+                        <p>This matches the symmetry shortcut: \(9 - x^2\) is symmetric about \(x = 0\), so the mean must be 0.</p>
+                        <div class="step">E(X²)</div>
+                        \[E(X^2) = \frac{1}{36}\int_{-3}^{3}(9x^2 - x^4)\,dx = \frac{1}{36}\left[3x^3 - \frac{x^5}{5}\right]_{-3}^{3}\]
+                        \[= \frac{1}{36}\times 2\left(81 - \frac{243}{5}\right) = \frac{1}{36}\times\frac{324}{5} = \frac{9}{5}\]
+                        <div class="step">Variance</div>
+                        \[\text{Var}(X) = E(X^2) - [E(X)]^2 = \frac{9}{5} - 0^2 = \frac{9}{5}\]
+                        <span class="answer">Mean = 0 · Variance = 9/5 = 1.8</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>4. Mode and Median of a Continuous Random Variable</h2>
+
+                <h3>Mode</h3>
+                <div class="definition-box">
+                    <strong>Mode:</strong> The mode is the value \(x\) at which the pdf reaches its <em>maximum</em>.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Finding the Mode</div>
+                    \[f(x) \text{ is maximum at } x = \text{mode} \qquad\text{or where}\qquad f'(x) = 0\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">⚠️ Check It's a Maximum</div>
+                    <p>\(f'(x) = 0\) also finds minimums. Confirm with \(f''(x) &lt; 0\), and check the endpoints of the range too — if \(f(x)\) is a straight line (like Example 01), the maximum is at an endpoint and \(f'(x)\) is never zero.</p>
+                </div>
+
+                <h3>Median</h3>
+                <div class="definition-box">
+                    <strong>Median:</strong> The median \(m\) of a continuous random variable having pdf \(f(x)\) is the value that splits the area under the curve exactly in half.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Median</div>
+                    \[P(X \leq m) = P(X \geq m) = 0.5\]
+                    \[\int_{-\infty}^{m} f(x)\,dx = \int_{m}^{\infty} f(x)\,dx = 0.5\]
+                </div>
+                <p>Integrate from the start of the range up to \(m\), set it equal to 0.5, and solve for \(m\). This usually gives a quadratic — keep only the root that lies inside the range.</p>
+                <div class="note-callout">
+                    <div class="callout-label">Quartiles Work the Same Way</div>
+                    <p>The lower quartile \(Q_1\) solves \(\int_{-\infty}^{Q_1} f(x)\,dx = 0.25\), and the upper quartile \(Q_3\) solves the same equation with 0.75. Then \(IQR = Q_3 - Q_1\), just as in Unit 04.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>5. Cumulative Distribution Function (cdf)</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> The Cumulative Distribution Function (CDF) gives the probability that a random variable takes on a value less than or equal to a specified value.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">CDF</div>
+                    \[F(a) = P(X \leq a)\]
+                    \[F(x) = \int_{-\infty}^{x} f(t)\,dt\]
+                </div>
+                <p>\(F(x)\) is the cdf <em>corresponding</em> to the pdf \(f(x)\). The two are linked both ways:</p>
+                <div class="formula-box">
+                    <div class="formula-label">pdf ↔ cdf</div>
+                    \[F(x) = \int f(x)\,dx \qquad\qquad f(x) = F'(x)\]
+                </div>
+
+                <h3>Writing a cdf Properly</h3>
+                <p>For a pdf that is non-zero only on \(a \leq x \leq b\), a complete cdf has <strong>three pieces</strong>:</p>
+                \[F(x) = \begin{cases} 0, & x &lt; a \\[4pt] \displaystyle\int_a^x f(t)\,dt, & a \leq x \leq b \\[4pt] 1, & x &gt; b \end{cases}\]
+                <div class="note-callout">
+                    <div class="callout-label">✅ Self-check</div>
+                    <p>Your middle piece must give \(F(a) = 0\) and \(F(b) = 1\). If it doesn't, you've lost a constant of integration — always integrate from \(a\) to \(x\) rather than writing an indefinite integral.</p>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">💡 The cdf Makes Everything Faster</div>
+                    <p>Once you have \(F(x)\): \(P(X \leq c) = F(c)\), \(P(c &lt; X \leq d) = F(d) - F(c)\), and the median solves \(F(m) = 0.5\). One integration, then just substitution.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>6. Full Example — Weekly Petrol Consumption</h2>
+                <div class="example-box">
+                    <div class="example-label">📝 Example</div>
+                    <p>The weekly petrol consumption, in hundreds of litres, of a sales representative may be modelled by the random variable \(X\) with probability density function</p>
+                    \[f(x) = a\,x(4 - 3x) \qquad \text{for } 0 \leq x \leq \tfrac{4}{3}.\]
+                    <ul>
+                        <li>(i) Find the value of \(a\)</li>
+                        <li>(ii) Find the mean of the weekly consumption</li>
+                        <li>(iii) Find the probability that the weekly consumption will be less than 1 hundred litres</li>
+                        <li>(iv) Find the mode of the weekly consumption</li>
+                        <li>(v) Construct the corresponding cdf for the above pdf</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <p>Expand first: \(f(x) = a(4x - 3x^2)\).</p>
+                        <div class="step">(i) Find a — total area = 1</div>
+                        \[\int_0^{4/3} a(4x - 3x^2)\,dx = a\Big[2x^2 - x^3\Big]_0^{4/3} = a\left(\frac{32}{9} - \frac{64}{27}\right) = a\left(\frac{96 - 64}{27}\right) = \frac{32a}{27}\]
+                        \[\frac{32a}{27} = 1 \quad\Longrightarrow\quad a = \frac{27}{32}\]
+                        <div class="step">(ii) Mean</div>
+                        \[E(X) = \frac{27}{32}\int_0^{4/3}(4x^2 - 3x^3)\,dx = \frac{27}{32}\left[\frac{4x^3}{3} - \frac{3x^4}{4}\right]_0^{4/3}\]
+                        \[= \frac{27}{32}\left(\frac{256}{81} - \frac{192}{81}\right) = \frac{27}{32}\times\frac{64}{81} = \frac{2}{3}\]
+                        <p>So the mean weekly consumption is \(\tfrac{2}{3}\) hundred litres \(\approx 66.7\) litres.</p>
+                        <div class="step">(iii) P(X &lt; 1)</div>
+                        \[P(X &lt; 1) = \frac{27}{32}\Big[2x^2 - x^3\Big]_0^{1} = \frac{27}{32}(2 - 1) = \frac{27}{32}\]
+                        <div class="step">(iv) Mode — differentiate and set to zero</div>
+                        \[f'(x) = \frac{27}{32}(4 - 6x) = 0 \quad\Longrightarrow\quad x = \frac{2}{3}\]
+                        <p>\(f''(x) = \frac{27}{32}(-6) &lt; 0\), so this is a maximum. Mode \(= \tfrac{2}{3}\) hundred litres.</p>
+                        <p>Notice mean = mode = \(\tfrac{2}{3}\). That's no coincidence: \(x(4-3x)\) is a parabola symmetric about \(x = \tfrac{2}{3}\), the midpoint of the range \([0, \tfrac{4}{3}]\).</p>
+                        <div class="step">(v) The cdf</div>
+                        \[F(x) = \int_0^{x}\frac{27}{32}(4t - 3t^2)\,dt = \frac{27}{32}(2x^2 - x^3)\]
+                        \[F(x) = \begin{cases} 0, & x &lt; 0 \\[4pt] \dfrac{27}{32}(2x^2 - x^3), & 0 \leq x \leq \tfrac{4}{3} \\[4pt] 1, & x &gt; \tfrac{4}{3} \end{cases}\]
+                        <p>Check: \(F(0) = 0\) and \(F(\tfrac{4}{3}) = \frac{27}{32}\times\frac{32}{27} = 1\). ✓ &nbsp;Also \(F(1) = \frac{27}{32}\), which matches part (iii).</p>
+                        <span class="answer">a = 27/32 · mean = 2/3 (≈ 66.7 L) · P(X &lt; 1) = 27/32 ≈ 0.844 · mode = 2/3</span>
+                    </div>
+                </details>
+            </section>
+
+            <section class="notes-section">
+                <h2>7. Method Summary</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Question asks for</th><th>Do this</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Show it's a pdf</td><td>Show \(f(x) \geq 0\) on the range <strong>and</strong> \(\int f(x)\,dx = 1\)</td></tr>
+                        <tr><td>Unknown constant \(k\)</td><td>Set \(\int f(x)\,dx = 1\) and solve</td></tr>
+                        <tr><td>\(P(a &lt; X &lt; b)\)</td><td>\(\int_a^b f(x)\,dx\) &nbsp;(or \(F(b) - F(a)\))</td></tr>
+                        <tr><td>\(P(X = c)\)</td><td>Always 0</td></tr>
+                        <tr><td>Mean</td><td>\(\int x\,f(x)\,dx\) &nbsp;(check symmetry first)</td></tr>
+                        <tr><td>Variance</td><td>\(\int x^2 f(x)\,dx - \mu^2\)</td></tr>
+                        <tr><td>Mode</td><td>Solve \(f'(x) = 0\); check it's a max and check the endpoints</td></tr>
+                        <tr><td>Median</td><td>Solve \(F(m) = 0.5\); keep the root inside the range</td></tr>
+                        <tr><td>Quartiles</td><td>Solve \(F(Q_1) = 0.25\) and \(F(Q_3) = 0.75\)</td></tr>
+                        <tr><td>cdf</td><td>\(\int_a^x f(t)\,dt\), written in 3 pieces (0 / formula / 1)</td></tr>
+                    </tbody>
+                </table>
+                <div class="note-callout">
+                    <div class="callout-label">✏️ Practise</div>
+                    <p>Questions 1–4 of <a href="worksheet-02.html">Worksheet 02</a> drill every row of this table, with worked solutions.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MATH-2205 Probability &amp; Statistics — United International University</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>

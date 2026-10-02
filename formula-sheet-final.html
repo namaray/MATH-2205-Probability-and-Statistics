@@ -34,7 +34,7 @@
             </div>
             <div class="unit-badge">QUICK REVIEW · FINAL TERM</div>
             <h1>Formula Sheet &amp; Quick Review</h1>
-            <p class="hero-subtitle" style="max-width:560px;margin:0.5rem auto 0;font-size:0.95rem;">All key formulas and conditions from the final term in one skimmable page. Currently covering Probability and Unit 07 — more units will be added as they arrive.</p>
+            <p class="hero-subtitle" style="max-width:560px;margin:0.5rem auto 0;font-size:0.95rem;">All key formulas and conditions from the final term in one skimmable page. Currently covering Probability, Unit 07, Unit 09 and the Worksheet 02 methods — more units will be added as they arrive.</p>
         </div>
 
         <!-- ============ QUICK-NAV PILLS ============ -->
@@ -48,6 +48,11 @@
             <a href="#poisson">Poisson</a>
             <a href="#normal">Normal</a>
             <a href="#zscore">z-Score</a>
+            <a href="#unit9">Unit 09</a>
+            <a href="#pdf">pdf Rules</a>
+            <a href="#cdf">cdf &amp; Median</a>
+            <a href="#estimation">Estimation</a>
+            <a href="#hypothesis">Hypothesis Test</a>
             <a href="#choosing">Which One?</a>
         </div>
 
@@ -309,6 +314,124 @@
             </div>
 
             <!-- Which distribution -->
+            <!-- ═══════════════ UNIT 09 ═══════════════ -->
+            <div class="unit-divider" id="unit9">
+                <span class="unit-divider-tag">UNIT 09</span>
+                <span class="unit-divider-title">Continuous Probability Distribution</span>
+            </div>
+
+            <div class="fs-card wide highlight-teal" id="pdf">
+                <div class="fs-card-head">📈 Probability Density Function (pdf)</div>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">Three properties</span>
+                    <div class="fs-steps">
+                        <span>① \(f(x) \geq 0\) for all x</span>
+                        <span>② \(\int_{-\infty}^{\infty} f(x)\,dx = 1\)</span>
+                        <span>③ \(P(a &lt; X \leq b) = \int_a^b f(x)\,dx\)</span>
+                    </div>
+                </div>
+                <div class="fs-formula-row">
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Mean</span>
+                        \[E(x) = \mu = \int x\,f(x)\,dx\]
+                    </div>
+                    <div class="fs-formula-divider"></div>
+                    <div class="fs-formula-item">
+                        <span class="fs-formula-label">Variance</span>
+                        \[\sigma^2 = \int x^2 f(x)\,dx - [E(x)]^2\]
+                    </div>
+                </div>
+                <p class="fs-tip">⚠️ \(P(X = c) = 0\) always, so \(&lt;\) and \(\leq\) give the same answer. \(f(x)\) is a density, not a probability — it can exceed 1.</p>
+                <p class="fs-tip">💡 Unknown constant \(k\)? Set \(\int f(x)\,dx = 1\) and solve. "Show it's a pdf" needs <strong>both</strong> \(f \geq 0\) and area = 1.</p>
+                <p class="fs-tip">💡 Symmetric pdf → the mean is the centre of symmetry, no integration needed.</p>
+                <div class="fs-simple"><em>Same as Unit 07 discrete, with \(\sum\) → \(\int\) and \(p(x)\) → \(f(x)\,dx\).</em></div>
+            </div>
+
+            <div class="fs-card wide highlight-purple" id="cdf">
+                <div class="fs-card-head">📐 cdf, Median, Quartiles &amp; Mode</div>
+                <div class="fs-formula">
+                    <span class="fs-formula-label">Cumulative distribution function</span>
+                    \[F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t)\,dt \qquad f(x) = F'(x)\]
+                </div>
+                <div class="fs-formula">
+                    \[F(x) = \begin{cases} 0, & x &lt; a \\ \int_a^x f(t)\,dt, & a \leq x \leq b \\ 1, & x &gt; b \end{cases}\]
+                </div>
+                <table class="fs-mini-table">
+                    <thead><tr><th>Find</th><th>Solve</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Median m</strong></td><td>\(F(m) = 0.5\)</td></tr>
+                        <tr><td><strong>Lower quartile</strong></td><td>\(F(Q_1) = 0.25\)</td></tr>
+                        <tr><td><strong>Upper quartile</strong></td><td>\(F(Q_3) = 0.75\)</td></tr>
+                        <tr><td><strong>Mode</strong></td><td>\(f'(x) = 0\), check \(f''(x) &lt; 0\) and the endpoints</td></tr>
+                        <tr><td><strong>Probability</strong></td><td>\(P(c &lt; X \leq d) = F(d) - F(c)\)</td></tr>
+                    </tbody>
+                </table>
+                <p class="fs-tip">✅ Check \(F(a) = 0\) and \(F(b) = 1\). Median/quartile equations are usually quadratics — keep the root <strong>inside</strong> the range.</p>
+            </div>
+
+            <!-- ═══════════════ ESTIMATION ═══════════════ -->
+            <div class="unit-divider" id="estimation">
+                <span class="unit-divider-tag">WORKSHEET 02</span>
+                <span class="unit-divider-title">Estimation &amp; Hypothesis Testing</span>
+            </div>
+
+            <div class="fs-card wide highlight-amber">
+                <div class="fs-card-head">🎯 Confidence Intervals</div>
+                <div class="fs-formula">
+                    <span class="fs-formula-label">Shape of every interval</span>
+                    \[\text{estimate} \pm z \times SE\]
+                </div>
+                <table class="fs-mini-table">
+                    <thead><tr><th>Situation</th><th>Interval</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Mean, σ known</strong></td><td>\(\bar{x} \pm z\,\sigma/\sqrt{n}\)</td></tr>
+                        <tr><td><strong>Mean, σ unknown, large n</strong></td><td>\(\bar{x} \pm z\,s/\sqrt{n}\)</td></tr>
+                        <tr><td><strong>Proportion</strong></td><td>\(\hat{p} \pm z\sqrt{\hat{p}(1-\hat{p})/n}\)</td></tr>
+                    </tbody>
+                </table>
+                <div class="fs-formula">
+                    <span class="fs-formula-label">Unbiased estimates from Σx, Σx²</span>
+                    \[\bar{x} = \frac{\sum x}{n} \qquad s^2 = \frac{1}{n-1}\left(\sum x^2 - \frac{(\sum x)^2}{n}\right)\]
+                </div>
+                <div class="fs-notation">
+                    <span>90% → z = 1.645</span>
+                    <span>95% → z = 1.960</span>
+                    <span>98% → z = 2.326</span>
+                    <span>99% → z = 2.576</span>
+                </div>
+                <p class="fs-tip">💡 Given a width: \(z = \dfrac{\text{width}}{2 \times SE}\), then confidence \(= 2\Phi(z) - 1\).</p>
+                <p class="fs-tip">💡 Claimed value <strong>inside</strong> the interval → consistent with the data. Outside → evidence against it.</p>
+                <p class="fs-tip">📎 Not yet in your slides — the methods used by Worksheet 02.</p>
+            </div>
+
+            <div class="fs-card wide highlight-teal" id="hypothesis">
+                <div class="fs-card-head">⚖️ Hypothesis Testing (Binomial &amp; Poisson)</div>
+                <div class="fs-steps">
+                    <span>① Define X and its distribution</span>
+                    <span>② \(H_0\): old value · \(H_1\): the claim</span>
+                    <span>③ P(result this extreme | \(H_0\))</span>
+                    <span>④ Compare with level</span>
+                    <span>⑤ Conclude in context</span>
+                </div>
+                <table class="fs-mini-table" style="margin-top:0.75rem">
+                    <thead><tr><th>Claim says</th><th>H₁</th><th>Find</th></tr></thead>
+                    <tbody>
+                        <tr><td>"lower" / "reduced"</td><td>\(p &lt; p_0\)</td><td>\(P(X \leq \text{obs})\)</td></tr>
+                        <tr><td>"higher" / "increased"</td><td>\(p &gt; p_0\)</td><td>\(P(X \geq \text{obs})\)</td></tr>
+                        <tr><td>"different" / "changed"</td><td>\(p \neq p_0\)</td><td>Two-tailed: compare with half the level</td></tr>
+                    </tbody>
+                </table>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">Decision</span>
+                    <table class="fs-mini-table">
+                        <tr><td>Probability &lt; level</td><td><strong>Reject \(H_0\)</strong> — significant evidence for \(H_1\)</td></tr>
+                        <tr><td>Probability ≥ level</td><td><strong>Do not reject \(H_0\)</strong> — insufficient evidence</td></tr>
+                    </table>
+                </div>
+                <p class="fs-tip">⏱️ Poisson over a longer period: scale λ first (7/month → 42 over 6 months). Large λ → approximate by \(N(\lambda, \lambda)\) with continuity correction: \(X \leq 32\) → \(X &lt; 32.5\).</p>
+                <p class="fs-tip">⚠️ Never write "accept \(H_0\)" — write "insufficient evidence to reject \(H_0\)".</p>
+            </div>
+
             <div class="unit-divider" id="choosing">
                 <span class="unit-divider-tag">KEY</span>
                 <span class="unit-divider-title">Which Distribution Do I Use?</span>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worksheet 02: Continuous RV, Estimation &amp; Hypothesis Testing — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <span class="nav-brand-icon">📚</span>
+                <span class="nav-brand-text">MATH-2205</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="unit09.html">Unit 09 Notes</a>
+                <a href="../index.html#final-topics">Final Topics</a>
+                <a href="../formula-sheet-final.html">⚡ Final Formula Sheet</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-page final-page">
+        <div class="notes-hero final">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#final-topics">Final Term</a> &gt; <span>Worksheet 02</span>
+            </div>
+            <div class="unit-badge">WORKSHEET 02 &middot; FINAL TERM</div>
+            <h1>Continuous RV, Estimation &amp; Hypothesis Testing</h1>
+        </div>
+
+        <div class="notes-container">
+            <section class="notes-section">
+                <div class="note-callout">
+                    <div class="callout-label">How to Use This Page</div>
+                    <p>Every question from <em>Continuous Random Variable, Estimation and Hypothesis Test</em> with a full worked solution behind a dropdown. Try each one on paper first.</p>
+                    <p>Part A uses the methods in the <a href="unit09.html">Unit 09 notes</a>. Parts B and C go beyond the slides you've been given so far, so each starts with a short method recap.</p>
+                </div>
+            </section>
+
+            <!-- ═════════════════ PART A ═════════════════ -->
+            <section class="notes-section">
+                <h2>Part A — Continuous Random Variables</h2>
+
+                <h3>Question A1 — Mean and Variance</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>The time, in minutes, taken by students to answer a question in a multiple-choice test has a pdf \(f(t)\) as follows:</p>
+                    \[f(t) = \begin{cases} \dfrac{1}{99}(40 - t^2), & 1 \leq t \leq 4 \\[6pt] 0, & \text{otherwise} \end{cases}\]
+                    <p>Work out the mean and variance of the time taken.</p>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Mean</div>
+                        \[E(T) = \frac{1}{99}\int_1^4 t(40 - t^2)\,dt = \frac{1}{99}\left[20t^2 - \frac{t^4}{4}\right]_1^4\]
+                        \[= \frac{1}{99}\left[(320 - 64) - \left(20 - \tfrac{1}{4}\right)\right] = \frac{1}{99}\times 236.25 = \frac{105}{44} \approx 2.386\]
+                        <div class="step">E(T²)</div>
+                        \[E(T^2) = \frac{1}{99}\int_1^4 (40t^2 - t^4)\,dt = \frac{1}{99}\left[\frac{40t^3}{3} - \frac{t^5}{5}\right]_1^4\]
+                        \[= \frac{1}{99}\left[\left(\frac{2560}{3} - \frac{1024}{5}\right) - \left(\frac{40}{3} - \frac{1}{5}\right)\right] = \frac{1}{99}\left(840 - 204.6\right) = \frac{353}{55} \approx 6.418\]
+                        <div class="step">Variance</div>
+                        \[\text{Var}(T) = E(T^2) - [E(T)]^2 = \frac{353}{55} - \left(\frac{105}{44}\right)^2 = \frac{7003}{9680} \approx 0.723\]
+                        <p>Keep the exact fractions until the last line — rounding \(E(T)\) to 2.39 before squaring gives 0.706, which is noticeably off.</p>
+                        <span class="answer">Mean ≈ 2.39 minutes · Variance ≈ 0.723 min²</span>
+                    </div>
+                </details>
+
+                <h3>Question A2 — Probability, Median and IQR</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>A continuous random variable, \(X\), has the following probability density function:</p>
+                    \[f(x) = \begin{cases} \dfrac{2}{25}(5 - x), & 0 \leq x \leq 5 \\[6pt] 0, & \text{otherwise} \end{cases}\]
+                    <ul>
+                        <li>(a) Find \(P(X \leq 2)\)</li>
+                        <li>(b) Show that the median is \(5 - \dfrac{\sqrt{50}}{2}\)</li>
+                        <li>(c) Calculate the interquartile range</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Get the cdf first — every part uses it</div>
+                        \[F(x) = \int_0^x \frac{2}{25}(5 - t)\,dt = \frac{2}{25}\left[5t - \frac{t^2}{2}\right]_0^x = \frac{10x - x^2}{25}\]
+                        <div class="step">(a) P(X ≤ 2)</div>
+                        \[P(X \leq 2) = F(2) = \frac{20 - 4}{25} = \frac{16}{25} = 0.64\]
+                        <div class="step">(b) Median — solve F(m) = 0.5</div>
+                        \[\frac{10m - m^2}{25} = \frac{1}{2} \;\Longrightarrow\; m^2 - 10m + 12.5 = 0\]
+                        \[m = \frac{10 \pm \sqrt{100 - 50}}{2} = 5 \pm \frac{\sqrt{50}}{2}\]
+                        <p>The \(+\) root gives \(m \approx 8.54\), which is outside \(0 \leq x \leq 5\). So</p>
+                        \[m = 5 - \frac{\sqrt{50}}{2} \approx 1.464 \quad\text{as required.}\]
+                        <div class="note-callout">
+                            <div class="callout-label">⚠️ Typo in the Worksheet</div>
+                            <p>The sheet prints the answer as \(5 - \sqrt{\tfrac{(50)}{2}}\). Read literally that is \(5 - \sqrt{25} = 0\), which is wrong. It means \(5 - \dfrac{\sqrt{50}}{2}\), i.e. the square root of 50, then divided by 2 — equivalently \(5 - \sqrt{12.5}\).</p>
+                        </div>
+                        <div class="step">(c) Interquartile range</div>
+                        <p>Lower quartile — solve \(F(Q_1) = 0.25\):</p>
+                        \[Q_1^2 - 10Q_1 + 6.25 = 0 \;\Longrightarrow\; Q_1 = 5 - \frac{\sqrt{75}}{2} \approx 0.6699\]
+                        <p>Upper quartile — solve \(F(Q_3) = 0.75\):</p>
+                        \[Q_3^2 - 10Q_3 + 18.75 = 0 \;\Longrightarrow\; Q_3 = 5 - \frac{\sqrt{25}}{2} = 2.5\]
+                        \[IQR = Q_3 - Q_1 = 2.5 - 0.6699 = 1.830 \qquad\left(\text{exactly } \tfrac{5}{2}(\sqrt{3} - 1)\right)\]
+                        <span class="answer">(a) 0.64 · (b) m = 5 − √50⁄2 ≈ 1.464 · (c) IQR ≈ 1.83</span>
+                    </div>
+                </details>
+
+                <h3>Question A3 — Constant, Probability, Median and cdf</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>Two sisters make contact using an internet messaging service. The length of time for which they are logged on, in minutes, is modelled by the random variable \(T\) with probability density function:</p>
+                    \[f(t) = \begin{cases} \dfrac{1}{k}(40 - t), & 10 \leq t \leq 30 \\[6pt] 0, & \text{otherwise} \end{cases}\]
+                    <p>where \(k\) is a constant.</p>
+                    <ul>
+                        <li>(a) Verify that \(k = 400\)</li>
+                        <li>(b) Find the probability that the time they are logged on for is less than 15 minutes</li>
+                        <li>(c) Calculate the median value for time they are logged on for</li>
+                        <li>(d) Find the corresponding cdf of \(f(t)\)</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">(a) Verify k = 400</div>
+                        \[\int_{10}^{30}(40 - t)\,dt = \left[40t - \frac{t^2}{2}\right]_{10}^{30} = (1200 - 450) - (400 - 50) = 400\]
+                        <p>So \(\frac{1}{k}\times 400 = 1\), giving \(k = 400\). ✓</p>
+                        <div class="step">(d first) The cdf — it makes (b) and (c) quick</div>
+                        \[F(t) = \frac{1}{400}\left[40u - \frac{u^2}{2}\right]_{10}^{t} = \frac{1}{400}\left(40t - \frac{t^2}{2} - 350\right) = \frac{80t - t^2 - 700}{800}\]
+                        \[F(t) = \begin{cases} 0, & t &lt; 10 \\[4pt] \dfrac{80t - t^2 - 700}{800}, & 10 \leq t \leq 30 \\[4pt] 1, & t &gt; 30 \end{cases}\]
+                        <p>Check: \(F(10) = \frac{800 - 100 - 700}{800} = 0\) ✓ &nbsp; \(F(30) = \frac{2400 - 900 - 700}{800} = 1\) ✓</p>
+                        <div class="step">(b) P(T &lt; 15)</div>
+                        \[P(T &lt; 15) = F(15) = \frac{1200 - 225 - 700}{800} = \frac{275}{800} = \frac{11}{32} \approx 0.344\]
+                        <div class="step">(c) Median — solve F(m) = 0.5</div>
+                        \[\frac{80m - m^2 - 700}{800} = \frac{1}{2} \;\Longrightarrow\; m^2 - 80m + 1100 = 0\]
+                        \[m = \frac{80 \pm \sqrt{6400 - 4400}}{2} = 40 \pm \sqrt{500}\]
+                        <p>\(40 + \sqrt{500} \approx 62.4\) is outside \(10 \leq t \leq 30\), so</p>
+                        \[m = 40 - \sqrt{500} \approx 17.6 \text{ minutes}\]
+                        <span class="answer">(a) k = 400 ✓ · (b) 11/32 ≈ 0.344 · (c) ≈ 17.6 min · (d) F(t) = (80t − t² − 700)/800 on [10, 30]</span>
+                    </div>
+                </details>
+
+                <h3>Question A4 — Constant, Probability, Mean and a Percentile</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>A random variable, \(X\), has probability density function given by:</p>
+                    \[f(x) = \begin{cases} k(1 - x), & -1 \leq x \leq 1 \\[4pt] 0, & \text{otherwise} \end{cases}\]
+                    <p>where \(k\) is a constant.</p>
+                    <ul>
+                        <li>(i) Show that \(k = \tfrac{1}{2}\)</li>
+                        <li>(ii) Find \(P\!\left(X &gt; \tfrac{1}{2}\right)\)</li>
+                        <li>(iii) Find the mean of \(X\)</li>
+                        <li>(iv) Find \(a\) such that \(P(X &lt; a) = \tfrac{1}{4}\)</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">(i) Show k = ½</div>
+                        \[\int_{-1}^{1} k(1 - x)\,dx = k\left[x - \frac{x^2}{2}\right]_{-1}^{1} = k\left[\left(1 - \tfrac{1}{2}\right) - \left(-1 - \tfrac{1}{2}\right)\right] = 2k\]
+                        <p>\(2k = 1\), so \(k = \tfrac{1}{2}\). ✓</p>
+                        <div class="step">(ii) P(X &gt; ½)</div>
+                        \[P\!\left(X &gt; \tfrac{1}{2}\right) = \frac{1}{2}\left[x - \frac{x^2}{2}\right]_{1/2}^{1} = \frac{1}{2}\left[\tfrac{1}{2} - \tfrac{3}{8}\right] = \frac{1}{2}\times\frac{1}{8} = \frac{1}{16}\]
+                        <div class="step">(iii) Mean</div>
+                        \[E(X) = \frac{1}{2}\int_{-1}^{1}(x - x^2)\,dx = \frac{1}{2}\left[\frac{x^2}{2} - \frac{x^3}{3}\right]_{-1}^{1} = \frac{1}{2}\left[\left(\tfrac{1}{2} - \tfrac{1}{3}\right) - \left(\tfrac{1}{2} + \tfrac{1}{3}\right)\right] = -\frac{1}{3}\]
+                        <p>A negative mean makes sense: \(1 - x\) is largest at \(x = -1\), so most of the probability sits on the left.</p>
+                        <div class="step">(iv) Find a with P(X &lt; a) = ¼</div>
+                        \[\frac{1}{2}\left[x - \frac{x^2}{2}\right]_{-1}^{a} = \frac{1}{2}\left(a - \frac{a^2}{2} + \frac{3}{2}\right) = \frac{1}{4}\]
+                        \[a - \frac{a^2}{2} + 1 = 0 \;\Longrightarrow\; a^2 - 2a - 2 = 0 \;\Longrightarrow\; a = 1 \pm \sqrt{3}\]
+                        <p>\(1 + \sqrt{3} \approx 2.73\) is outside \(-1 \leq x \leq 1\), so \(a = 1 - \sqrt{3}\).</p>
+                        <span class="answer">(i) k = ½ ✓ · (ii) 1/16 · (iii) −1/3 · (iv) a = 1 − √3 ≈ −0.732</span>
+                    </div>
+                </details>
+            </section>
+
+            <!-- ═════════════════ PART B ═════════════════ -->
+            <section class="notes-section">
+                <h2>Part B — Estimation</h2>
+                <div class="note-callout">
+                    <div class="callout-label">📎 Method Recap (not yet in your slides)</div>
+                    <p>A <strong>confidence interval</strong> is a range that captures the true population value with a stated confidence. Every interval here has the same shape: <strong>estimate ± z × standard error</strong>.</p>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Situation</th><th>Confidence interval</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Mean, \(\sigma\) known</td><td>\(\bar{x} \pm z\dfrac{\sigma}{\sqrt{n}}\)</td></tr>
+                        <tr><td>Mean, \(\sigma\) unknown, large \(n\)</td><td>\(\bar{x} \pm z\dfrac{s}{\sqrt{n}}\)</td></tr>
+                        <tr><td>Proportion</td><td>\(\hat{p} \pm z\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\)</td></tr>
+                    </tbody>
+                </table>
+                <div class="formula-box">
+                    <div class="formula-label">Unbiased Estimates from Σx and Σx²</div>
+                    \[\bar{x} = \frac{\sum x}{n} \qquad s^2 = \frac{1}{n-1}\left(\sum x^2 - \frac{(\sum x)^2}{n}\right)\]
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Confidence level</th><th>90%</th><th>95%</th><th>98%</th><th>99%</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>z</strong></td><td>1.645</td><td>1.960</td><td>2.326</td><td>2.576</td></tr>
+                    </tbody>
+                </table>
+                <div class="note-callout">
+                    <div class="callout-label">💡 Working Backwards from a Width</div>
+                    <p>Width \(= 2 \times z \times SE\), so \(z = \dfrac{\text{width}}{2 \times SE}\). Then the confidence level is \(2\Phi(z) - 1\).</p>
+                </div>
+
+                <h3>Question B1 — Sweets (σ known)</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>The label on a certain packet of sweets states the contents are 100 g. It is known that the standard deviation is 5 g. The mechanism producing these packets of sweets is checked. From a random sample of ten packets, the mean is 103.8 g. Find a 99% confidence interval for the mean contents of the packets of sweets. Use your result to explain whether the mechanism needs adjustment.</p>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Set up</div>
+                        <p>\(\sigma = 5\) is known, \(n = 10\), \(\bar{x} = 103.8\), and \(z = 2.576\) for 99%.</p>
+                        <div class="step">Standard error and margin</div>
+                        \[SE = \frac{\sigma}{\sqrt{n}} = \frac{5}{\sqrt{10}} = 1.5811 \qquad \text{margin} = 2.576 \times 1.5811 = 4.073\]
+                        <div class="step">Interval</div>
+                        \[103.8 \pm 4.073 \;\Longrightarrow\; (99.73,\; 107.87)\]
+                        <div class="step">Does the mechanism need adjustment?</div>
+                        <p>The stated contents, <strong>100 g, lies inside</strong> the interval. So at 99% confidence, a true mean of 100 g is entirely consistent with this sample — there is <strong>no evidence the mechanism needs adjustment</strong>.</p>
+                        <p>Since \(\sigma\) is known we can use \(z\) even though \(n = 10\) is small, as long as the masses are normally distributed.</p>
+                        <span class="answer">99% CI = (99.7 g, 107.9 g) · 100 g is inside → no adjustment needed</span>
+                    </div>
+                </details>
+
+                <h3>Question B2 — Quail Eggs (σ unknown)</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>The following data summarise the total mass, \(x\) grams, for a random sample of quail eggs:</p>
+                    \[n = 30, \quad \sum x = 254.4 \quad\text{and}\quad \sum x^2 = 2271.6\]
+                    <ul>
+                        <li>(a) Calculate a 99% confidence interval for the population mean</li>
+                        <li>(b) An \(\alpha\)% confidence interval for the population mean, based on this sample, is found to have width of 1.3 grams. Find \(\alpha\).</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Unbiased estimates</div>
+                        \[\bar{x} = \frac{254.4}{30} = 8.48\]
+                        \[s^2 = \frac{1}{29}\left(2271.6 - \frac{254.4^2}{30}\right) = \frac{1}{29}(2271.6 - 2157.312) = \frac{114.288}{29} = 3.9410\]
+                        \[s = 1.9852 \qquad SE = \frac{s}{\sqrt{n}} = \frac{1.9852}{\sqrt{30}} = 0.36244\]
+                        <div class="step">(a) 99% interval</div>
+                        \[8.48 \pm 2.576 \times 0.36244 = 8.48 \pm 0.934 \;\Longrightarrow\; (7.55,\; 9.41)\]
+                        <p>\(\sigma\) is unknown, but \(n = 30\) is large, so by the Central Limit Theorem we can still use \(z\) with \(s\) in place of \(\sigma\).</p>
+                        <div class="step">(b) Find α from the width</div>
+                        \[z = \frac{\text{width}}{2 \times SE} = \frac{1.3}{2 \times 0.36244} = 1.793\]
+                        \[\Phi(1.793) = 0.9635 \;\Longrightarrow\; \text{confidence} = 2(0.9635) - 1 = 0.927\]
+                        <span class="answer">(a) (7.55 g, 9.41 g) · (b) α ≈ 92.7</span>
+                    </div>
+                </details>
+
+                <h3>Question B3 — Pet Food</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>The following data summarise the masses, \(x\) kg, of 60 bags of dry pet food.</p>
+                    \[\sum x = 117 \quad\text{and}\quad \sum x^2 = 232.72\]
+                    <ul>
+                        <li>(a) Calculate unbiased estimates for the population mean and variance</li>
+                        <li>(b) Calculate a 98% confidence interval for the population mean</li>
+                        <li>(c) An \(\alpha\)% confidence interval for the population mean, based on this sample, is found to have width of 0.118 kg. Find \(\alpha\).</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">(a) Unbiased estimates</div>
+                        \[\bar{x} = \frac{117}{60} = 1.95\]
+                        \[s^2 = \frac{1}{59}\left(232.72 - \frac{117^2}{60}\right) = \frac{1}{59}(232.72 - 228.15) = \frac{4.57}{59} = 0.07746\]
+                        <p>Divide by \(n - 1 = 59\), not \(n = 60\) — that's what makes it the <em>unbiased</em> estimate.</p>
+                        <div class="step">(b) 98% interval</div>
+                        \[SE = \sqrt{\frac{0.07746}{60}} = 0.035930\]
+                        \[1.95 \pm 2.326 \times 0.035930 = 1.95 \pm 0.0836 \;\Longrightarrow\; (1.866,\; 2.034)\]
+                        <div class="step">(c) Find α from the width</div>
+                        \[z = \frac{0.118}{2 \times 0.035930} = 1.642 \qquad \Phi(1.642) = 0.9497\]
+                        \[\text{confidence} = 2(0.9497) - 1 = 0.899\]
+                        <span class="answer">(a) mean = 1.95 kg, variance ≈ 0.0775 kg² · (b) (1.87 kg, 2.03 kg) · (c) α ≈ 90</span>
+                    </div>
+                </details>
+
+                <h3>Question B4 — Jeans (a proportion)</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>A quality control check of a random sample of 120 pairs of jeans produced at a factory finds that 24 pairs are sub-standard. Calculate the following confidence intervals for the proportion of jeans produced that are sub-standard:</p>
+                    <ul>
+                        <li>(a) a 90% confidence interval</li>
+                        <li>(b) a 98% confidence interval</li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Sample proportion and standard error</div>
+                        \[\hat{p} = \frac{24}{120} = 0.2 \qquad SE = \sqrt{\frac{0.2 \times 0.8}{120}} = 0.036515\]
+                        <div class="step">(a) 90% interval</div>
+                        \[0.2 \pm 1.645 \times 0.036515 = 0.2 \pm 0.0601 \;\Longrightarrow\; (0.140,\; 0.260)\]
+                        <div class="step">(b) 98% interval</div>
+                        \[0.2 \pm 2.326 \times 0.036515 = 0.2 \pm 0.0849 \;\Longrightarrow\; (0.115,\; 0.285)\]
+                        <p>The 98% interval is wider: to be more confident of capturing the true proportion, you need a bigger net.</p>
+                        <span class="answer">(a) (0.140, 0.260) · (b) (0.115, 0.285)</span>
+                    </div>
+                </details>
+            </section>
+
+            <!-- ═════════════════ PART C ═════════════════ -->
+            <section class="notes-section">
+                <h2>Part C — Hypothesis Testing</h2>
+                <div class="note-callout">
+                    <div class="callout-label">📎 Method Recap (not yet in your slides)</div>
+                    <p>A <strong>hypothesis test</strong> asks: if nothing had changed, how surprising is what we observed? If it's surprising enough — less likely than the significance level — we reject "nothing changed".</p>
+                </div>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Define the random variable and its distribution</h4>
+                            <p>e.g. \(X \sim B(20, p)\) or \(X \sim \text{Po}(\lambda)\)</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>State the hypotheses</h4>
+                            <p>\(H_0\): the old value (\(p = 0.4\)). \(H_1\): the claimed change — \(p &lt; 0.4\) for "lower", \(p &gt; 0.4\) for "higher" (one-tailed), or \(p \neq 0.4\) for "different" (two-tailed).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Find the probability of a result at least this extreme</h4>
+                            <p>Assuming \(H_0\) is true. For "lower", find \(P(X \leq \text{observed})\).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Compare with the significance level</h4>
+                            <p>Probability \(&lt;\) level → reject \(H_0\). Probability \(\geq\) level → do not reject \(H_0\).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-content">
+                            <h4>Conclude in context</h4>
+                            <p>Say what it means for the actual situation — not just "reject \(H_0\)".</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">⚠️ Wording Matters</div>
+                    <p>Never say "\(H_0\) is true" or "we accept \(H_0\)". The correct phrasing is "there is <em>insufficient evidence</em> to reject \(H_0\)" — failing to find evidence isn't proof of no effect.</p>
+                </div>
+
+                <h3>Question C1 — Racetrack Simulator</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>Experience has shown that drivers on a Formula 1 racetrack simulator crash 40% of the time. Zander decides to run a simulator training programme to reduce the number of crashes. To evaluate the effectiveness of the training programme, Zander allows 20 drivers, one by one, to use the simulator. Zander counts how many of the drivers crash. Four drivers crash. Test the effectiveness of Zander's simulation training programme at the 5% level of significance.</p>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Random variable and hypotheses</div>
+                        <p>Let \(X\) = number of the 20 drivers who crash, so \(X \sim B(20, p)\).</p>
+                        \[H_0: p = 0.4 \qquad H_1: p &lt; 0.4 \quad\text{(one-tailed: the programme is meant to reduce crashes)}\]
+                        <div class="step">Probability of 4 or fewer crashes, assuming H₀</div>
+                        \[P(X \leq 4) = \sum_{r=0}^{4}\binom{20}{r}(0.4)^r(0.6)^{20-r}\]
+                        <table class="comparison-table">
+                            <thead><tr><th>r</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+                            <tbody><tr><td>P(X = r)</td><td>0.00004</td><td>0.00049</td><td>0.00309</td><td>0.01235</td><td>0.03499</td></tr></tbody>
+                        </table>
+                        \[P(X \leq 4) = 0.0510\]
+                        <div class="step">Compare and conclude</div>
+                        <p>\(0.0510 &gt; 0.05\), so we <strong>do not reject \(H_0\)</strong>.</p>
+                        <p>There is insufficient evidence at the 5% level that the training programme reduces the crash rate.</p>
+                        <div class="note-callout">
+                            <div class="callout-label">A Close Call</div>
+                            <p>This misses significance by about 0.001. Had only 3 drivers crashed, \(P(X \leq 3) = 0.0160\) and the result would have been significant. A larger sample would give the test a better chance of detecting a real improvement.</p>
+                        </div>
+                        <span class="answer">P(X ≤ 4) = 0.0510 &gt; 0.05 → do not reject H₀ · insufficient evidence the programme works</span>
+                    </div>
+                </details>
+
+                <h3>Question C2 — The Offside Rule</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>It is claimed that 40% of professional footballers cannot explain the offside rule. Alberto thinks the percentage is lower. To test this, he asks 15 professional footballers to explain the offside rule. Define the random variable and hypotheses. Carry out a hypothesis test at the 5% significance level given that two of the professional footballers asked cannot explain the rule.</p>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">Random variable and hypotheses</div>
+                        <p>Let \(X\) = number of the 15 footballers who <em>cannot</em> explain the offside rule, so \(X \sim B(15, p)\), where \(p\) is the proportion of all professional footballers who cannot explain it.</p>
+                        \[H_0: p = 0.4 \qquad H_1: p &lt; 0.4\]
+                        <div class="step">Probability of 2 or fewer, assuming H₀</div>
+                        \[P(X \leq 2) = (0.6)^{15} + 15(0.4)(0.6)^{14} + \binom{15}{2}(0.4)^2(0.6)^{13}\]
+                        \[= 0.00047 + 0.00470 + 0.02194 = 0.0271\]
+                        <div class="step">Compare and conclude</div>
+                        <p>\(0.0271 &lt; 0.05\), so we <strong>reject \(H_0\)</strong>.</p>
+                        <p>There is significant evidence at the 5% level that fewer than 40% of professional footballers cannot explain the offside rule — Alberto's belief is supported.</p>
+                        <span class="answer">P(X ≤ 2) = 0.0271 &lt; 0.05 → reject H₀ · evidence the percentage is lower than 40%</span>
+                    </div>
+                </details>
+
+                <h3>Question C3 — Road Accidents (Poisson)</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Question</div>
+                    <p>Accidents on a stretch of road occur at the rate of seven each month. New traffic measures are put in place to reduce the number of accidents. In the following month, there are only two accidents.</p>
+                    <ul>
+                        <li>(a) Test at the 5% level of significance if there is evidence that the new traffic measures have significantly reduced the number of accidents.</li>
+                        <li>(b) Over a period of 6 months, there are 32 accidents. It is claimed the new traffic measures are no longer reducing the number of accidents.
+                            <ul>
+                                <li>(i) Test this claim at the 5% level of significance.</li>
+                                <li>(ii) What would your conclusion be if you tested the claim at the 10% level of significance?</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <div class="step">(a) One month — random variable and hypotheses</div>
+                        <p>Let \(X\) = number of accidents in one month, \(X \sim \text{Po}(\lambda)\).</p>
+                        \[H_0: \lambda = 7 \qquad H_1: \lambda &lt; 7\]
+                        <div class="step">(a) Probability of 2 or fewer, assuming H₀</div>
+                        \[P(X \leq 2) = e^{-7}\left(1 + 7 + \frac{7^2}{2}\right) = 32.5\,e^{-7} = 0.0296\]
+                        <p>\(0.0296 &lt; 0.05\), so <strong>reject \(H_0\)</strong>. There is significant evidence at the 5% level that the new measures have reduced the number of accidents.</p>
+
+                        <div class="step">(b) Six months — scale the rate</div>
+                        <p>If the measures are <em>no longer</em> working, the rate is back to 7 per month, i.e. \(7 \times 6 = 42\) over 6 months. Let \(Y\) = accidents in 6 months, \(Y \sim \text{Po}(\lambda)\).</p>
+                        \[H_0: \lambda = 42 \;\;\text{(measures no longer reducing accidents)} \qquad H_1: \lambda &lt; 42 \;\;\text{(still reducing)}\]
+                        <div class="step">(b) Probability of 32 or fewer — normal approximation</div>
+                        <p>\(\lambda = 42\) is too large for Poisson tables, so approximate with \(N(42, 42)\) — Poisson has mean = variance. Use a continuity correction: \(Y \leq 32\) becomes \(Y &lt; 32.5\).</p>
+                        \[z = \frac{32.5 - 42}{\sqrt{42}} = -1.466 \qquad P(Y \leq 32) \approx \Phi(-1.466) = 0.0713\]
+                        <p>(The exact Poisson value is 0.0668. It leads to the same conclusions below.)</p>
+                        <div class="step">(b)(i) At the 5% level</div>
+                        <p>\(0.0713 &gt; 0.05\), so <strong>do not reject \(H_0\)</strong>. There is insufficient evidence at the 5% level that the measures are still reducing accidents — the claim cannot be rejected.</p>
+                        <div class="step">(b)(ii) At the 10% level</div>
+                        <p>\(0.0713 &lt; 0.10\), so <strong>reject \(H_0\)</strong>. At the 10% level there <em>is</em> evidence that the measures are still reducing accidents, so the claim would be rejected.</p>
+                        <div class="note-callout">
+                            <div class="callout-label">Why the Answers Differ</div>
+                            <p>The significance level is how much evidence you demand before rejecting \(H_0\). A probability of 0.07 isn't rare enough for a strict 5% test, but it is rare enough for a more lenient 10% test. Same data, different standard.</p>
+                        </div>
+                        <span class="answer">(a) 0.0296 &lt; 0.05 → reject H₀, measures reduced accidents · (b)(i) 0.0713 &gt; 0.05 → do not reject, claim stands · (b)(ii) 0.0713 &lt; 0.10 → reject, claim rejected</span>
+                    </div>
+                </details>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MATH-2205 Probability &amp; Statistics — United International University</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
