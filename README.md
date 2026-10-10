@@ -21,17 +21,18 @@
 |------|-------|-------------|
 | Probability | Probability | Sample space, complement, addition rule, mutually exclusive, independent & dependent events, conditional probability, tree diagrams, Bayes' theorem |
 | Unit 07 | The Probability Distribution | Discrete distributions, E(x) & Var(x), binomial, Poisson, normal, empirical rule, z-score |
+| Unit 08 | Binomial, Poisson & Normal Distribution | B(n, p), Po(λ), normal N(μ, σ²), standard normal Z, finding μ & σ, Six Sigma |
 | Unit 09 | Continuous Probability Distribution | pdf properties, finding k, mean & variance, mode, median, quartiles, cdf |
+| Estimation | Point & Interval Estimation | Good estimator properties, confidence intervals for a mean and a proportion, working backwards |
+| Unit 10 | Hypothesis Testing | H₀ & H₁, significance level, one- vs two-tailed, z-test, p-value, Type I & II errors |
 
-✏️ **[Worksheet 01 — Probability Practice](units/worksheet-probability-01.html)** — 10 questions with full worked solutions behind dropdowns.
+✏️ **[Worksheet 01 — Probability Practice](units/worksheet-probability-01.html)** — 10 questions, each with a plain-English explanation, a diagram where it helps, and full working.
 
-✏️ **[Worksheet 02 — Continuous RV, Estimation & Hypothesis Testing](units/worksheet-02.html)** — 11 questions with full worked solutions behind dropdowns.
+✏️ **[Worksheet 02 — Continuous RV, Estimation & Hypothesis Testing](units/worksheet-02.html)** — 11 questions, each with a plain-English explanation, a diagram where it helps, and full working.
 
-📄 **[Final Term Formula Sheet](formula-sheet-final.html)** — final-term formulas on one page.
+📄 **[Final Cheat Sheet](formula-sheet-final.html)** — every final-term formula on one page.
 
-> 💡 Every exercise in the Unit 07 and Unit 09 notes and in both worksheets has a **Show solution** dropdown with complete working.
-
-> 📚 More final term units coming as they are released.
+> 💡 Every exercise in the final-term notes and both worksheets has a **Show solution** dropdown with complete working.
 
 ## 🚀 How to Use
 

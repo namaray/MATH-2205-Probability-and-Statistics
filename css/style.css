@@ -1252,3 +1252,84 @@ footer {
 }
 
 .solution-body table.comparison-table { margin: 0.75rem 0; }
+
+/* ============ DIAGRAMS & PLAIN-ENGLISH EXPLANATIONS ============ */
+.viz {
+  margin: 1.1rem auto 1.3rem;
+  text-align: center;
+}
+
+.viz svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.viz figcaption {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.solution-body .simple,
+.notes-section .simple {
+  background: rgba(251, 191, 36, 0.07);
+  border-left: 3px solid #fbbf24;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 0.75rem 1rem;
+  margin: 0.9rem 0 1rem;
+  color: var(--text-primary);
+}
+
+.solution-body .simple::before,
+.notes-section .simple::before {
+  content: '💡 In simple words';
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fbbf24;
+  margin-bottom: 0.3rem;
+}
+
+.error-grid {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 0.4rem;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+}
+
+.error-grid > div {
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.error-grid .eg-head { color: var(--text-muted); font-weight: 600; }
+.error-grid .eg-bad { background: rgba(248, 113, 113, 0.16); border: 1px solid rgba(248, 113, 113, 0.35); }
+.error-grid .eg-good { background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.3); }
+.error-grid strong { display: block; color: var(--text-heading); margin-bottom: 0.15rem; }
+
+/* In-content links: readable on the dark theme (browser default blue was too dark) */
+.notes-container a {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+  text-decoration-color: rgba(167, 139, 250, 0.45);
+  text-underline-offset: 2px;
+}
+
+.final-page .notes-container a {
+  color: #34d399;
+  text-decoration-color: rgba(52, 211, 153, 0.45);
+}
+
+.notes-container a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* Keep Greek letters lower-case inside upper-case step labels (μ must not turn into "M") */
+.solution-body .step .nc { text-transform: none; }

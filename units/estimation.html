@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimation — MATH-2205</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>window.MathJax = {tex: {inlineMath: [['\\(','\\)'],['$','$']], displayMath: [['\\[','\\]'],['$$','$$']]}};</script>
+    <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <span class="nav-brand-icon">📚</span>
+                <span class="nav-brand-text">MATH-2205</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#final-topics">Final Topics</a>
+                <a href="../formula-sheet-final.html">⚡ Final Cheat Sheet</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-page final-page">
+        <div class="notes-hero final">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt; <a href="../index.html#final-topics">Final Term</a> &gt; <span>Estimation</span>
+            </div>
+            <div class="unit-badge">ESTIMATION &middot; FINAL TERM</div>
+            <h1>Estimation</h1>
+        </div>
+
+        <div class="notes-container">
+            <section class="notes-section">
+                <h2>1. What is Estimation?</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Estimation is the process of inferring or approximating the value of a population parameter based on sample data.
+                </div>
+                <p class="simple">You usually can't measure everyone — every packet a machine fills, or every voter in a country. So you measure a sample and use it to make an educated guess about the whole population. Estimation is the maths of making that guess, and of saying how confident you are in it.</p>
+                <p>There are two main types:</p>
+                <div class="cards-container">
+                    <div class="key-concept-card">
+                        <div class="icon">📍</div>
+                        <h4>Point Estimation</h4>
+                        <p>A single best-guess value — e.g. "the mean is 81.5".</p>
+                    </div>
+                    <div class="key-concept-card">
+                        <div class="icon">↔️</div>
+                        <h4>Interval Estimation</h4>
+                        <p>A range of plausible values — e.g. "the mean is between 78.5 and 84.5, with 98% confidence".</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>2. Point Estimation</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Point estimation gives a single value as the estimate of an unknown population parameter. For example, the sample mean \(\bar{x}\) is often used as a point estimate of the population mean \(\mu\).
+                </div>
+                <h3>Properties of a Good Point Estimator</h3>
+                <table class="comparison-table">
+                    <thead><tr><th>Property</th><th>Meaning</th><th>In plain words</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Unbiasedness</strong></td><td>The expected value of the estimator equals the true population parameter.</td><td>On average, it hits the target — no systematic over- or under-shooting.</td></tr>
+                        <tr><td><strong>Consistency</strong></td><td>As the sample size increases, the estimator becomes more accurate.</td><td>More data → closer to the truth.</td></tr>
+                        <tr><td><strong>Efficiency</strong></td><td>Among all unbiased estimators, the one with the smallest variance is preferred.</td><td>Of the fair estimators, pick the least jumpy one.</td></tr>
+                        <tr><td><strong>Sufficiency</strong></td><td>The estimator uses all the information in the data relevant to the parameter.</td><td>It doesn't throw any useful information away.</td></tr>
+                    </tbody>
+                </table>
+                <h3>Unbiased Estimates of the Mean and Variance</h3>
+                <p>Questions often give you only the totals \(\sum x\) and \(\sum x^2\):</p>
+                <div class="formula-box">
+                    <div class="formula-label">Unbiased Estimates</div>
+                    \[\bar{x} = \frac{\sum x}{n} \qquad\qquad s^2 = \frac{1}{n-1}\left(\sum x^2 - \frac{(\sum x)^2}{n}\right)\]
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">📎 Supplementary</div>
+                    <p>The \(s^2\) formula isn't in the Estimation handout, but <a href="worksheet-02.html">Worksheet 02</a> needs it (Questions B2 and B3). Dividing by \(n - 1\) rather than \(n\) is what makes it <em>unbiased</em> — the same \(n - 1\) as the sample variance in Unit 04.</p>
+                </div>
+            </section>
+
+            <section class="notes-section">
+                <h2>3. Interval Estimation — Confidence Intervals</h2>
+                <div class="definition-box">
+                    <strong>Definition:</strong> Interval estimation calculates a range of values, called a <em>confidence interval</em>, within which the population parameter is likely to lie.
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">Every Confidence Interval</div>
+                    \[\text{Estimate} \pm \text{Margin of Error}\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">CI for a Population Mean</div>
+                    \[\bar{x} \pm z\,\frac{\sigma}{\sqrt{n}}\]
+                </div>
+                <div class="formula-box">
+                    <div class="formula-label">CI for a Population Proportion</div>
+                    \[\hat{p} - z\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \;&lt;\; p \;&lt;\; \hat{p} + z\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \qquad\text{where } \hat{p} = \frac{x}{n}\]
+                    <p>\(x\) = number of successes, \(n\) = size of the sample.</p>
+                </div>
+                <div class="note-callout">
+                    <div class="callout-label">⚠️ Typo in the Handout</div>
+                    <p>The handout labels <em>both</em> formulas "CI (Confidence Interval population mean)". The second one, with \(\hat{p}\), is the interval for a population <strong>proportion</strong>.</p>
+                </div>
+                <h3>Where z Comes From</h3>
+                <figure class="viz"><svg viewBox="0 0 560 230" style="max-width:560px" role="img" aria-label="95% central area" xmlns="http://www.w3.org/2000/svg"><polygon points="149.7,188.0 149.7,167.4 152.0,166.1 154.3,164.7 156.6,163.2 158.9,161.6 161.2,160.0 163.5,158.4 165.8,156.6 168.1,154.8 170.5,152.9 172.8,151.0 175.1,149.0 177.4,146.9 179.7,144.8 182.0,142.6 184.3,140.3 186.6,138.0 188.9,135.6 191.2,133.2 193.5,130.7 195.8,128.2 198.1,125.6 200.4,123.0 202.7,120.3 205.0,117.6 207.3,114.9 209.6,112.2 211.9,109.4 214.2,106.6 216.6,103.9 218.9,101.1 221.2,98.3 223.5,95.5 225.8,92.8 228.1,90.0 230.4,87.3 232.7,84.7 235.0,82.1 237.3,79.5 239.6,77.0 241.9,74.5 244.2,72.1 246.5,69.8 248.8,67.6 251.1,65.4 253.4,63.4 255.7,61.5 258.0,59.6 260.3,57.9 262.6,56.3 265.0,54.8 267.3,53.4 269.6,52.2 271.9,51.1 274.2,50.2 276.5,49.4 278.8,48.7 281.1,48.2 283.4,47.8 285.7,47.6 288.0,47.5 290.3,47.6 292.6,47.8 294.9,48.2 297.2,48.7 299.5,49.4 301.8,50.2 304.1,51.1 306.4,52.2 308.7,53.4 311.0,54.8 313.4,56.3 315.7,57.9 318.0,59.6 320.3,61.5 322.6,63.4 324.9,65.4 327.2,67.6 329.5,69.8 331.8,72.1 334.1,74.5 336.4,77.0 338.7,79.5 341.0,82.1 343.3,84.7 345.6,87.3 347.9,90.0 350.2,92.8 352.5,95.5 354.8,98.3 357.1,101.1 359.4,103.9 361.8,106.6 364.1,109.4 366.4,112.2 368.7,114.9 371.0,117.6 373.3,120.3 375.6,123.0 377.9,125.6 380.2,128.2 382.5,130.7 384.8,133.2 387.1,135.6 389.4,138.0 391.7,140.3 394.0,142.6 396.3,144.8 398.6,146.9 400.9,149.0 403.2,151.0 405.5,152.9 407.9,154.8 410.2,156.6 412.5,158.4 414.8,160.0 417.1,161.6 419.4,163.2 421.7,164.7 424.0,166.1 426.3,167.4 426.3,188.0" fill="rgba(52,211,153,0.38)" stroke="none"/><polygon points="34.0,188.0 34.0,187.8 35.0,187.8 35.9,187.8 36.9,187.8 37.9,187.7 38.8,187.7 39.8,187.7 40.7,187.7 41.7,187.7 42.7,187.7 43.6,187.7 44.6,187.6 45.6,187.6 46.5,187.6 47.5,187.6 48.5,187.6 49.4,187.5 50.4,187.5 51.4,187.5 52.3,187.5 53.3,187.4 54.2,187.4 55.2,187.4 56.2,187.4 57.1,187.3 58.1,187.3 59.1,187.3 60.0,187.2 61.0,187.2 62.0,187.2 62.9,187.1 63.9,187.1 64.9,187.1 65.8,187.0 66.8,187.0 67.7,186.9 68.7,186.9 69.7,186.8 70.6,186.8 71.6,186.7 72.6,186.7 73.5,186.6 74.5,186.6 75.5,186.5 76.4,186.4 77.4,186.4 78.4,186.3 79.3,186.2 80.3,186.2 81.2,186.1 82.2,186.0 83.2,185.9 84.1,185.8 85.1,185.8 86.1,185.7 87.0,185.6 88.0,185.5 89.0,185.4 89.9,185.3 90.9,185.2 91.9,185.1 92.8,184.9 93.8,184.8 94.7,184.7 95.7,184.6 96.7,184.4 97.6,184.3 98.6,184.2 99.6,184.0 100.5,183.9 101.5,183.7 102.5,183.6 103.4,183.4 104.4,183.2 105.4,183.1 106.3,182.9 107.3,182.7 108.2,182.5 109.2,182.3 110.2,182.1 111.1,181.9 112.1,181.7 113.1,181.5 114.0,181.3 115.0,181.0 116.0,180.8 116.9,180.6 117.9,180.3 118.9,180.1 119.8,179.8 120.8,179.5 121.7,179.3 122.7,179.0 123.7,178.7 124.6,178.4 125.6,178.1 126.6,177.7 127.5,177.4 128.5,177.1 129.5,176.7 130.4,176.4 131.4,176.0 132.4,175.7 133.3,175.3 134.3,174.9 135.2,174.5 136.2,174.1 137.2,173.7 138.1,173.3 139.1,172.8 140.1,172.4 141.0,171.9 142.0,171.5 143.0,171.0 143.9,170.5 144.9,170.0 145.9,169.5 146.8,169.0 147.8,168.5 148.7,168.0 149.7,167.4 149.7,188.0" fill="rgba(248,113,113,0.42)" stroke="none"/><polygon points="426.3,188.0 426.3,167.4 427.3,168.0 428.2,168.5 429.2,169.0 430.1,169.5 431.1,170.0 432.1,170.5 433.0,171.0 434.0,171.5 435.0,171.9 435.9,172.4 436.9,172.8 437.9,173.3 438.8,173.7 439.8,174.1 440.8,174.5 441.7,174.9 442.7,175.3 443.6,175.7 444.6,176.0 445.6,176.4 446.5,176.7 447.5,177.1 448.5,177.4 449.4,177.7 450.4,178.1 451.4,178.4 452.3,178.7 453.3,179.0 454.3,179.3 455.2,179.5 456.2,179.8 457.1,180.1 458.1,180.3 459.1,180.6 460.0,180.8 461.0,181.0 462.0,181.3 462.9,181.5 463.9,181.7 464.9,181.9 465.8,182.1 466.8,182.3 467.8,182.5 468.7,182.7 469.7,182.9 470.6,183.1 471.6,183.2 472.6,183.4 473.5,183.6 474.5,183.7 475.5,183.9 476.4,184.0 477.4,184.2 478.4,184.3 479.3,184.4 480.3,184.6 481.3,184.7 482.2,184.8 483.2,184.9 484.1,185.1 485.1,185.2 486.1,185.3 487.0,185.4 488.0,185.5 489.0,185.6 489.9,185.7 490.9,185.8 491.9,185.8 492.8,185.9 493.8,186.0 494.8,186.1 495.7,186.2 496.7,186.2 497.6,186.3 498.6,186.4 499.6,186.4 500.5,186.5 501.5,186.6 502.5,186.6 503.4,186.7 504.4,186.7 505.4,186.8 506.3,186.8 507.3,186.9 508.3,186.9 509.2,187.0 510.2,187.0 511.1,187.1 512.1,187.1 513.1,187.1 514.0,187.2 515.0,187.2 516.0,187.2 516.9,187.3 517.9,187.3 518.9,187.3 519.8,187.4 520.8,187.4 521.8,187.4 522.7,187.4 523.7,187.5 524.6,187.5 525.6,187.5 526.6,187.5 527.5,187.6 528.5,187.6 529.5,187.6 530.4,187.6 531.4,187.6 532.4,187.7 533.3,187.7 534.3,187.7 535.3,187.7 536.2,187.7 537.2,187.7 538.1,187.7 539.1,187.8 540.1,187.8 541.0,187.8 542.0,187.8 542.0,188.0" fill="rgba(248,113,113,0.42)" stroke="none"/><line x1="34" y1="188" x2="542" y2="188" stroke="#6a6a82" stroke-width="1.4"/><path d="M34.0,187.8 L36.1,187.8 L38.2,187.7 L40.3,187.7 L42.5,187.7 L44.6,187.6 L46.7,187.6 L48.8,187.6 L50.9,187.5 L53.0,187.5 L55.2,187.4 L57.3,187.3 L59.4,187.3 L61.5,187.2 L63.6,187.1 L65.8,187.0 L67.9,186.9 L70.0,186.8 L72.1,186.7 L74.2,186.6 L76.3,186.4 L78.5,186.3 L80.6,186.1 L82.7,186.0 L84.8,185.8 L86.9,185.6 L89.0,185.4 L91.2,185.1 L93.3,184.9 L95.4,184.6 L97.5,184.3 L99.6,184.0 L101.7,183.7 L103.8,183.3 L106.0,183.0 L108.1,182.6 L110.2,182.1 L112.3,181.7 L114.4,181.2 L116.6,180.7 L118.7,180.1 L120.8,179.5 L122.9,178.9 L125.0,178.3 L127.1,177.6 L129.2,176.8 L131.4,176.0 L133.5,175.2 L135.6,174.4 L137.7,173.5 L139.8,172.5 L141.9,171.5 L144.1,170.5 L146.2,169.4 L148.3,168.2 L150.4,167.0 L152.5,165.8 L154.7,164.4 L156.8,163.1 L158.9,161.7 L161.0,160.2 L163.1,158.7 L165.2,157.1 L167.3,155.4 L169.5,153.7 L171.6,152.0 L173.7,150.2 L175.8,148.3 L177.9,146.4 L180.0,144.4 L182.2,142.4 L184.3,140.3 L186.4,138.2 L188.5,136.0 L190.6,133.8 L192.8,131.5 L194.9,129.2 L197.0,126.9 L199.1,124.5 L201.2,122.1 L203.3,119.6 L205.5,117.1 L207.6,114.6 L209.7,112.1 L211.8,109.6 L213.9,107.0 L216.0,104.5 L218.2,101.9 L220.3,99.4 L222.4,96.8 L224.5,94.3 L226.6,91.8 L228.7,89.3 L230.8,86.8 L233.0,84.4 L235.1,81.9 L237.2,79.6 L239.3,77.3 L241.4,75.0 L243.6,72.8 L245.7,70.6 L247.8,68.6 L249.9,66.6 L252.0,64.6 L254.1,62.8 L256.2,61.0 L258.4,59.4 L260.5,57.8 L262.6,56.3 L264.7,54.9 L266.8,53.7 L269.0,52.5 L271.1,51.5 L273.2,50.6 L275.3,49.8 L277.4,49.1 L279.5,48.5 L281.6,48.1 L283.8,47.8 L285.9,47.6 L288.0,47.5 L290.1,47.6 L292.2,47.8 L294.3,48.1 L296.5,48.5 L298.6,49.1 L300.7,49.8 L302.8,50.6 L304.9,51.5 L307.1,52.5 L309.2,53.7 L311.3,54.9 L313.4,56.3 L315.5,57.8 L317.6,59.4 L319.8,61.0 L321.9,62.8 L324.0,64.6 L326.1,66.6 L328.2,68.6 L330.3,70.6 L332.4,72.8 L334.6,75.0 L336.7,77.3 L338.8,79.6 L340.9,81.9 L343.0,84.4 L345.2,86.8 L347.3,89.3 L349.4,91.8 L351.5,94.3 L353.6,96.8 L355.7,99.4 L357.9,101.9 L360.0,104.5 L362.1,107.0 L364.2,109.6 L366.3,112.1 L368.4,114.6 L370.6,117.1 L372.7,119.6 L374.8,122.1 L376.9,124.5 L379.0,126.9 L381.1,129.2 L383.2,131.5 L385.4,133.8 L387.5,136.0 L389.6,138.2 L391.7,140.3 L393.8,142.4 L395.9,144.4 L398.1,146.4 L400.2,148.3 L402.3,150.2 L404.4,152.0 L406.5,153.7 L408.7,155.4 L410.8,157.1 L412.9,158.7 L415.0,160.2 L417.1,161.7 L419.2,163.1 L421.3,164.4 L423.5,165.8 L425.6,167.0 L427.7,168.2 L429.8,169.4 L431.9,170.5 L434.1,171.5 L436.2,172.5 L438.3,173.5 L440.4,174.4 L442.5,175.2 L444.6,176.0 L446.7,176.8 L448.9,177.6 L451.0,178.3 L453.1,178.9 L455.2,179.5 L457.3,180.1 L459.4,180.7 L461.6,181.2 L463.7,181.7 L465.8,182.1 L467.9,182.6 L470.0,183.0 L472.1,183.3 L474.3,183.7 L476.4,184.0 L478.5,184.3 L480.6,184.6 L482.7,184.9 L484.9,185.1 L487.0,185.4 L489.1,185.6 L491.2,185.8 L493.3,186.0 L495.4,186.1 L497.5,186.3 L499.7,186.4 L501.8,186.6 L503.9,186.7 L506.0,186.8 L508.1,186.9 L510.2,187.0 L512.4,187.1 L514.5,187.2 L516.6,187.3 L518.7,187.3 L520.8,187.4 L523.0,187.5 L525.1,187.5 L527.2,187.6 L529.3,187.6 L531.4,187.6 L533.5,187.7 L535.7,187.7 L537.8,187.7 L539.9,187.8 L542.0,187.8" fill="none" stroke="#34d399" stroke-width="2.6"/><line x1="149.7" y1="188" x2="149.7" y2="193" stroke="#6a6a82"/><text x="149.7" y="207.0" font-family="Inter,system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#8a8aa2" font-weight="400" >−1.96</text><line x1="288.0" y1="188" x2="288.0" y2="193" stroke="#6a6a82"/><text x="288.0" y="207.0" font-family="Inter,system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#8a8aa2" font-weight="400" >0</text><line x1="426.3" y1="188" x2="426.3" y2="193" stroke="#6a6a82"/><text x="426.3" y="207.0" font-family="Inter,system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#8a8aa2" font-weight="400" >1.96</text><text x="288.0" y="128.1" font-family="Inter,system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700" >95%</text></svg><figcaption>A 95% interval uses z = 1.96 because 95% of the standard normal lies between −1.96 and 1.96 (2.5% in each red tail).</figcaption></figure>
+                <table class="comparison-table">
+                    <thead><tr><th>Confidence level</th><th>90%</th><th>95%</th><th>98%</th><th>99%</th></tr></thead>
+                    <tbody><tr><td><strong>z</strong></td><td>1.645</td><td>1.960</td><td>2.326</td><td>2.576</td></tr></tbody>
+                </table>
+                <p class="simple">Think of the interval as a net you throw around your estimate. A wider net (bigger \(z\)) is more likely to catch the true value, so higher confidence means a wider interval. A bigger sample (larger \(n\)) shrinks the margin, so more data means a tighter net.</p>
+                <h3>Working Backwards</h3>
+                <table class="comparison-table">
+                    <thead><tr><th>You're given</th><th>Find it with</th></tr></thead>
+                    <tbody>
+                        <tr><td>The interval's width</td><td>\(\text{margin} = \tfrac{1}{2}\text{width}\), then \(z = \text{margin} \div SE\)</td></tr>
+                        <tr><td>\(z\), want the confidence level</td><td>\(\text{confidence} = 2\Phi(z) - 1\)</td></tr>
+                        <tr><td>The interval, want \(\sigma\) (or \(s\))</td><td>\(\text{margin} = z\,\sigma/\sqrt{n}\), so \(\sigma = \text{margin} \times \sqrt{n} / z\)</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Applications</h3>
+                <ul>
+                    <li>Estimating the average income of a population from a sample survey.</li>
+                    <li>Determining the proportion of voters who support a particular candidate.</li>
+                    <li>Estimating the effect of a drug in clinical trials by comparing sample outcomes.</li>
+                </ul>
+            </section>
+
+            <section class="notes-section">
+                <h2>4. Handout Questions</h2>
+
+                <h3>Q1 — Train Journey Time</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Q1</div>
+                    <p>The time taken in minutes for a certain daily train journey has a normal distribution with standard deviation 5.8. For a random sample of 20 days the journey times were noted, and the mean journey time was found to be 81.5 minutes.</p>
+                    <p>(a) Calculate a 98% confidence interval for the population mean journey time. <strong>[3]</strong></p>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <p class="simple">We know \(\sigma\), so this is a direct plug-in: sample mean ± \(z\) × (\(\sigma\) ÷ √n). For 98%, \(z = 2.326\).</p>
+                        \[SE = \frac{5.8}{\sqrt{20}} = 1.2969 \qquad \text{margin} = 2.326 \times 1.2969 = 3.017\]
+                        \[81.5 \pm 3.017 \;\Longrightarrow\; (78.48,\; 84.52)\]
+                        <figure class="viz"><svg viewBox="0 0 560 114" style="max-width:560px" role="img" aria-label="98% interval for journey time" xmlns="http://www.w3.org/2000/svg"><line x1="40" y1="84" x2="520" y2="84" stroke="#6a6a82" stroke-width="1.4"/><line x1="40.0" y1="84" x2="40.0" y2="89" stroke="#6a6a82"/><text x="40.0" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >77</text><line x1="93.3" y1="84" x2="93.3" y2="89" stroke="#6a6a82"/><text x="93.3" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >78</text><line x1="146.7" y1="84" x2="146.7" y2="89" stroke="#6a6a82"/><text x="146.7" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >79</text><line x1="200.0" y1="84" x2="200.0" y2="89" stroke="#6a6a82"/><text x="200.0" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >80</text><line x1="253.3" y1="84" x2="253.3" y2="89" stroke="#6a6a82"/><text x="253.3" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >81</text><line x1="306.7" y1="84" x2="306.7" y2="89" stroke="#6a6a82"/><text x="306.7" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >82</text><line x1="360.0" y1="84" x2="360.0" y2="89" stroke="#6a6a82"/><text x="360.0" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >83</text><line x1="413.3" y1="84" x2="413.3" y2="89" stroke="#6a6a82"/><text x="413.3" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >84</text><line x1="466.7" y1="84" x2="466.7" y2="89" stroke="#6a6a82"/><text x="466.7" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >85</text><line x1="520.0" y1="84" x2="520.0" y2="89" stroke="#6a6a82"/><text x="520.0" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >86</text><line x1="118.9" y1="38" x2="441.1" y2="38" stroke="#34d399" stroke-width="6" stroke-linecap="round"/><circle cx="280.0" cy="38" r="5" fill="#fff"/><text x="110.9" y="42.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="end" fill="#34d399" font-weight="600" >78.48</text><text x="449.1" y="42.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="start" fill="#34d399" font-weight="600" >84.52</text><text x="280.0" y="28.0" font-family="Inter,system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#c8c8d8" font-weight="600" >sample mean 81.5</text></svg><figcaption>98% confidence interval: 81.5 ± 3.02 minutes.</figcaption></figure>
+                        <span class="answer">98% CI ≈ (78.5, 84.5) minutes</span>
+                    </div>
+                </details>
+
+                <h3>Q2 — Finding σ from an Interval</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Q2</div>
+                    <p>The widths, \(w\) cm, of a random sample of 150 leaves of a certain kind were measured. The sample mean of \(w\) was found to be 3.12 cm. Using this sample, an approximate 95% confidence interval for the population mean of the widths in centimetres was found to be [3.01, 3.23].</p>
+                    <p>(a) Calculate an estimate of the population standard deviation. <strong>[3]</strong></p>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <p class="simple">This runs the formula backwards. The interval is centred on 3.12 and reaches 0.11 either side. That 0.11 is the margin, which equals 1.96 × σ ÷ √150 — so solve for σ.</p>
+                        <figure class="viz"><svg viewBox="0 0 560 114" style="max-width:560px" role="img" aria-label="given 95% interval for leaf widths" xmlns="http://www.w3.org/2000/svg"><line x1="40" y1="84" x2="520" y2="84" stroke="#6a6a82" stroke-width="1.4"/><line x1="40.0" y1="84" x2="40.0" y2="89" stroke="#6a6a82"/><text x="40.0" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >2.95</text><line x1="124.7" y1="84" x2="124.7" y2="89" stroke="#6a6a82"/><text x="124.7" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >3.01</text><line x1="280.0" y1="84" x2="280.0" y2="89" stroke="#6a6a82"/><text x="280.0" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >3.12</text><line x1="435.3" y1="84" x2="435.3" y2="89" stroke="#6a6a82"/><text x="435.3" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >3.23</text><line x1="520.0" y1="84" x2="520.0" y2="89" stroke="#6a6a82"/><text x="520.0" y="103.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="middle" fill="#8a8aa2" font-weight="400" >3.29</text><line x1="124.7" y1="38" x2="435.3" y2="38" stroke="#34d399" stroke-width="6" stroke-linecap="round"/><circle cx="280.0" cy="38" r="5" fill="#fff"/><text x="116.7" y="42.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="end" fill="#34d399" font-weight="600" >3.01</text><text x="443.3" y="42.0" font-family="Inter,system-ui,sans-serif" font-size="11" text-anchor="start" fill="#34d399" font-weight="600" >3.23</text><text x="280.0" y="28.0" font-family="Inter,system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#c8c8d8" font-weight="600" >half-width = 0.11</text></svg><figcaption>Read backwards: the half-width 0.11 equals 1.96 × s/√150, so you can solve for s.</figcaption></figure>
+                        \[\text{margin} = 3.23 - 3.12 = 0.11\]
+                        \[1.96 \times \frac{\sigma}{\sqrt{150}} = 0.11 \;\Longrightarrow\; \sigma = \frac{0.11\sqrt{150}}{1.96} = 0.687\]
+                        <span class="answer">σ ≈ 0.687 cm</span>
+                    </div>
+                </details>
+
+                <h3>Q3 — Finding the Confidence Level</h3>
+                <div class="example-box">
+                    <div class="example-label">📝 Q3</div>
+                    <p>A student wishes to estimate the proportion, \(p\), of students at her college who have exactly one brother. She surveys a random sample of 50 students at her college and finds that 18 of them have exactly one brother. She calculates an approximate \(\alpha\)% confidence interval for \(p\) and finds that the lower limit of the confidence interval is 0.244 correct to 3 significant figures.</p>
+                    <p>Find \(\alpha\) correct to the nearest integer. <strong>[4]</strong></p>
+                </div>
+                <details class="solution">
+                    <summary>Show solution</summary>
+                    <div class="solution-body">
+                        <p class="simple">Work out how far the lower limit is below \(\hat{p}\), measured in standard errors. That distance is \(z\). Then the area between \(-z\) and \(z\) is the confidence level.</p>
+                        <div class="step">Sample proportion and standard error</div>
+                        \[\hat{p} = \frac{18}{50} = 0.36 \qquad SE = \sqrt{\frac{0.36 \times 0.64}{50}} = 0.06788\]
+                        <div class="step">Find z from the lower limit</div>
+                        \[0.36 - z(0.06788) = 0.244 \;\Longrightarrow\; z = \frac{0.116}{0.06788} = 1.709\]
+                        <div class="step">Turn z into a confidence level</div>
+                        \[\Phi(1.709) = 0.9563 \;\Longrightarrow\; \text{confidence} = 2(0.9563) - 1 = 0.9125\]
+                        <figure class="viz"><svg viewBox="0 0 560 230" style="max-width:560px" role="img" aria-label="central 91% area" xmlns="http://www.w3.org/2000/svg"><polygon points="167.4,188.0 167.4,155.4 169.4,153.8 171.4,152.1 173.4,150.4 175.5,148.6 177.5,146.8 179.5,145.0 181.5,143.0 183.5,141.1 185.5,139.1 187.5,137.0 189.5,135.0 191.5,132.8 193.5,130.7 195.6,128.4 197.6,126.2 199.6,123.9 201.6,121.6 203.6,119.3 205.6,117.0 207.6,114.6 209.6,112.2 211.6,109.8 213.6,107.4 215.7,104.9 217.7,102.5 219.7,100.1 221.7,97.7 223.7,95.3 225.7,92.9 227.7,90.5 229.7,88.1 231.7,85.8 233.7,83.5 235.7,81.2 237.8,79.0 239.8,76.8 241.8,74.6 243.8,72.5 245.8,70.5 247.8,68.5 249.8,66.6 251.8,64.8 253.8,63.0 255.8,61.4 257.9,59.8 259.9,58.2 261.9,56.8 263.9,55.5 265.9,54.2 267.9,53.1 269.9,52.0 271.9,51.1 273.9,50.3 275.9,49.5 278.0,48.9 280.0,48.4 282.0,48.0 284.0,47.7 286.0,47.6 288.0,47.5 290.0,47.6 292.0,47.7 294.0,48.0 296.0,48.4 298.0,48.9 300.1,49.5 302.1,50.3 304.1,51.1 306.1,52.0 308.1,53.1 310.1,54.2 312.1,55.5 314.1,56.8 316.1,58.2 318.1,59.8 320.2,61.4 322.2,63.0 324.2,64.8 326.2,66.6 328.2,68.5 330.2,70.5 332.2,72.5 334.2,74.6 336.2,76.8 338.2,79.0 340.3,81.2 342.3,83.5 344.3,85.8 346.3,88.1 348.3,90.5 350.3,92.9 352.3,95.3 354.3,97.7 356.3,100.1 358.3,102.5 360.3,104.9 362.4,107.4 364.4,109.8 366.4,112.2 368.4,114.6 370.4,117.0 372.4,119.3 374.4,121.6 376.4,123.9 378.4,126.2 380.4,128.4 382.5,130.7 384.5,132.8 386.5,135.0 388.5,137.0 390.5,139.1 392.5,141.1 394.5,143.0 396.5,145.0 398.5,146.8 400.5,148.6 402.6,150.4 404.6,152.1 406.6,153.8 408.6,155.4 408.6,188.0" fill="rgba(52,211,153,0.38)" stroke="none"/><line x1="34" y1="188" x2="542" y2="188" stroke="#6a6a82" stroke-width="1.4"/><path d="M34.0,187.8 L36.1,187.8 L38.2,187.7 L40.3,187.7 L42.5,187.7 L44.6,187.6 L46.7,187.6 L48.8,187.6 L50.9,187.5 L53.0,187.5 L55.2,187.4 L57.3,187.3 L59.4,187.3 L61.5,187.2 L63.6,187.1 L65.8,187.0 L67.9,186.9 L70.0,186.8 L72.1,186.7 L74.2,186.6 L76.3,186.4 L78.5,186.3 L80.6,186.1 L82.7,186.0 L84.8,185.8 L86.9,185.6 L89.0,185.4 L91.2,185.1 L93.3,184.9 L95.4,184.6 L97.5,184.3 L99.6,184.0 L101.7,183.7 L103.8,183.3 L106.0,183.0 L108.1,182.6 L110.2,182.1 L112.3,181.7 L114.4,181.2 L116.6,180.7 L118.7,180.1 L120.8,179.5 L122.9,178.9 L125.0,178.3 L127.1,177.6 L129.2,176.8 L131.4,176.0 L133.5,175.2 L135.6,174.4 L137.7,173.5 L139.8,172.5 L141.9,171.5 L144.1,170.5 L146.2,169.4 L148.3,168.2 L150.4,167.0 L152.5,165.8 L154.7,164.4 L156.8,163.1 L158.9,161.7 L161.0,160.2 L163.1,158.7 L165.2,157.1 L167.3,155.4 L169.5,153.7 L171.6,152.0 L173.7,150.2 L175.8,148.3 L177.9,146.4 L180.0,144.4 L182.2,142.4 L184.3,140.3 L186.4,138.2 L188.5,136.0 L190.6,133.8 L192.8,131.5 L194.9,129.2 L197.0,126.9 L199.1,124.5 L201.2,122.1 L203.3,119.6 L205.5,117.1 L207.6,114.6 L209.7,112.1 L211.8,109.6 L213.9,107.0 L216.0,104.5 L218.2,101.9 L220.3,99.4 L222.4,96.8 L224.5,94.3 L226.6,91.8 L228.7,89.3 L230.8,86.8 L233.0,84.4 L235.1,81.9 L237.2,79.6 L239.3,77.3 L241.4,75.0 L243.6,72.8 L245.7,70.6 L247.8,68.6 L249.9,66.6 L252.0,64.6 L254.1,62.8 L256.2,61.0 L258.4,59.4 L260.5,57.8 L262.6,56.3 L264.7,54.9 L266.8,53.7 L269.0,52.5 L271.1,51.5 L273.2,50.6 L275.3,49.8 L277.4,49.1 L279.5,48.5 L281.6,48.1 L283.8,47.8 L285.9,47.6 L288.0,47.5 L290.1,47.6 L292.2,47.8 L294.3,48.1 L296.5,48.5 L298.6,49.1 L300.7,49.8 L302.8,50.6 L304.9,51.5 L307.1,52.5 L309.2,53.7 L311.3,54.9 L313.4,56.3 L315.5,57.8 L317.6,59.4 L319.8,61.0 L321.9,62.8 L324.0,64.6 L326.1,66.6 L328.2,68.6 L330.3,70.6 L332.4,72.8 L334.6,75.0 L336.7,77.3 L338.8,79.6 L340.9,81.9 L343.0,84.4 L345.2,86.8 L347.3,89.3 L349.4,91.8 L351.5,94.3 L353.6,96.8 L355.7,99.4 L357.9,101.9 L360.0,104.5 L362.1,107.0 L364.2,109.6 L366.3,112.1 L368.4,114.6 L370.6,117.1 L372.7,119.6 L374.8,122.1 L376.9,124.5 L379.0,126.9 L381.1,129.2 L383.2,131.5 L385.4,133.8 L387.5,136.0 L389.6,138.2 L391.7,140.3 L393.8,142.4 L395.9,144.4 L398.1,146.4 L400.2,148.3 L402.3,150.2 L404.4,152.0 L406.5,153.7 L408.7,155.4 L410.8,157.1 L412.9,158.7 L415.0,160.2 L417.1,161.7 L419.2,163.1 L421.3,164.4 L423.5,165.8 L425.6,167.0 L427.7,168.2 L429.8,169.4 L431.9,170.5 L434.1,171.5 L436.2,172.5 L438.3,173.5 L440.4,174.4 L442.5,175.2 L444.6,176.0 L446.7,176.8 L448.9,177.6 L451.0,178.3 L453.1,178.9 L455.2,179.5 L457.3,180.1 L459.4,180.7 L461.6,181.2 L463.7,181.7 L465.8,182.1 L467.9,182.6 L470.0,183.0 L472.1,183.3 L474.3,183.7 L476.4,184.0 L478.5,184.3 L480.6,184.6 L482.7,184.9 L484.9,185.1 L487.0,185.4 L489.1,185.6 L491.2,185.8 L493.3,186.0 L495.4,186.1 L497.5,186.3 L499.7,186.4 L501.8,186.6 L503.9,186.7 L506.0,186.8 L508.1,186.9 L510.2,187.0 L512.4,187.1 L514.5,187.2 L516.6,187.3 L518.7,187.3 L520.8,187.4 L523.0,187.5 L525.1,187.5 L527.2,187.6 L529.3,187.6 L531.4,187.6 L533.5,187.7 L535.7,187.7 L537.8,187.7 L539.9,187.8 L542.0,187.8" fill="none" stroke="#34d399" stroke-width="2.6"/><line x1="167.4" y1="188" x2="167.4" y2="193" stroke="#6a6a82"/><text x="167.4" y="207.0" font-family="Inter,system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#8a8aa2" font-weight="400" >−1.709</text><line x1="288.0" y1="188" x2="288.0" y2="193" stroke="#6a6a82"/><text x="288.0" y="207.0" font-family="Inter,system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#8a8aa2" font-weight="400" >0</text><line x1="408.6" y1="188" x2="408.6" y2="193" stroke="#6a6a82"/><text x="408.6" y="207.0" font-family="Inter,system-ui,sans-serif" font-size="12" text-anchor="middle" fill="#8a8aa2" font-weight="400" >1.709</text><text x="288.0" y="128.1" font-family="Inter,system-ui,sans-serif" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700" >91.3%</text></svg><figcaption>The lower limit 0.244 is 1.709 standard errors below p̂ = 0.36. The area between ±1.709 is about 91%, so α = 91.</figcaption></figure>
+                        <p>Since 0.244 is rounded, the true lower limit lies between 0.2435 and 0.2445. That gives a confidence between 91.1% and 91.4%, so the nearest integer is safely 91.</p>
+                        <span class="answer">α = 91</span>
+                    </div>
+                </details>
+                <div class="note-callout">
+                    <div class="callout-label">✏️ More Practice</div>
+                    <p>Part B of <a href="worksheet-02.html">Worksheet 02</a> has four more confidence-interval questions, with worked solutions.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>MATH-2205 Probability &amp; Statistics — United International University</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
