@@ -1494,3 +1494,22 @@ mjx-container,
   .nav-links::-webkit-scrollbar { display: none; }
   .nav-links a { white-space: nowrap; flex-shrink: 0; }
 }
+
+/* ---------- Worksheet questions: screenshots of the original handout ---------- */
+.q-paper {
+  margin: 0.6rem 0 0.15rem;
+  padding: 0.7rem 0.85rem;
+  background: #ffffff;
+  border: 1px solid rgba(24, 24, 48, 0.10);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.q-paper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* On the dark theme, take the edge off the bright white page */
+[data-theme="dark"] .q-paper { border-color: rgba(255, 255, 255, 0.10); filter: brightness(0.93); }
