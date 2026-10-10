@@ -386,3 +386,14 @@
   color: var(--accent-final);
   border: 1px solid rgba(16, 185, 129, 0.2);
 }
+
+/* ─── LIGHT THEME (see js/theme.js) ─── */
+[data-theme="light"] .fs-card:hover { border-color: rgba(24, 24, 48, 0.18); }
+[data-theme="light"] .fs-sub-box { background: rgba(24, 24, 48, 0.025); }
+[data-theme="light"] .fs-mini-table td { border-bottom-color: rgba(24, 24, 48, 0.07); }
+[data-theme="light"] .fs-mini-table td.yes { color: #b45309; }
+[data-theme="light"] .fs-mini-table td.no  { color: #047857; }
+[data-theme="light"] .t-label.cat  { color: #be185d; }
+[data-theme="light"] .t-label.num  { color: #1d4ed8; }
+[data-theme="light"] .t-label.disc { color: #6d28d9; }
+[data-theme="light"] .t-label.cont { color: #047857; }

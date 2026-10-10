@@ -1331,5 +1331,166 @@ footer {
   text-decoration-color: currentColor;
 }
 
-/* Keep Greek letters lower-case inside upper-case step labels (μ must not turn into "M") */
-.solution-body .step .nc { text-transform: none; }
+/* Labels are styled upper-case, and that inherits into maths: μ → "M", σ → "Σ" (a sum!),
+   x̄ → "X̄". Keep rendered maths and wrapped Greek letters exactly as written. */
+mjx-container,
+.nc { text-transform: none; }
+
+/* ============================================================
+   LIGHT THEME
+   Activated by js/theme.js setting <html data-theme="light">.
+   The dark theme above is the default and is left untouched.
+   ============================================================ */
+:root { color-scheme: dark; }
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-primary: #f6f6fb;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-card-hover: #ffffff;
+  --bg-glass: rgba(24, 24, 48, 0.035);
+  --bg-glass-border: rgba(24, 24, 48, 0.10);
+
+  --text-primary: #26263b;
+  --text-secondary: #4b4b63;
+  --text-muted: #686880;
+  --text-heading: #12121f;
+
+  --accent-primary: #5a4fe0;
+  --accent-secondary: #6d28d9;
+  --accent-tertiary: #4f46e5;
+  --accent-glow: rgba(108, 99, 255, 0.16);
+
+  --gradient-hero: linear-gradient(135deg, #eef0ff 0%, #f4f1ff 50%, #eef7f4 100%);
+
+  --accent-mid: #5a4fe0;
+  --accent-final: #047857;
+  --accent-mid-glow: rgba(108, 99, 255, 0.16);
+  --accent-final-glow: rgba(16, 185, 129, 0.16);
+
+  --border-subtle: rgba(24, 24, 48, 0.08);
+  --border-card: rgba(24, 24, 48, 0.11);
+
+  --shadow-sm: 0 2px 8px rgba(24, 24, 48, 0.06);
+  --shadow-md: 0 4px 18px rgba(24, 24, 48, 0.08);
+  --shadow-lg: 0 8px 32px rgba(24, 24, 48, 0.10);
+}
+
+/* Background glow: softer on white */
+[data-theme="light"] body::before { opacity: 0.55; }
+
+/* Navbar */
+[data-theme="light"] .navbar { background: rgba(255, 255, 255, 0.86); }
+[data-theme="light"] .navbar.scrolled { background: rgba(255, 255, 255, 0.96); }
+
+/* Hover borders that were white-on-dark */
+[data-theme="light"] .topic-card:hover,
+[data-theme="light"] .key-concept:hover,
+[data-theme="light"] .key-concept-card:hover { border-color: rgba(24, 24, 48, 0.18); }
+
+/* Amber callouts and "In simple words" boxes */
+[data-theme="light"] .note-callout { background: rgba(251, 191, 36, 0.10); border-color: rgba(217, 119, 6, 0.25); border-left-color: #d97706; }
+[data-theme="light"] .note-callout .callout-label { color: #b45309; }
+[data-theme="light"] .solution-body .simple,
+[data-theme="light"] .notes-section .simple { background: rgba(251, 191, 36, 0.11); border-left-color: #d97706; }
+[data-theme="light"] .solution-body .simple::before,
+[data-theme="light"] .notes-section .simple::before { color: #b45309; }
+
+/* Purple example boxes read a little stronger on white */
+[data-theme="light"] .example-box { background: rgba(124, 58, 237, 0.05); border-color: rgba(124, 58, 237, 0.16); }
+
+/* In-content links */
+[data-theme="light"] .notes-container a { color: #5b21b6; text-decoration-color: rgba(91, 33, 182, 0.4); }
+[data-theme="light"] .final-page .notes-container a { color: #047857; text-decoration-color: rgba(4, 120, 87, 0.4); }
+
+/* Type I / II error grid */
+[data-theme="light"] .error-grid .eg-bad { background: rgba(220, 38, 38, 0.08); border-color: rgba(220, 38, 38, 0.28); }
+[data-theme="light"] .error-grid .eg-good { background: rgba(5, 150, 105, 0.08); border-color: rgba(5, 150, 105, 0.26); }
+
+/* Index navbar pills (moved out of inline styles) */
+.nav-pill-mid { background: rgba(108, 99, 255, 0.12); color: #a78bfa !important; border: 1px solid rgba(108, 99, 255, 0.2); }
+.nav-pill-final { background: rgba(16, 185, 129, 0.12); color: #34d399 !important; border: 1px solid rgba(16, 185, 129, 0.2); }
+[data-theme="light"] .nav-pill-mid { color: #5b21b6 !important; background: rgba(108, 99, 255, 0.10); }
+[data-theme="light"] .nav-pill-final { color: #047857 !important; background: rgba(16, 185, 129, 0.10); }
+
+.final-more {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 1rem;
+  background: rgba(16, 185, 129, 0.04);
+  border: 1px dashed rgba(16, 185, 129, 0.2);
+  border-radius: 16px;
+  color: var(--text-muted);
+}
+.final-more a { color: #34d399; }
+[data-theme="light"] .final-more a { color: #047857; }
+
+/* ---------- Diagrams ----------
+   The SVGs carry dark-theme colours as presentation attributes. CSS
+   declarations override presentation attributes, so in light mode each
+   exact colour is remapped here — no change to the SVG markup needed. */
+[data-theme="light"] .viz [fill="#ffffff"],
+[data-theme="light"] .viz [fill="#fff"]          { fill: #12121f; }
+[data-theme="light"] .viz [fill="#c8c8d8"]       { fill: #33334a; }
+[data-theme="light"] .viz [fill="#8a8aa2"]       { fill: #5e5e74; }
+[data-theme="light"] .viz [stroke="#6a6a82"]     { stroke: #9a9ab0; }
+[data-theme="light"] .viz [stroke="#fff"]        { stroke: #12121f; }
+[data-theme="light"] .viz [fill="#34d399"]       { fill: #059669; }
+[data-theme="light"] .viz [stroke="#34d399"]     { stroke: #059669; }
+[data-theme="light"] .viz [fill="#a78bfa"]       { fill: #7c3aed; }
+[data-theme="light"] .viz [stroke="#a78bfa"]     { stroke: #7c3aed; }
+[data-theme="light"] .viz [fill="#fbbf24"]       { fill: #c2410c; }
+[data-theme="light"] .viz [stroke="#fbbf24"]     { stroke: #d97706; }
+[data-theme="light"] .viz [fill="#f87171"]       { fill: #dc2626; }
+[data-theme="light"] .viz [fill="rgba(255,255,255,0.20)"] { fill: rgba(24, 24, 48, 0.14); }
+[data-theme="light"] .viz [fill="rgba(255,255,255,0.06)"] { fill: rgba(24, 24, 48, 0.035); }
+[data-theme="light"] .viz [stroke="rgba(255,255,255,0.35)"] { stroke: rgba(24, 24, 48, 0.28); }
+[data-theme="light"] .viz [fill="rgba(52,211,153,0.38)"]  { fill: rgba(16, 185, 129, 0.30); }
+[data-theme="light"] .viz [fill="rgba(167,139,250,0.38)"] { fill: rgba(124, 58, 237, 0.22); }
+[data-theme="light"] .viz [fill="rgba(251,191,36,0.38)"]  { fill: rgba(245, 158, 11, 0.30); }
+[data-theme="light"] .viz [fill="rgba(248,113,113,0.42)"] { fill: rgba(220, 38, 38, 0.26); }
+
+/* ---------- Theme toggle button ---------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 0.25rem;
+  padding: 0;
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-heading);
+  background: var(--bg-glass);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+.theme-toggle:hover { background: var(--bg-card-hover); border-color: var(--accent-primary); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
+
+/* Keep the link row right-aligned now that the toggle is a sibling of it */
+.nav-links { margin-left: auto; }
+.navbar .links + .theme-toggle { margin-left: 0.5rem; }
+
+@media (max-width: 768px) {
+  .theme-toggle { width: 32px; height: 32px; font-size: 0.95rem; }
+  /* Narrow screens: the link row scrolls sideways instead of overflowing,
+     and the toggle stays pinned at the right edge. */
+  .nav-container { gap: 0.5rem; }
+  .nav-links {
+    flex: 1 1 auto;
+    min-width: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { white-space: nowrap; flex-shrink: 0; }
+}
