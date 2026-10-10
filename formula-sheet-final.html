@@ -449,34 +449,39 @@
             <div class="fs-card wide highlight-amber">
                 <div class="fs-card-head">🎯 Confidence Intervals</div>
                 <div class="fs-formula">
-                    <span class="fs-formula-label">Every interval</span>
-                    \[\text{Estimate} \pm \text{Margin of Error} = \text{estimate} \pm z \times SE\]
+                    <span class="fs-formula-label">Every interval — <span class="nc">c</span> = margin of error</span>
+                    \[\text{estimate} - c \;&lt;\; \text{parameter} \;&lt;\; \text{estimate} + c\]
                 </div>
                 <table class="fs-mini-table">
-                    <thead><tr><th>Situation</th><th>Interval</th></tr></thead>
+                    <thead><tr><th>Situation</th><th>Interval</th><th>Margin of error</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Mean, σ known</strong></td><td>\(\bar{x} \pm z\,\sigma/\sqrt{n}\)</td></tr>
-                        <tr><td><strong>Mean, σ unknown, large n</strong></td><td>\(\bar{x} \pm z\,s/\sqrt{n}\)</td></tr>
-                        <tr><td><strong>Proportion</strong> (\(\hat{p} = x/n\))</td><td>\(\hat{p} \pm z\sqrt{\hat{p}(1-\hat{p})/n}\)</td></tr>
+                        <tr><td><strong>Mean, σ known</strong></td><td>\(\bar{x} - c &lt; \mu &lt; \bar{x} + c\)</td><td>\(c = z \times \frac{\sigma}{\sqrt{n}}\)</td></tr>
+                        <tr><td><strong>Mean, σ unknown, large n</strong></td><td>\(\bar{x} - c &lt; \mu &lt; \bar{x} + c\)</td><td>\(c = z \times \frac{s}{\sqrt{n}}\)</td></tr>
+                        <tr><td><strong>Proportion</strong></td><td>\(\hat{p} - c &lt; p &lt; \hat{p} + c\)</td><td>\(c = z \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\), \(\hat{p} = \frac{x}{n}\)</td></tr>
                     </tbody>
                 </table>
-                <div class="fs-notation">
-                    <span>90% → z = 1.645</span>
-                    <span>95% → z = 1.960</span>
-                    <span>98% → z = 2.326</span>
-                    <span>99% → z = 2.576</span>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">Finding <span class="nc">z</span> — named by the area to its left</span>
+                    <div class="fs-notation">
+                        <span>90% → 5% each tail → \(z_{95\%} = 1.645\)</span>
+                        <span>95% → 2.5% each tail → \(z_{97.5\%} = 1.960\)</span>
+                        <span>98% → 1% each tail → \(z_{99\%} = 2.326\)</span>
+                        <span>99% → 0.5% each tail → \(z_{99.5\%} = 2.576\)</span>
+                    </div>
+                    <p class="fs-tip">💡 The table gives the area to the <strong>left</strong> of z, which still includes the left tail — you can't get rid of the initial 5% — so look up confidence + one tail.</p>
                 </div>
                 <div class="fs-sub-box">
                     <span class="fs-formula-label">Working backwards</span>
                     <table class="fs-mini-table">
-                        <tr><td>Given width</td><td>margin = width ÷ 2, then \(z = \text{margin} \div SE\)</td></tr>
-                        <tr><td>Given z, want confidence</td><td>\(2\Phi(z) - 1\)</td></tr>
-                        <tr><td>Given interval, want σ</td><td>\(\sigma = \text{margin} \times \sqrt{n} \div z\)</td></tr>
-                        <tr><td>Given a limit, want α</td><td>\(z = (\hat{p} - \text{limit}) \div SE\), then \(2\Phi(z) - 1\)</td></tr>
+                        <tr><td>Given the two limits</td><td>estimate = midpoint, &nbsp;\(c = \frac{\text{upper} - \text{lower}}{2}\)</td></tr>
+                        <tr><td>Given c, want σ</td><td>\(\sigma = \frac{c\sqrt{n}}{z}\)</td></tr>
+                        <tr><td>Given c, want z</td><td>\(z = c \div \frac{\sigma}{\sqrt{n}}\)</td></tr>
+                        <tr><td>Given z, want confidence</td><td>tail = 100% − (area left of z); confidence = 100% − 2 × tail</td></tr>
+                        <tr><td>Given a limit, want α</td><td>\(c = \hat{p} - \text{lower limit}\) → z → confidence</td></tr>
                     </table>
                 </div>
                 <p class="fs-tip">💡 Claimed value <strong>inside</strong> the interval → consistent with the data. Outside → evidence against it.</p>
-                <p class="fs-tip">💡 Higher confidence → bigger z → wider interval. Bigger n → narrower interval.</p>
+                <p class="fs-tip">💡 Higher confidence → bigger z → bigger c → wider interval. Bigger n → smaller c → narrower interval.</p>
             </div>
 
             <!-- ═══════════════ UNIT 10 ═══════════════ -->
