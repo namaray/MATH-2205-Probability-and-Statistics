@@ -58,6 +58,7 @@
             <a href="#errors">Type I / II</a>
             <a href="#choosing">Which One?</a>
             <a href="#which-test">Which Test?</a>
+            <a href="#spot-dist">Spot It</a>
             <a href="#papers">Past Papers</a>
         </div>
 
@@ -616,6 +617,70 @@
                     </tbody>
                 </table>
                 <p class="fs-tip">🔁 Poisson with a large λ (above about 15) → approximate by \(N(\lambda, \lambda)\), use a continuity correction, then z. Same six steps every time — only Steps 3 and 4 change.</p>
+            </div>
+
+            <div class="fs-card wide highlight-purple" id="spot-dist">
+                <div class="fs-card-head">🔍 Spot the Distribution — Wording Trick</div>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">Ask three questions, in order</span>
+                    <div class="fs-steps">
+                        <span>① A fixed number \(n\) of yes/no trials? → <strong>Binomial</strong></span>
+                        <span>② A count per hour / day / page, with no upper limit? → <strong>Poisson</strong></span>
+                        <span>③ A sample mean \(\bar{x}\) of measurements, with σ? → <strong>Normal (z)</strong></span>
+                    </div>
+                </div>
+                <table class="fs-mini-table" style="margin-top:0.75rem">
+                    <thead><tr><th>Distribution</th><th>Look for these words</th><th>Test about</th><th>\(H_0\)</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Binomial</strong> \(\beta(n, p)\)</td><td>"out of <span class="nc">n</span>", "a sample of 15… each either", "30%", "proportion", "defective", "success / fail", "claims that 30%…"</td><td>\(p\)</td><td>\(p = p_0\)</td></tr>
+                        <tr><td><strong>Poisson</strong> \(P_0(\lambda)\)</td><td>"per hour", "per day", "per page", "per km", "rate", "on average 3 per…", calls / accidents / errors / arrivals, "in a 30-minute period"</td><td>\(\lambda\)</td><td>\(\lambda = \lambda_0\)</td></tr>
+                        <tr><td><strong>Normal</strong> (z-test)</td><td>"mean" or "average" of hours / kg / cm / marks / speed, "standard deviation", "a sample of 36… has a mean of 51.5"</td><td>\(\mu\)</td><td>\(\mu = \mu_0\)</td></tr>
+                    </tbody>
+                </table>
+                <p class="fs-tip">⚠️ <strong>"Average" alone doesn't mean normal.</strong> "On average 3 calls per 10 minutes" is a Poisson rate. Look at what the question hands you at the end: one count of events → Poisson; <span class="nc">x</span> successes out of <span class="nc">n</span> → binomial; a sample mean \(\bar{x}\) with σ → normal.</p>
+                <p class="fs-tip">💡 Units give it away. Continuous units (hours, kg, cm, words per minute) → normal. Whole-number counts → binomial if there's a maximum (<span class="nc">n</span>), Poisson if there isn't.</p>
+
+                <div class="fs-example">
+                    <span class="fs-formula-label">Example 1 — Binomial</span>
+                    <p class="fs-q">A company claims that <span class="clue">30%</span> of its customers prefer its new flavour. In a <span class="clue">random sample of 15 customers</span>, <span class="clue">only 1 prefers</span> the new flavour. Test at the 5% level of significance whether the proportion who prefer it is <span class="clue">less than</span> the company claims.</p>
+                    <p class="fs-why">🔍 Fixed <span class="nc">n</span> = 15, and each customer either prefers it or doesn't → binomial, \(X \sim \beta(15,\, 0.3)\).</p>
+                    <ol>
+                        <li>\(H_0: p = 0.3 \qquad H_1: p &lt; 0.3\) ("less than")</li>
+                        <li>\(\alpha = 0.05\), one-tailed (left)</li>
+                        <li>Test statistic: \(X = 1\), the number who prefer it, with \(X \sim \beta(15,\, 0.3)\) under \(H_0\)</li>
+                        <li>p-value \(= P(X \leq 1)\) \(= 0.7^{15} + {}^{15}C_1(0.3)(0.7)^{14}\) \(= 0.0047 + 0.0305\) \(= 0.0353\)</li>
+                        <li>\(0.0353 &lt; 0.05\) → <strong>reject \(H_0\)</strong></li>
+                        <li>There is sufficient evidence, at the 5% level, that fewer than 30% of customers prefer the new flavour.</li>
+                    </ol>
+                </div>
+
+                <div class="fs-example">
+                    <span class="fs-formula-label">Example 2 — Poisson</span>
+                    <p class="fs-q">A help desk receives calls at an <span class="clue">average rate of 3 per 10 minutes</span>. After a new FAQ page goes online, only <span class="clue">4 calls</span> are received <span class="clue">in a randomly chosen 30-minute period</span>. Test at the 5% level whether the rate of calls has <span class="clue">decreased</span>.</p>
+                    <p class="fs-why">🔍 A count of calls over a time period, with no maximum → Poisson. Rescale first: 30 minutes is 3 × 10 minutes, so \(\lambda = 3 \times 3 = 9\).</p>
+                    <ol>
+                        <li>\(H_0: \lambda = 9 \qquad H_1: \lambda &lt; 9\) (calls per 30 minutes, "decreased")</li>
+                        <li>\(\alpha = 0.05\), one-tailed (left)</li>
+                        <li>Test statistic: \(X = 4\) calls, with \(X \sim P_0(9)\) under \(H_0\)</li>
+                        <li>p-value \(= P(X \leq 4)\) \(= e^{-9}\left(1 + 9 + \frac{9^2}{2!} + \frac{9^3}{3!} + \frac{9^4}{4!}\right)\) \(= e^{-9} \times 445.375\) \(= 0.0550\)</li>
+                        <li>\(0.0550 &gt; 0.05\) → <strong>insufficient evidence to reject \(H_0\)</strong></li>
+                        <li>There is insufficient evidence, at the 5% level, that the call rate has decreased. Four calls could easily happen by chance at the old rate.</li>
+                    </ol>
+                </div>
+
+                <div class="fs-example">
+                    <span class="fs-formula-label">Example 3 — Normal (z-test)</span>
+                    <p class="fs-q">The lifetime of a brand of battery has <span class="clue">mean 50 hours</span> and <span class="clue">standard deviation 4 hours</span>. A new design is tested on a <span class="clue">random sample of 36 batteries</span>, which last a <span class="clue">mean of 51.5 hours</span>. Test at the 5% level whether the new design has <span class="clue">increased</span> the mean lifetime.</p>
+                    <p class="fs-why">🔍 A sample mean of a measurement (hours), with σ given → normal, z-test.</p>
+                    <ol>
+                        <li>\(H_0: \mu = 50 \qquad H_1: \mu &gt; 50\) ("increased")</li>
+                        <li>\(\alpha = 0.05\), one-tailed (right); critical value \(z = 1.645\)</li>
+                        <li>Test statistic: \(z = \dfrac{\bar{x} - \mu_0}{\sigma/\sqrt{n}}\) \(= \dfrac{51.5 - 50}{4/\sqrt{36}}\) \(= \dfrac{1.5}{0.667} = 2.25\)</li>
+                        <li>p-value \(= P(Z &gt; 2.25) = 1 - 0.9878 = 0.0122\). Equivalently, \(2.25 &gt; 1.645\), so z falls in the rejection region.</li>
+                        <li>\(0.0122 &lt; 0.05\) → <strong>reject \(H_0\)</strong></li>
+                        <li>There is sufficient evidence, at the 5% level, that the new design increases the mean battery lifetime.</li>
+                    </ol>
+                </div>
             </div>
 
             <!-- ═══════════════ PAST PAPERS ═══════════════ -->

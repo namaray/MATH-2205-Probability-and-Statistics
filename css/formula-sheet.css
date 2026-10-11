@@ -240,6 +240,47 @@
   margin-bottom: 0 !important;
 }
 
+/* ─── Worked examples inside a card ─── */
+.fs-example {
+  text-align: left;
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.fs-example .fs-q {
+  font-size: 0.88rem;
+  margin: 0.5rem 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--accent-secondary);
+  color: var(--text-primary);
+}
+
+.fs-example .fs-why {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+}
+
+.fs-example ol {
+  font-size: 0.84rem;
+  padding-left: 1.4rem;
+  margin: 0.5rem 0 0;
+  color: var(--text-secondary);
+}
+
+.fs-example li { margin: 0.3rem 0; }
+
+.clue {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.14);
+  padding: 0 0.2em;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
 /* ─── Mini Tables ─── */
 .fs-mini-table {
   width: 100%;
@@ -390,6 +431,8 @@
 /* ─── LIGHT THEME (see js/theme.js) ─── */
 [data-theme="light"] .fs-card:hover { border-color: rgba(24, 24, 48, 0.18); }
 [data-theme="light"] .fs-sub-box { background: rgba(24, 24, 48, 0.025); }
+[data-theme="light"] .fs-example { background: rgba(24, 24, 48, 0.025); }
+[data-theme="light"] .clue { color: #b45309; background: rgba(245, 158, 11, 0.16); }
 [data-theme="light"] .fs-mini-table td { border-bottom-color: rgba(24, 24, 48, 0.07); }
 [data-theme="light"] .fs-mini-table td.yes { color: #b45309; }
 [data-theme="light"] .fs-mini-table td.no  { color: #047857; }
