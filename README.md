@@ -30,6 +30,8 @@
 
 ✏️ **[Worksheet 02 — Continuous RV, Estimation & Hypothesis Testing](units/worksheet-02.html)** — 11 questions, each with a plain-English explanation, a diagram where it helps, and full working.
 
+📝 **[Past Paper — Final Exam, Fall 2025 (253)](units/final-253.html)** — the full paper, each question shown as on the original, with worked solutions.
+
 📄 **[Final Cheat Sheet](formula-sheet-final.html)** — every final-term formula on one page.
 
 > 💡 Every exercise in the final-term notes and both worksheets has a **Show solution** dropdown with complete working.
