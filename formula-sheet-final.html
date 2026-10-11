@@ -35,7 +35,7 @@
             </div>
             <div class="unit-badge">QUICK REVIEW · FINAL TERM</div>
             <h1>Final Cheat Sheet</h1>
-            <p class="hero-subtitle" style="max-width:560px;margin:0.5rem auto 0;font-size:0.95rem;">All key formulas and conditions from the final term in one skimmable page. Covers Probability and Units 07, 08, 09, Estimation and 10 — every formula you need for the final.</p>
+            <p class="hero-subtitle" style="max-width:560px;margin:0.5rem auto 0;font-size:0.95rem;">All key formulas and conditions from the final term in one skimmable page. Covers Probability and Units 07, 08, 09, Estimation and 10 — every formula you need for the final. Includes what the Summer and Fall 2025 finals asked.</p>
         </div>
 
         <!-- ============ QUICK-NAV PILLS ============ -->
@@ -57,6 +57,8 @@
             <a href="#unit10">Unit 10</a>
             <a href="#errors">Type I / II</a>
             <a href="#choosing">Which One?</a>
+            <a href="#which-test">Which Test?</a>
+            <a href="#papers">Past Papers</a>
         </div>
 
         <div class="notes-container" style="max-width:920px;">
@@ -108,6 +110,8 @@
                     </table>
                 </div>
                 <p class="fs-tip">⚠️ Mutually exclusive ≠ independent. Exclusive events never co-occur; independent ones often do, just without influencing each other.</p>
+                <p class="fs-tip">🧪 <strong>Test independence from a two-way table:</strong> read \(P(A)\), \(P(B)\) and \(P(A \cap B)\) from the totals. Independent only if \(P(A \cap B) = P(A)P(B)\) exactly (equivalently \(P(B \mid A) = P(B)\)). Summer 2025: \(0.4 \neq 0.5 \times 0.7 = 0.35\) → not independent.</p>
+                <p class="fs-tip">💡 Told the events are independent? Then \(P(A \cup B) = P(A) + P(B) - P(A)P(B)\). Fall 2025: \(0.6 + 0.4 - 0.24 = 0.76\).</p>
                 <p class="fs-tip">💡 "Exactly one of A, B" = \(P(A \cup B) - P(A \cap B)\).</p>
             </div>
 
@@ -143,6 +147,8 @@
                         <tr><td>\(P(B)\)</td><td>Evidence</td><td>Total probability of B</td></tr>
                     </tbody>
                 </table>
+                <p class="fs-tip">💡 Always build \(P(B)\) from <strong>both</strong> branches of the tree first: \(P(+) = P(D)P(+ \mid D) + P(D')P(+ \mid D')\).</p>
+                <p class="fs-tip">⚠️ A rare condition plus an imperfect test gives a <strong>small</strong> \(P(D \mid +)\). Fall 2025: 2% prevalence, 90% detection, 5% false positives → \(0.018 / 0.067 \approx 0.27\).</p>
                 <div class="fs-use-case">
                     <strong>Use when:</strong> the question reverses a condition — "given the outcome, what caused it?" (positive test → does the patient have the disease?)
                 </div>
@@ -182,6 +188,12 @@
                     </div>
                 </div>
                 <div class="fs-simple"><em>Build the table, then the \(xp(x)\) and \(x^2p(x)\) columns. Variance = mean of squares − square of the mean.</em></div>
+                <div class="fs-sub-box">
+                    <span class="fs-formula-label">Change of units — \(Y = aX + b\)</span>
+                    \[E(Y) = aE(X) + b \qquad \text{Var}(Y) = a^2\,\text{Var}(X) \qquad \text{SD}(Y) = |a|\,\text{SD}(X)\]
+                    <p class="fs-tip">💡 Summer 2025: bonus = 50 × deliveries − 50, so SD(bonus) = 50 × √1.2 = 54.77 Tk. Not in the slides — the table method always works, and this is a quick check.</p>
+                </div>
+                <p class="fs-tip">⚠️ Read whether it asks for the <strong>variance</strong> or the <strong>standard deviation</strong>: SD = √Var.</p>
             </div>
 
             <!-- Binomial -->
@@ -326,12 +338,12 @@
                 <div class="fs-card-head">📐 Standard Normal, z &amp; Working Backwards</div>
                 <div class="fs-formula-row">
                     <div class="fs-formula-item">
-                        <span class="fs-formula-label">Forwards (x → probability)</span>
+                        <span class="fs-formula-label">Forwards (<span class="nc">x</span> → probability)</span>
                         \[Z = \frac{X - \mu}{\sigma} \qquad Z \sim N(0, 1^2)\]
                     </div>
                     <div class="fs-formula-divider"></div>
                     <div class="fs-formula-item">
-                        <span class="fs-formula-label">Backwards (probability → x)</span>
+                        <span class="fs-formula-label">Backwards (probability → <span class="nc">x</span>)</span>
                         \[x = \mu + z\sigma\]
                     </div>
                 </div>
@@ -345,7 +357,7 @@
                     </tbody>
                 </table>
                 <div class="fs-sub-box">
-                    <span class="fs-formula-label">Inverse z values (area to the left)</span>
+                    <span class="fs-formula-label">Inverse <span class="nc">z</span> values (area to the left)</span>
                     <div class="fs-notation">
                         <span>0.75 → 0.674</span>
                         <span>0.90 → 1.282</span>
@@ -366,6 +378,16 @@
                         <tr><td>\(\mu \pm 1\sigma\)</td><td>68.27%</td><td>\(\mu \pm 2\sigma\)</td><td>95.45%</td><td>\(\mu \pm 3\sigma\)</td><td>99.73%</td></tr>
                     </tbody>
                 </table>
+                <div class="fs-formula">
+                    <span class="fs-formula-label">Within \(k\) standard deviations — any normal</span>
+                    \[P(\mu - k\sigma &lt; X &lt; \mu + k\sigma) = P(-k &lt; Z &lt; k) = 2\Phi(k) - 1\]
+                </div>
+                <div class="fs-notation">
+                    <span>k = 1 → 2(0.8413) − 1 = 0.6826</span>
+                    <span>k = 2 → 2(0.9772) − 1 = 0.9544</span>
+                    <span>k = 3 → 2(0.99865) − 1 = 0.9973</span>
+                </div>
+                <p class="fs-tip">💡 The answer doesn't depend on μ or σ (Summer 2025 Q1d). Outside the band = both tails = \(2(1 - \Phi(k))\).</p>
                 <p class="fs-tip">🏭 <strong>Six Sigma</strong> (slides): 99.99966% within \(\pm 6\sigma\) = <strong>3.4 defects per million opportunities (DPMO)</strong>. Strictly, 3.4 DPMO assumes the industry's 1.5σ drift; a perfectly centred ±6σ is ≈ 0.002 DPMO.</p>
             </div>
 
@@ -422,6 +444,8 @@
                     </tbody>
                 </table>
                 <p class="fs-tip">✅ Check \(F(a) = 0\) and \(F(b) = 1\). Median/quartile equations are usually quadratics — keep the root <strong>inside</strong> the range.</p>
+                <p class="fs-tip">⚠️ <strong>Mode ≠ median.</strong> \(F(m) = 0.5\) finds the <em>median</em> only. For the mode, solve \(f'(x) = 0\) or check the endpoints. They only coincide when the pdf is symmetric: Fall 2025's \(kt(10 - t)\) gives both = 5, but Summer 2025's \(k(10 - x)\) has mode 0 and median 2.93.</p>
+                <p class="fs-tip">💡 \(P(X &gt; a) = 1 - F(a)\), and for a continuous variable \(P(X \geq a) = P(X &gt; a)\). Summer 2025: \(P(X &gt; 5) = 1 - 0.75 = 0.25\).</p>
             </div>
 
             <!-- ═══════════════ ESTIMATION ═══════════════ -->
@@ -441,7 +465,7 @@
                     </tbody>
                 </table>
                 <div class="fs-formula">
-                    <span class="fs-formula-label">Unbiased estimates from Σx, Σx²</span>
+                    <span class="fs-formula-label">Unbiased estimates from <span class="nc">Σx, Σx²</span></span>
                     \[\bar{x} = \frac{\sum x}{n} \qquad s^2 = \frac{1}{n-1}\left(\sum x^2 - \frac{(\sum x)^2}{n}\right)\]
                 </div>
             </div>
@@ -526,6 +550,9 @@
                     <span>α 1%: 2.326 / 2.576</span>
                     <span>(one-tail / two-tail)</span>
                 </div>
+                <p class="fs-tip">🎯 <strong>Where does the claim go?</strong> Whatever you want evidence <em>for</em> goes in \(H_1\) ("more than 80 hours", "greater than 60 wpm" → \(\mu &gt;\)). \(H_0\) always contains the "=".</p>
+                <p class="fs-tip">📏 σ unknown but \(n \geq 30\)? Use the sample's \(s\) in place of σ (Summer 2025, n = 40). With σ unknown <em>and</em> small n, a textbook would use a t-test — this course and its papers use z (Fall 2025, n = 16: both methods reject \(H_0\)).</p>
+                <p class="fs-tip">✏️ <strong>"Sketch the critical region"</strong> (Fall 2025, 2 marks): a bell curve centred at 0, lines at ±1.96, both 2.5% tails shaded and labelled "rejection region", the middle labelled "acceptance region, 95%".</p>
                 <p class="fs-tip">📝 Jeffrey: \(z = \frac{16 - 16.43}{0.8/\sqrt{15}} = -2.081\), p = 0.0188 &lt; 0.05 → reject \(H_0\): the goggles helped.</p>
                 <p class="fs-tip">⚠️ Never write "accept \(H_0\)" — write "insufficient evidence to reject \(H_0\)".</p>
             </div>
@@ -540,6 +567,7 @@
                     </tbody>
                 </table>
                 <div class="fs-simple"><em>Court analogy (H₀ = innocent): Type I = convicting an innocent person; Type II = letting a guilty one go.</em></div>
+                <p class="fs-tip">✍️ <strong>"Define a Type I error in this context"</strong>: write \(H_0\) first, then say "concluding [\(H_1\) in words] when actually [\(H_0\) in words]". Summer 2025 bulbs: concluding they last <em>under</em> 10,000 hours when they actually meet the standard — a good batch is wrongly rejected.</p>
             </div>
 
             <div class="fs-card wide highlight-purple">
@@ -576,6 +604,72 @@
                 <p class="fs-tip">⚡ Mean = variance is the <strong>Poisson</strong> signature. For binomial the variance is always smaller than the mean, since \(npq &lt; np\).</p>
             </div>
 
+            <div class="fs-card wide highlight-teal" id="which-test">
+                <div class="fs-card-head">🧪 Which Hypothesis Test?</div>
+                <table class="fs-mini-table">
+                    <thead><tr><th>The data is…</th><th>Use</th><th>Test</th><th>p-value from</th></tr></thead>
+                    <tbody>
+                        <tr><td>Successes out of a <strong>fixed number</strong> of yes/no trials</td><td>\(B(n, p)\)</td><td>\(p\)</td><td>\(P(X \leq x)\) or \(P(X \geq x)\), binomial formula</td></tr>
+                        <tr><td>Events per unit of <strong>time or space</strong>, given a rate</td><td>\(Po(\lambda)\)</td><td>\(\lambda\)</td><td>\(P(X \leq x)\), Poisson formula (rescale λ first)</td></tr>
+                        <tr><td>A <strong>mean of measurements</strong>, with σ (or large n)</td><td>z-test</td><td>\(\mu\)</td><td>\(z = \frac{\bar{x} - \mu_0}{\sigma/\sqrt{n}}\) → z-table</td></tr>
+                    </tbody>
+                </table>
+                <p class="fs-tip">🔁 Poisson with a large λ (above about 15) → approximate by \(N(\lambda, \lambda)\), use a continuity correction, then z. Same six steps every time — only Steps 3 and 4 change.</p>
+            </div>
+
+            <!-- ═══════════════ PAST PAPERS ═══════════════ -->
+            <div class="unit-divider" id="papers">
+                <span class="unit-divider-tag">PAST PAPERS</span>
+                <span class="unit-divider-title">What the Finals Ask</span>
+            </div>
+
+            <div class="fs-card wide highlight-amber">
+                <div class="fs-card-head">📝 Question Types — Summer &amp; Fall 2025</div>
+                <table class="fs-mini-table">
+                    <thead><tr><th>Topic</th><th>Summer 2025 (252)</th><th>Fall 2025 (253)</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>pdf: k, cdf, probability, mean / median / mode</strong></td><td>\(k(10 - x)\) — 10 marks</td><td>\(kt(10 - t)\) — 10 marks</td></tr>
+                        <tr><td><strong>One-tailed z-test</strong> (six steps)</td><td>typing speed &gt; 60 — 5</td><td>battery life &gt; 80 — 5</td></tr>
+                        <tr><td><strong>Confidence interval</strong></td><td>proportion, 95% — 2</td><td>mean, 90% — 3</td></tr>
+                        <tr><td><strong>Errors / critical region</strong></td><td>define Type I &amp; II — 2, in context — 1</td><td>sketch two-tailed 5% region — 2</td></tr>
+                        <tr><td><strong>Bayes / total probability</strong></td><td>two machines — 3</td><td>medical test — 3</td></tr>
+                        <tr><td><strong>Independence</strong></td><td>test from a table — 3</td><td>P(A ∪ B) given independent — 2</td></tr>
+                        <tr><td><strong>Discrete E(X), Var / SD</strong></td><td>deliveries &amp; bonus SD — 4</td><td>delivery delay — 5</td></tr>
+                        <tr><td><strong>Normal probability</strong></td><td>less than 2 — 3, and μ ± σ — 2</td><td>between 25 and 35 — 4</td></tr>
+                        <tr><td><strong>Binomial</strong></td><td>exactly 3 — 2</td><td>at least one — 3</td></tr>
+                        <tr><td><strong>Poisson with a rescaled rate</strong></td><td>at least 1 in 2 s — 3</td><td>at most 1 in 30 min — 3</td></tr>
+                    </tbody>
+                </table>
+                <p class="fs-tip">🎯 Both papers: 40 marks in 2 hours, the pdf question is worth 10 marks, and the hypothesis test is worth 5. Full solutions: <a href="units/final-252.html">Summer 2025</a> · <a href="units/final-253.html">Fall 2025</a>.</p>
+            </div>
+
+            <div class="fs-grid two-col">
+                <div class="fs-card">
+                    <div class="fs-card-head">📄 Printed on the Paper</div>
+                    <table class="fs-mini-table">
+                        <tr><td>Binomial pmf</td><td>\(^nC_x\,p^x(1-p)^{n-x}\)</td></tr>
+                        <tr><td>Poisson pmf</td><td>\(\frac{e^{-\lambda}\lambda^x}{x!}\)</td></tr>
+                        <tr><td>Normal pdf</td><td>\(\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</td></tr>
+                        <tr><td>CI for a mean</td><td>\(\bar{x} \pm z\frac{\sigma}{\sqrt{n}}\)</td></tr>
+                        <tr><td>CI for a proportion</td><td>\(\hat{p} \pm z\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</td></tr>
+                    </table>
+                </div>
+                <div class="fs-card">
+                    <div class="fs-card-head">🧠 Memorise — Not Printed</div>
+                    <div class="fs-steps">
+                        <span>Addition &amp; independence rules</span>
+                        <span>Bayes &amp; total probability</span>
+                        <span>\(E(X)\), \(\text{Var}(X)\), SD</span>
+                        <span>\(Z = \frac{X-\mu}{\sigma}\)</span>
+                        <span>\(z = \frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}\)</span>
+                        <span>z-values 1.645 · 1.96 · 2.326 · 2.576</span>
+                        <span>The six steps</span>
+                        <span>Type I / II definitions</span>
+                        <span>pdf: k, cdf, mean, median, mode</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="fs-card wide">
                 <div class="fs-card-head">🧮 Exam Checklist</div>
                 <div class="fs-steps">
@@ -585,6 +679,7 @@
                     <span>④ Normal? √variance first, then z</span>
                     <span>⑤ Complement if "more/fewer than"</span>
                     <span>⑥ State the answer in context</span>
+                    <span>⑦ Hypothesis test? Write all six steps</span>
                 </div>
             </div>
 
