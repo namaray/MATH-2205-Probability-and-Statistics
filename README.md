@@ -32,6 +32,8 @@
 
 📝 **[Past Paper — Final Exam, Fall 2025 (253)](units/final-253.html)** — the full paper, each question shown as on the original, with worked solutions.
 
+📝 **[Past Paper — Final Exam, Summer 2025 (252)](units/final-252.html)** — the full paper, each question shown as on the original, with worked solutions.
+
 📄 **[Final Cheat Sheet](formula-sheet-final.html)** — every final-term formula on one page.
 
 > 💡 Every exercise in the final-term notes and both worksheets has a **Show solution** dropdown with complete working.
